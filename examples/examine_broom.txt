@@ -1,0 +1,6 @@
+function main
+	if broom location inventory
+	say "It's a simple enough broom, there's nothing interesting about it."
+
+	if broom location this
+	say "It's a simple enough broom, there's nothing interesting about it."
