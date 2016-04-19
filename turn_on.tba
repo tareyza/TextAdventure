@@ -1,0 +1,32 @@
+function main
+    if lamp is broken
+        say "the lamp is broken and cannot be turned on."
+        return failure
+
+    if lamp is on
+        say "the lamp is already on"
+        return failure
+
+    if lamp contains bulb
+        say "there is no bulb in the lamp"
+        if inventory exists
+            say "...but you have one in your inventory."
+            ask "would you like to use it?[y/n]"
+                do "player put bulb in lamp"
+                return on
+
+        return failure
+
+    if is lamp.bulb broken
+        say "the bulb is broken."
+        return failure
+
+    return on
+
+function on
+    set state lamp.bulb lit
+    set state lamp on
+    say "the lamp is now on"
+    return success
+
+call main

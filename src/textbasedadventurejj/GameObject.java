@@ -1,0 +1,82 @@
+package textbasedadventurejj;
+
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.HashMap;
+
+public class GameObject {
+
+    private final Map<Trigger, Event> events;
+    private final Map<String, Object> properties;
+    private GameObject parent;
+    private String state;
+    private String name;
+
+    public static final GameObject NOTHING = new GameObject("nothing", "nothing");
+
+    public GameObject(String state, String name) {
+        events = new TreeMap<>();
+        properties = new HashMap<>();
+        parent = null;
+        this.state = state;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void addEvent(Trigger trigger, Event event) {
+        events.put(trigger, event);
+    }
+
+    public Event getEvent(Trigger trigger) {
+        Event event = null;
+        for (Map.Entry<Trigger, Event> entry : events.entrySet()) {
+            int result = trigger.compareTo(entry.getKey());
+            if (result >= 0) {
+                if (event == null) {
+                    event = entry.getValue();
+                }
+            }
+            if (result == 0) {
+                return event;
+            }
+        }
+        return event;
+    }
+
+    public Object getProperty(String key) {
+        return properties.get(key);
+    }
+
+    public void setProperty(String key, Object value) {
+        properties.put(key, value);
+    }
+
+    public GameObject getParent() {
+        return parent;
+    }
+
+    public void setParent(GameObject parent) {
+        this.parent = parent;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public boolean isA(GameObject object) {
+        if (this.equals(object)) {
+            return true;
+        }
+        if (parent == null) {
+            return false;
+        }
+        return parent.isA(object);
+    }
+}

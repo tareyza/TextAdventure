@@ -1,0 +1,9 @@
+function main
+	if door is closed
+		say "You manage to walk over to the door and open it."
+		say "The light reveals several things you hadn’t seen before. There are shelves of boxes and other contraptions. In a corner, there appears to be a first aid kit and a broom."
+		set state light on
+
+	if door is open
+		say "The door is already open."
+		
