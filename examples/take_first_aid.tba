@@ -1,7 +1,7 @@
 function main 
 	if light is on
 		say "You walk over to the shelf with the first aid kit and take it. Looks like this might be useful later."
-		set first_aid location inventory
+		set first_aid in inventory
 
 	if light is off
 		say "You cannot see a first aid kit. The room is too dark to make anything out."

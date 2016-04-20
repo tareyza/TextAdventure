@@ -1,0 +1,5 @@
+function main
+	if door is open
+		set player in control
+	if door is closed
+		say "The door is closed, you can't go there."

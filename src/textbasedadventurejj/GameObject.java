@@ -10,7 +10,7 @@ public class GameObject {
     private final Map<String, Object> properties;
     private GameObject parent;
     private String state;
-    private String name;
+    private final String name;
 
     public static final GameObject NOTHING = new GameObject("nothing", "nothing");
 
@@ -21,11 +21,7 @@ public class GameObject {
         this.state = state;
         this.name = name;
     }
-
-    public String getName() {
-        return name;
-    }
-
+ 
     public void addEvent(Trigger trigger, Event event) {
         events.put(trigger, event);
     }
@@ -44,6 +40,10 @@ public class GameObject {
             }
         }
         return event;
+    }
+
+     public String getName() {
+        return name;
     }
 
     public Object getProperty(String key) {

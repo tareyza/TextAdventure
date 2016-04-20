@@ -1,4 +1,3 @@
-
 package textbasedadventurejj;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class IfCommand implements Command {
                 Interpreter.getInstance().skipUntilNewline();
                 return false;
             }
-        } else if (words[1].equals("is")) {
+        } else if (words[1].equals("is")) {//if state e.g. lamp is (state) off
             if (object.getState().equals(words[1])) {
                 return true;
             } else {
@@ -36,8 +35,9 @@ public class IfCommand implements Command {
             }
             boolean exist = false;
             for (GameObject obj : allObjects) {
-                if(obj.equals(target))
+                if (obj.equals(target)) {
                     exist = true;
+                }
             }
             if (exist) {
                 return true;
@@ -45,6 +45,18 @@ public class IfCommand implements Command {
                 Interpreter.getInstance().skipUntilNewline();
                 return false;
             }
+        } else if (words[2].equals("in")) {
+            GameObject target = Interpreter.getInstance().parseObject(words[1]);
+            Location targetLocation;
+            if (words[3].equals("here")) {
+                targetLocation = Interpreter.getInstance().getContext();
+            } else if (words[3].equals("inventory")) {
+                targetLocation = Interpreter.getInstance().getContext().getSubLocation("inventory");
+            } else {
+                targetLocation = Interpreter.getInstance().getContext().getSubLocation(words[3]);//does this actually work?!?
+            }
+            return targetLocation.getChildren().containsValue(words[1]);
+
         } else {
             return false;//nothing is executed
         }
