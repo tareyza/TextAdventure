@@ -15,7 +15,7 @@ public class SetCommand implements Command {
             GameObject object = Interpreter.getInstance().parseObject(words[1]);
             object.setProperty(words[2], words[3]);
             return true;
-        } else if (words[0].equals("location")) {
+        } else if (words[1].equals("in")) {//"set" + objectName "in" + newLocation
             GameObject object = Interpreter.getInstance().parseObject(words[1]);
             Location currentLocation = Interpreter.getInstance().getContext();
             String objectName = object.getName();
