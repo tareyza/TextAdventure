@@ -13,11 +13,16 @@ public class Loader{
     public GameObject loadObject(String name) throws IOException{
     	String fp = Constants.OBJECT_ROOT + name;
     	File fobject = new File(fp);
-    	Map<String, Event> events;
+    	Map<Trigger, Event> events;
     	for(File file : fobject.listFiles()){
     		if(file.getName().equals(Constants.EVENT_FILE))
     			events = parseEvents(file);
     	}
+    }
+    
+    
+    public Location loadLocation(String name){
+    	return null;
     }
     
     private Map<Trigger, Event> parseEvents(File eventFile) throws IOException{
@@ -27,7 +32,10 @@ public class Loader{
     	String s = null;
     	while((s = reader.readLine()) != null){
     		String[] keyVal = s.split(":");
-    		String name = keyVal[0];
+    		String[] trigger = keyVal[0].split(" ");
+    		String name = trigger[0];
+    		String object = null;
+    		object = trigger[1];
     		String fname = keyVal[1];
     		Event event = null;
     		if(cache.containsKey(fname)){
@@ -36,7 +44,7 @@ public class Loader{
     			event = readEvent(new File(eventFile.getAbsolutePath() + File.separatorChar + name));
     			cache.put(fname, event);
     		}
-    		events.put(new Trigger(name, ), event);
+    		events.put(new Trigger(name), event);
     	}
     	return events;
     }
