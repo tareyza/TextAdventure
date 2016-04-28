@@ -11,4 +11,8 @@ public class Event{
     public String[] getLines(){
         return lines;
     }
+    
+    public int getLength(){
+        return lines.length;
+    }
 }
