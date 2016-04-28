@@ -1,4 +1,3 @@
-
 package textbasedadventurejj;
 
 import java.io.BufferedReader;
@@ -17,7 +16,7 @@ public class GameObjectManager {
     public void loadObjects(){
     	objects = new HashMap<>();
     	try{
-    		for(String s : Utils.readFile(Constants.OBJECT_ROOT + "Objects").split("\n")){
+    		for(String s : Utils.readFile(Constants.OBJECT_ROOT + Constants.OBJECT_FILE).split("\n")){
     			String[] fullObj = s.split(":");
     			String name = fullObj[0];
     			GameObject object = Loader.loadObject(name);
