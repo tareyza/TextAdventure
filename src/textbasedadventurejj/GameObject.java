@@ -12,14 +12,26 @@ public class GameObject {
     private String state;
     private final String name;
 
-    public static final GameObject NOTHING = new GameObject("nothing", "nothing");
+    public static final GameObject NOTHING;
+    
+    static{
+        NOTHING = new GameObject("nothing");
+        NOTHING.setState("nothing");
+    }
 
-    public GameObject(String state, String name) {
+    public GameObject(String name) {
         events = new TreeMap<>();
         properties = new HashMap<>();
         parent = null;
-        this.state = state;
         this.name = name;
+    }
+    
+    public Map<Trigger, Event> getEvents(){
+    	return events;
+    }
+    
+    public void addEvents(Map<Trigger, Event> eventMap){
+    	events.putAll(eventMap);
     }
  
     public void addEvent(Trigger trigger, Event event) {
@@ -42,7 +54,7 @@ public class GameObject {
         return event;
     }
 
-     public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -78,5 +90,9 @@ public class GameObject {
             return false;
         }
         return parent.isA(object);
+    }
+    
+    @Override public String toString(){
+    	return name + (parent != null ? "(" + parent.getName() + ")" : "") + ":" + events;
     }
 }

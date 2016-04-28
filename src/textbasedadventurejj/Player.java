@@ -11,8 +11,8 @@ public class Player extends GameObject {
     private int weaponDamage;
     ArrayList<GameObject> items = new ArrayList<>();
     
-    public Player(String state, String name) {
-        super(state, name);
+    public Player(String name) {
+        super(name);
     }
     
     public void addGameObject(GameObject object) {

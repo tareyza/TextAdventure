@@ -6,5 +6,6 @@ public class Test {
 
         RunGame.loadSavedGame();
         RunGame.runGame();
+
     }
 }

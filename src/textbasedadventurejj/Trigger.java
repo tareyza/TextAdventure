@@ -26,9 +26,22 @@ public class Trigger implements Comparable<Trigger>{
     public String getVerb(){
         return verb;
     }
+    
+    @Override public String toString(){
+    	if(object != null)
+    		return String.format("(%s,%s)", verb, object);
+    	return "(" + verb + ")";
+    }
+    
+    @Override public boolean equals(Object obj){
+    	Trigger trigger = (Trigger) obj;
+    	return trigger.verb.equals(verb) && trigger.object.equals(object);
+    }
 
     @Override public int compareTo(Trigger trigger){
         GameObject compare = trigger.getObject();
+        if(object == null)
+        	return -1;
         if(object.equals(compare)){
             return 0;
         }
@@ -57,3 +70,4 @@ public class Trigger implements Comparable<Trigger>{
     }
     
 }
+
