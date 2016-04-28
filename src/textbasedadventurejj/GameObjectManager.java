@@ -1,4 +1,3 @@
-
 package textbasedadventurejj;
 
 import java.io.BufferedReader;
