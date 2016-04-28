@@ -55,6 +55,8 @@ public class GameObjectManager {
         	String s = null;
         	while((s = reader.readLine()) != null){
         		String[] keyVal = s.split(":");
+        		if(keyVal.length != 2)
+        			continue;
         		String[] trigger = keyVal[0].split(",");
         		String name = null, object = null;
         		name = trigger[0];
@@ -82,7 +84,7 @@ public class GameObjectManager {
     
     public static GameObjectManager getInstance() {
         if (INSTANCE == null) {
-            synchronized (Interpreter.class) {
+            synchronized (GameObjectManager.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new GameObjectManager();
                 }

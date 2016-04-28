@@ -18,8 +18,6 @@ public class MakeCommand implements Command {
         }
         String objectName = words[0];
         Location location = Interpreter.getInstance().getRoot().getSubLocation(words[2]);
-        
-        
+        return true;
     }
-    
 }
