@@ -19,7 +19,8 @@ public class RunGame {
     }
     
     private static Event loadEvents(){
-    return null; //implement once loader is made
+        //Event event = new Event("Test","open door");
+        return null;//implement later
     }
     
     public static void runGame(){

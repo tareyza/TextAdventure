@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package textbasedadventurejj;
 
 /**
@@ -13,7 +8,18 @@ public class MakeCommand implements Command {
 
     @Override
     public boolean execute(String[] words) {
-        if (words.length < 1) {
+        if (words.length < 5) {
+            return false;
+        }
+        if (words[1].equals("in") && words[3].equals("as")) {
+            //"make object in location as name"
+            String object = words[0];
+            Location location = Interpreter.getInstance().getRoot().getSubLocation(words[2]);
+            String objectName = words[4];
+
+            location.getChildren().put(objectName, new GameObject(object));
+            return true;
+        } else {
             return false;
         }
         String objectName = words[0];

@@ -1,7 +1,5 @@
 package textbasedadventurejj;
 
-import java.util.Map;
-
 public class Trigger implements Comparable<Trigger>{
     
     private String verb;

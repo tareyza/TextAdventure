@@ -42,6 +42,9 @@ public class Interpreter {
 
     public void interpret(Event event) {
         programCounter = 0;
+        if ((event == null) || event.getLines().length == 0 ) {
+            return;
+        }
         lines = event.getLines();
         while (programCounter < lines.length) {
             interpret(lines[programCounter++]);
@@ -50,14 +53,15 @@ public class Interpreter {
 
     public boolean interpret(String line) {//line is command typed by user, object is the gameobject
         String[] words = line.split(" ");
+        System.out.println("test interpretLine");
         return interpretCommand(words);
 
     }
 
-    public void printError(){
+    public void printError() {
         //print stuff for non-executed commands
     }
-    
+
     private int countWords(String line) {
         int counter = 1;
         for (int i = 0; i < line.length(); i++) {
@@ -110,8 +114,8 @@ public class Interpreter {
             return interpretNonVerbSentence(words);
         }
     }
-    
-    public boolean interpretNonVerbSentence(String[] words){
+
+    public boolean interpretNonVerbSentence(String[] words) {
         return false;//stuff goes here later
     }
 

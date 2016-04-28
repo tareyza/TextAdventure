@@ -9,7 +9,7 @@ public class GameObject {
     private final Map<Trigger, Event> events;
     private final Map<String, Object> properties;
     private GameObject parent;
-    private String state;
+    private String state = "default";
     private final String name;
 
     public static final GameObject NOTHING;
@@ -24,6 +24,14 @@ public class GameObject {
         properties = new HashMap<>();
         parent = null;
         this.name = name;
+    }
+    
+    public GameObject(String name, String state){
+        events = new TreeMap<>();
+        properties = new HashMap<>();
+        parent = null;
+        this.name = name;
+        this.state = state; 
     }
     
     public Map<Trigger, Event> getEvents(){
