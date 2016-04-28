@@ -5,19 +5,30 @@
  */
 package textbasedadventurejj;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Jerry
  */
 public class RunGame {
     
-    public void loadSavedGame(){
+    public static void loadSavedGame(){
     Event load = loadEvents();
-        Interpreter.getInstance().interpret(load);
+        Interpreter.getInstance().interpret(load);//redos all previous events executed by player
     }
     
-    public Event loadEvents(){
+    private static Event loadEvents(){
     return null; //implement once loader is made
     }
     
+    public static void runGame(){
+    boolean gameIsRunning = true;
+        Scanner scanner = new Scanner(System.in);
+        while (gameIsRunning) {
+            System.out.println("");
+            String nextLine = scanner.nextLine();
+            Interpreter.getInstance().interpret(nextLine);
+        }
+    }
 }

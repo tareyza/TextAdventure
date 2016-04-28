@@ -6,5 +6,4 @@ class Utils {
 		return Interpreter.getInstance().getContext().getChildren().get(name);
 	}
         
-        public static 
 }
