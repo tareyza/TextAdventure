@@ -15,11 +15,14 @@ public class MakeCommand implements Command {
     public boolean execute(String[] words) {
         if (words.length < 1) {
             return false;
-        }
-        String objectName = words[0];
+        } 
+        //"make object in location as name"
+        String object = words[0];
         Location location = Interpreter.getInstance().getRoot().getSubLocation(words[2]);
+        String objectName = words[4];
         
-        
+        location.getChildren().put(objectName, new GameObject(object));
+        return true;
     }
     
 }
