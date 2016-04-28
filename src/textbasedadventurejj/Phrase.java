@@ -3,7 +3,7 @@ package textbasedadventurejj;
 
 public class Phrase {
     
-    private GameObject object, subject;
+    private GameObject object, subject, indirect;
     private String verb;
 
     /**
@@ -18,6 +18,14 @@ public class Phrase {
      */
     public void setDirectObject(GameObject object) {
         this.object = object;
+    }
+    
+    public GameObject getIndirectObject(){
+    return indirect;
+    }
+    
+    public void setIndirectObject(GameObject indirect){
+        this.indirect = indirect;
     }
 
     /**

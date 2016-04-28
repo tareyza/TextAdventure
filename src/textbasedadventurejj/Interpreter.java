@@ -50,6 +50,7 @@ public class Interpreter {
 
     public boolean interpret(String line) {//line is command typed by user, object is the gameobject
         String[] words = line.split(" ");
+        System.out.println("test interpretLine");
         return interpretCommand(words);
 
     }

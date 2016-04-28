@@ -19,7 +19,7 @@ public class RunGame {
     }
     
     private static Event loadEvents(){
-    return null; //implement once loader is made
+        return null;//implement later
     }
     
     public static void runGame(){
