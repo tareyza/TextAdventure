@@ -25,10 +25,14 @@ public class RunGame {
     public static void runGame(){
     boolean gameIsRunning = true;
         Scanner scanner = new Scanner(System.in);
+        boolean commandExecuted = false;
         while (gameIsRunning) {
             System.out.println("");
             String nextLine = scanner.nextLine();
-            Interpreter.getInstance().interpret(nextLine);
+            commandExecuted = Interpreter.getInstance().interpret(nextLine);
+            if(!commandExecuted){
+                Interpreter.getInstance().printError();
+            }
         }
     }
 }
