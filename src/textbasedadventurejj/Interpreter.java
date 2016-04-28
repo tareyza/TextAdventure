@@ -91,7 +91,7 @@ public class Interpreter {
 
         String verb = "";
         boolean containsVerb = false;
-        if (Trigger.verifyVerbName(words[0])) {
+        if (VerbManager.verifyVerbName(words[0])) {
             verb = words[0];
             containsVerb = true;
         }
