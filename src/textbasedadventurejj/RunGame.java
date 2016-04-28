@@ -19,6 +19,7 @@ public class RunGame {
     }
     
     private static Event loadEvents(){
+        //Event event = new Event("Test","open door");
         return null;//implement later
     }
     
