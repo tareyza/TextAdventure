@@ -1,4 +1,3 @@
-function main 
 	if light is on
 		say "You walk over to the shelf with the first aid kit and take it. Looks like this might be useful later."
 		set first_aid in inventory

@@ -112,7 +112,7 @@ public class Interpreter {
     }
     
     public boolean interpretNonVerbSentence(String[] words){
-    return false;//stuff goes here later
+        return false;//stuff goes here later
     }
 
     public GameObject parseObject(String objectName) {
