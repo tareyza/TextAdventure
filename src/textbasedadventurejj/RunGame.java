@@ -1,6 +1,7 @@
 
 package textbasedadventurejj;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -17,7 +18,7 @@ public class RunGame {
 		try {
 			String events = Utils.readFile("SAVE_FILE");
 			events = events.trim();
-			String[] eventArr = events.split("\\n");
+			String[] eventArr = events.split("\n");
 			for (String element : eventArr) {
 				Interpreter.getInstance().interpret(element);
 			}
@@ -29,7 +30,16 @@ public class RunGame {
 	public static void newGame() {
 		System.out.println("Your game is being restarted.");
 		gameIsRunning = false;
-		runGame(false);
+                String events;
+                try {
+			events = Utils.readFile(Constants.ROOT + Constants.NEW_GAME_FILE);
+			events = events.trim();
+                        FileWriter writer = new FileWriter(Constants.ROOT + Constants.SAVE_FILE, false);
+                        writer.write(events);
+		} catch (IOException ex) {
+			Logger.getLogger(RunGame.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		runGame();
 	}
 
 	public static void exitGame() {
@@ -37,11 +47,9 @@ public class RunGame {
 		gameIsRunning = false;
 	}
 
-	public static void runGame(boolean load) {
+	public static void runGame() {
 		gameIsRunning = true;
-		if (load) {
 			loadSavedGame();
-		}
 		Scanner scanner = new Scanner(System.in);
 		boolean commandExecuted = false;
 		while (gameIsRunning) {

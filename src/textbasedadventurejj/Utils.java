@@ -20,7 +20,12 @@ class Utils {
 	}
 
 	public static void writeError(String input) throws IOException {
-		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE);
+		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE, true);
+		writer.write(input);
+	}
+        
+        public static void writeEvent(String input) throws IOException {
+		FileWriter writer = new FileWriter(Constants.ROOT + Constants.SAVE_FILE, true);
 		writer.write(input);
 	}
 
