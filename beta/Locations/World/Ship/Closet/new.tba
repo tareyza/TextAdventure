@@ -1,3 +1,3 @@
-make Door in this as control_room_door
-set this.control_room_door.new_location as World.Ship.ControlRoom
-set this.control_room_door is closed
+make Door in here as control_room_door
+set control_room_door.new_location as World.Ship.ControlRoom
+set control_room_door is closed
