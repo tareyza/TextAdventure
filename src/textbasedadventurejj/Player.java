@@ -32,15 +32,4 @@ public class Player extends GameObject {
         return health <= 0;
     }
     
-    public void setGameObjectState(GameObject target, String newState) {
-        for (GameObject obj : items) {
-            if (obj.equals(target)) {
-                obj.setState(newState);
-            }
-        }
-    }
-    
-    public GameObject getObjectFromInventory(String name) {
-        return LocationManager.getInstance().getObject(name);
-    }
 }

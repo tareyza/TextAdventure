@@ -28,9 +28,9 @@ public class IfCommand implements Command {
                 return false;
             }
         } else if (words[1].equals("exists")) {
-            GameObject target = lmanager.parseObject(words[2]);
+            GameObject target = lmanager.getObject(words[2]);
             Location currentLocation = lmanager.getContext();
-            ArrayList<GameObject> allObjects = new ArrayList<GameObject>();
+            ArrayList<GameObjectxcvzxcadf> allObjects = new ArrayList<GameObject>();
 
             for (GameObject obj : currentLocation.getGameObjects()) {
                 allObjects.add(obj);

@@ -29,7 +29,7 @@ public class PhraseBuilder {
 
     static public Phrase getPhrase(String[] inputArr) {
         Phrase phrase = new Phrase();
-        phrase.setSubject(lmanager.parseObject(inputArr[inputArr.length - 1]));
+        phrase.setSubject(lmanager.getObject(inputArr[inputArr.length - 1]));
         inputArr = java.util.Arrays.copyOf(inputArr, inputArr.length - 1);
         for (String sentence : verbStructures) {
             String[] phraseArr = sentence.split(" ");

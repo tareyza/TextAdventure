@@ -1,8 +1,6 @@
 
 package textbasedadventurejj;
 
-import java.awt.SystemColor;
-
 public class SayCommand implements Command {
 
     @Override
