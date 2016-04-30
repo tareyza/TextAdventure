@@ -4,11 +4,18 @@ public class TestLoader {
 
 	public static void main(String[] argv){
 		
-		GameObjectManager manager = GameObjectManager.getInstance();
-		manager.loadObjects();
+		Interpreter interp = Interpreter.getInstance();
+		interp.addCommand("make", new MakeCommand());
+		interp.addCommand("set", new SetCommand());
 		
-		System.out.println(manager.getObject("Weapon"));
-		System.out.println(manager.getObject("Lamp"));
-		System.out.println(manager.getObject("Sword"));
+		GameObjectManager gmanager = GameObjectManager.getInstance();
+		LocationManager lmanager = LocationManager.getInstance();
+
+		gmanager.loadObjects();
+		lmanager.load();
+		
+		Location root = lmanager.getRoot();
+		System.out.println(root);
+		System.out.println(lmanager.parseObject("World.Ship.Closet.control_room_door"));
 	}
 }

@@ -1,0 +1,3 @@
+make Door in World.Ship.Closet as control_room_door
+set World.Ship.Closet.control_room_door.new_location as World.Ship.ControlRoom
+set World.Ship.Closet.control_room_door is closed
