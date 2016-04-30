@@ -16,7 +16,7 @@ public class RunGame {
 
 	public static void loadSavedGame() {
 		try {
-			String events = Utils.readFile("SAVE_FILE");
+			String events = Utils.readFile(Constants.ROOT+Constants.SAVE_FILE);
 			events = events.trim();
 			String[] eventArr = events.split("\n");
 			for (String element : eventArr) {

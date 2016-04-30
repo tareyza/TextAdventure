@@ -22,5 +22,7 @@ public class TestLoader {
 
 		GameObject controlDoor = lmanager.getObject("World.Ship.Closet.control_room_door");
 		System.out.println(controlDoor);
+                
+                RunGame.runGame();
 	}
 }
