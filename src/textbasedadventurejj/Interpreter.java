@@ -2,6 +2,7 @@ package textbasedadventurejj;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Interpreter {
@@ -9,7 +10,7 @@ public class Interpreter {
     private static volatile Interpreter INSTANCE;
 
     static Structure getStructure(String verb) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        return null;//implement later
     }
 
     private Location root;
@@ -53,7 +54,6 @@ public class Interpreter {
 
     public boolean interpret(String line) {//line is command typed by user, object is the gameobject
         String[] words = line.split(" ");
-        System.out.println("test interpretLine");
         return interpretCommand(words);
 
     }
