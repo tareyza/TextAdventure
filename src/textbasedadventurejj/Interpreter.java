@@ -93,15 +93,17 @@ public class Interpreter {
         } else if (words[0].equals("save")){
             System.out.println("Your game is automatically saved every action you make.");
             return true;
-        } else if (VerbManager.verifyResponseName(words[0])){
-            Structure struct = Interpreter.getStructure("say");
-            Phrase phrase = struct.parse("say", Arrays.copyOf(words, 1));
+        } else {
+            String[] say = new String[words.length+1];
+            say[0]="say";
+            for (int i = 0; i < words.length; i++) {
+                say[i+1]=words[i];
+            }
+            Phrase phrase = PhraseBuilder.getPhrase(say);
             GameObject object = phrase.getSubject();
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
             return true;
-        } else {
-            return false;
         }
     }
 

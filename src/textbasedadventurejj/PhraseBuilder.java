@@ -1,30 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package textbasedadventurejj;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Jerry
- */
 public class PhraseBuilder {
 
-    static ArrayList<String> verbStructures = new ArrayList<>();
+    static String[] verbStructures;
     private static LocationManager lmanager = LocationManager.getInstance();
 
     private PhraseBuilder() {
     }
 
     static public void generateVerbStructures() {
-        //implement later
+        try {
+            String verbStruct = Utils.readFile("STRUCTURE_FILE");
+            verbStruct.trim();
+            verbStructures = verbStruct.split("\\n");
+        } catch (IOException ex) {
+            Logger.getLogger(PhraseBuilder.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     static public String[] getVerbStructures() {
-        return (String[]) verbStructures.toArray();
+        return verbStructures;
     }
 
     static public Phrase getPhrase(String[] inputArr) {
