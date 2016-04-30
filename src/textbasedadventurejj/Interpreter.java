@@ -9,28 +9,16 @@ public class Interpreter {
 
     private static volatile Interpreter INSTANCE;
 
-    static Structure getStructure(String verb) {
+    static Phrase getPhrase(String verb) {
         return null;//implement later
     }
-
-    private Location root;
-    private Location context;
+    
     private String[] lines;
-    private GameObjectManager gameObjectManager;
     private Map<String, Command> commands;
-    private int programCounter = 0;
-    private boolean finished;
-
+    private int programCounter;
+    
     private Interpreter() {
         commands = new HashMap<>();
-    }
-
-    public void setRoot(Location root) {
-        this.root = root;
-    }
-
-    public Location getRoot() {
-        return root;
     }
 
     public void addCommand(String name, Command command) {
@@ -54,6 +42,7 @@ public class Interpreter {
 
     public boolean interpret(String line) {//line is command typed by user, object is the gameobject
         String[] words = line.split(" ");
+    	System.out.println("[Interpreter] interpreting command");
         return interpretCommand(words);
 
     }
@@ -68,6 +57,7 @@ public class Interpreter {
             return false;
         }
         String command = words[0];
+        System.out.println("[Interpreter] type " + command);
         if (commands.containsKey(words[0])) {
             return commands.get(words[0]).execute(Arrays.copyOfRange(words, 1, words.length));
         }
@@ -126,23 +116,6 @@ public class Interpreter {
         } else {
             return false;
         }
-    }
-
-    public GameObject parseObject(String objectName) {
-        String[] words = objectName.split("\\.");
-        if (words[0].equals(root.getName())) {
-            return root.getSubLocation(words).getChildren().get(objectName);
-        } else {
-            return context.getSubLocation(words).getChildren().get(objectName);
-        }
-    }
-
-    public Location getContext() {
-        return context;
-    }
-
-    public void setContext(Location context) {
-        this.context = context;
     }
 
     public static Interpreter getInstance() {

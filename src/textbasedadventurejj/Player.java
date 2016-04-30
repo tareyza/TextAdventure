@@ -13,7 +13,7 @@ public class Player extends GameObject {
     
     public void equipWeapon(GameObject newWeapon) {
         equippedWeapon = newWeapon;
-        weaponDamage = (int) equippedWeapon.getProperty("damage");
+        weaponDamage = (int) equippedWeapon.getProperties().get("damage");
     }
     
     public GameObject getEquippedWeapon() {
@@ -31,5 +31,5 @@ public class Player extends GameObject {
     public boolean checkIsDead() {
         return health <= 0;
     }
-   
+
 }
