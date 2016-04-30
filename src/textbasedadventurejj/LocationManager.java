@@ -40,6 +40,10 @@ public class LocationManager {
 		Location location = getSubLocation(Utils.getPathHead(objectName));
 		return location.getChildren().get(Utils.getPathTail(objectName));
 	}
+	
+	public GameObject getObjectInCurrentRoom(String name) {
+		return context.getChildren().get(name);
+	}
 
 	public void load() {
 		File file = new File(Constants.ROOT + Constants.LOCATION_DIR);

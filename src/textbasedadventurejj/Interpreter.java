@@ -111,7 +111,7 @@ public class Interpreter {
 		} else if (words[0].equals("save")) {
 			System.out.println("Your game is automatically saved every action you make.");
 			return true;
-		} else {
+		} else if (words[0].equals("say")){
 			String[] say = new String[words.length + 1];
 			say[0] = "say";
 			for (int i = 0; i < words.length; i++) {
@@ -124,6 +124,7 @@ public class Interpreter {
 			printError(words);
 			return true;
 		}
+		return false;
 	}
 
 	public static Interpreter getInstance() {

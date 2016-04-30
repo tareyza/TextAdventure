@@ -7,30 +7,36 @@ import java.util.logging.Logger;
 
 public class PhraseBuilder {
 
-	static String[] verbStructures;
+	static{
+		generateVerbStructures();
+	}
+	
+	private static String[] verbStructures;
 	private static LocationManager lmanager = LocationManager.getInstance();
 
 	private PhraseBuilder() {
 	}
 
-	static public void generateVerbStructures() {
+	public static void generateVerbStructures() {
 		try {
-			String verbStruct = Utils.readFile("STRUCTURE_FILE");
+			String verbStruct = Utils.readFile(Constants.ROOT + Constants.STRUCTURE_FILE);
 			verbStruct.trim();
-			verbStructures = verbStruct.split("\\n");
+			verbStructures = verbStruct.split("\n");
 		} catch (IOException ex) {
-			Logger.getLogger(PhraseBuilder.class.getName()).log(Level.SEVERE, null, ex);
+			ex.printStackTrace();
 		}
 	}
 
-	static public String[] getVerbStructures() {
+	public static String[] getVerbStructures() {
 		return verbStructures;
 	}
 
-	static public Phrase getPhrase(String[] inputArr) {
+	public static Phrase getPhrase(String[] inputArr) {
 		Phrase phrase = new Phrase();
 		phrase.setSubject(lmanager.getObject(inputArr[inputArr.length - 1]));
+		System.out.println(java.util.Arrays.toString(inputArr));
 		inputArr = java.util.Arrays.copyOf(inputArr, inputArr.length - 1);
+		System.out.println(java.util.Arrays.toString(inputArr));
 		for (String sentence : verbStructures) {
 			String[] phraseArr = sentence.split(" ");
 			boolean match = true;
@@ -46,16 +52,20 @@ public class PhraseBuilder {
 				match = false;
 			}
 			if (match) {
-				for (int i = 1; i < phraseArr.length; i++) {
+				String verb = "";
+				for (int i = 0; i < phraseArr.length; i++) {
 					if (phraseArr[i].equals("INDIRECT")) {
-						phrase.setIndirectObject(Utils.getObjectInCurrentRoom(inputArr[i]));
+						phrase.setIndirectObject(lmanager.getObjectInCurrentRoom(inputArr[i]));
 					} else if (phraseArr[i].equals("OBJECT")) {
-						phrase.setDirectObject(Utils.getObjectInCurrentRoom(inputArr[i]));
+						phrase.setDirectObject(lmanager.getObjectInCurrentRoom(inputArr[i]));
 					} else if (phraseArr[i].equals("RESPONSE")) {
 						phrase.setResponse(inputArr[i]);
+					}else{
+						verb += phraseArr[i] + " ";
 					}
-					phrase.setVerb(phraseArr[0]);
 				}
+				phrase.setVerb(verb.trim());
+				System.out.println(phrase);
 				return phrase;
 			}
 		}

@@ -8,9 +8,7 @@ import java.io.IOException;
 
 class Utils {
 
-	public static GameObject getObjectInCurrentRoom(String name) {
-		return LocationManager.getInstance().getContext().getChildren().get(name);
-	}
+	
 
 	public static String readFile(String fname) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(fname));
@@ -24,7 +22,7 @@ class Utils {
 	}
 
 	public static void writeError(String input) throws IOException {
-		FileWriter writer = new FileWriter("ERROR_FILE");
+		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE);
 		writer.write(input);
 	}
 
