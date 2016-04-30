@@ -8,10 +8,6 @@ import java.util.Map;
 public class Interpreter {
 
     private static volatile Interpreter INSTANCE;
-
-    static Phrase getPhrase(String verb) {
-        return null;//implement later
-    }
     
     private String[] lines;
     private Map<String, Command> commands;
@@ -70,25 +66,16 @@ public class Interpreter {
     }
 
     public boolean interpretSentence(String[] words) {//modified user typed sents are possible here
+        
+        
         if (words.length < 1) {
             return false;
         }
+        Phrase phrase = PhraseBuilder.getPhrase(words);
 
-        String verb = "";
-        boolean containsVerb = false;
-        if (VerbManager.verifyVerbName(words[0])) {
-            verb = words[0];
-            containsVerb = true;
-        }
-
-        if (containsVerb) {
-            Structure struct = Interpreter.getStructure(verb);
-            if (struct == null) {
-                return false;
-            }
-            Phrase phrase = struct.parse(verb, Arrays.copyOf(words, 1));
+        if (phrase==null) {
             GameObject object = phrase.getSubject();
-            Event event = object.getEvent(new Trigger(verb));
+            Event event = object.getEvent(new Trigger(phrase.getVerb()));
             interpret(event);
             return true;
         } else {

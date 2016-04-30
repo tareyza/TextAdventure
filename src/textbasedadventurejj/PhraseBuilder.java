@@ -13,23 +13,26 @@ import java.util.ArrayList;
  */
 public class PhraseBuilder {
 
-    ArrayList<String> verbStructures = new ArrayList<>();
+    static ArrayList<String> verbStructures = new ArrayList<>();
+    private static LocationManager lmanager = LocationManager.getInstance();
 
     private PhraseBuilder() {
     }
 
-    public void generateVerbStructures() {
+    static public void generateVerbStructures() {
         //implement later
     }
 
-    public String[] getVerbStructures() {
+    static public String[] getVerbStructures() {
         return (String[]) verbStructures.toArray();
     }
 
-    public Phrase getPhrase(String input) {
-        String[] inputArr = input.split(" ");
-        for (String phrase : verbStructures) {
-            String[] phraseArr = phrase.split(" ");
+    static public Phrase getPhrase(String[] inputArr) {
+        Phrase phrase = new Phrase();
+        phrase.setSubject(lmanager.parseObject(inputArr[inputArr.length - 1]));
+        inputArr = java.util.Arrays.copyOf(inputArr, inputArr.length - 1);
+        for (String sentence : verbStructures) {
+            String[] phraseArr = sentence.split(" ");
             boolean match = true;
             if (phraseArr.length == inputArr.length) {
                 for (int i = 0; i < phraseArr.length; i++) {
@@ -42,8 +45,19 @@ public class PhraseBuilder {
                 match = false;
             }
             if (match) {
-                return 
+                for (int i = 1; i < phraseArr.length; i++) {
+                        if(phraseArr[i].equals("INDIRECT")){
+                            phrase.setIndirectObject(Utils.getObjectInCurrentRoom(inputArr[i]));
+                        } else if(phraseArr[i].equals("OBJECT")){
+                            phrase.setDirectObject(Utils.getObjectInCurrentRoom(inputArr[i]));
+                        } else if(phraseArr[i].equals("RESPONSE")){
+                            phrase.setResponse(inputArr[i]);
+                        } 
+                        phrase.setVerb(phraseArr[0]);
+                }
+                return phrase;
             }
         }
+        return null;
     }
 }
