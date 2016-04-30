@@ -43,7 +43,7 @@ public class RunGame {
 	}
 
 	public static void exitGame() {
-		System.out.println("Your game progress is saved. Thank you for playing.");
+		System.out.println("Your game progress is automatically saved. Thank you for playing.");
 		gameIsRunning = false;
 	}
 

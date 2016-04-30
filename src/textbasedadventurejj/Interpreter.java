@@ -41,6 +41,11 @@ public class Interpreter {
 	public void interpret(String line) {// line is command typed by user,
 											// object is the gameobject
 		line = line.trim();
+            try {
+                Utils.writeEvent(line);
+            } catch (IOException ex) {
+                Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
+            }
 		if (line.startsWith("#"))
 			return;
 		String[] words = line.split(" +");
