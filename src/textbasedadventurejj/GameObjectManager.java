@@ -16,7 +16,7 @@ public class GameObjectManager {
     public void loadObjects(){
     	objects = new HashMap<>();
     	try{
-    		for(String s : Utils.readFile(Constants.OBJECT_ROOT + Constants.OBJECT_FILE).split("\n")){
+    		for(String s : Utils.readFile(Constants.ROOT + Constants.OBJECT_DIR + Constants.OBJECT_FILE).split("\n")){
     			String[] fullObj = s.split(":");
     			String name = fullObj[0];
     			GameObject object = Loader.loadObject(name);
@@ -43,15 +43,12 @@ public class GameObjectManager {
     public GameObject newObject(String type){
     	return newObject(type, type);
     }
-    
-
      
     private static class Loader{
     	
     	public static GameObject loadObject(String name) throws IOException{
-        	File file = new File(Constants.OBJECT_ROOT + name + File.separator + Constants.EVENT_FILE);
+        	File file = new File(Constants.ROOT + Constants.OBJECT_DIR + name + File.separator + Constants.EVENT_FILE);
         	GameObject object = new GameObject(name);
-        	System.out.println(file);
         	object.addEvents(parseEvents(file));
         	return object;
         }

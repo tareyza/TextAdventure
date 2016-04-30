@@ -7,6 +7,8 @@ public class TestLoader {
 		Interpreter interp = Interpreter.getInstance();
 		interp.addCommand("make", new MakeCommand());
 		interp.addCommand("set", new SetCommand());
+		interp.addCommand("if", new IfCommand());
+		interp.addCommand("say", new SayCommand());
 		
 		GameObjectManager gmanager = GameObjectManager.getInstance();
 		LocationManager lmanager = LocationManager.getInstance();
@@ -16,6 +18,8 @@ public class TestLoader {
 		
 		Location root = lmanager.getRoot();
 		System.out.println(root);
-		System.out.println(lmanager.parseObject("World.Ship.Closet.control_room_door"));
+		
+		GameObject controlDoor = lmanager.getObject("World.Ship.Closet.control_room_door");
+		System.out.println(controlDoor);
 	}
 }

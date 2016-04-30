@@ -7,11 +7,6 @@ import java.util.Map;
 public class Interpreter {
 
     private static volatile Interpreter INSTANCE;
-
-    static Structure getStructure(String verb) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     private String[] lines;
     private Map<String, Command> commands;
     private int programCounter;
@@ -40,8 +35,10 @@ public class Interpreter {
     }
 
     public boolean interpret(String line) {//line is command typed by user, object is the gameobject
-        String[] words = line.split(" ");
-    	System.out.println("[Interpreter] interpreting command");
+        line = line.trim();
+    	if(line.startsWith("#"))
+    		return true;
+    	String[] words = line.split(" +");
         return interpretCommand(words);
 
     }
@@ -50,62 +47,23 @@ public class Interpreter {
         //print stuff for non-executed commands
     }
 
-    private int countWords(String line) {
-        int counter = 1;
-        for (int i = 0; i < line.length(); i++) {
-            if (line.charAt(i) == ' ') {
-                counter++;
-            }
-        }
-        return counter;
-    }
-
     public boolean interpretCommand(String[] words) {
         if (words.length == 0) {
             return false;
         }
         String command = words[0];
-        System.out.println("[Interpreter] type " + command);
-        if (commands.containsKey(words[0])) {
-            return commands.get(words[0]).execute(Arrays.copyOfRange(words, 1, words.length));
+        if (commands.containsKey(command)) {
+            return commands.get(command).execute(Arrays.copyOfRange(words, 1, words.length));
         }
         return false;
     }
 
-    public void skipUntilNewline() {
-        while (!lines[programCounter++].equals("\n")) {
-        }
+    void skipUntilNewline() {
+        while (programCounter < lines.length && !lines[programCounter++].equals("")) {}
     }
 
     public boolean interpretSentence(String[] words) {//modified user typed sents are possible here
-        if (words.length < 1) {
-            return false;
-        }
-
-        String verb = "";
-        boolean containsVerb = false;
-        if (VerbManager.verifyVerbName(words[0])) {
-            verb = words[0];
-            containsVerb = true;
-        }
-
-        if (containsVerb) {
-            Structure struct = Interpreter.getStructure(verb);
-            if (struct == null) {
-                return false;
-            }
-            Phrase phrase = struct.parse(verb, Arrays.copyOf(words, 1));
-            GameObject object = phrase.getSubject();
-            Event event = object.getEvent(new Trigger(verb));
-            interpret(event);
-            return true;
-        } else {
-            return interpretNonVerbSentence(words);
-        }
-    }
-
-    public boolean interpretNonVerbSentence(String[] words) {
-        return false;//stuff goes here later
+        return false;
     }
 
     public static Interpreter getInstance() {

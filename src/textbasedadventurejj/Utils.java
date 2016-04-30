@@ -44,7 +44,10 @@ class Utils {
 	}
 	
 	public static String getPathHead(String fullPath){
-		return fullPath.substring(0, fullPath.lastIndexOf("."));
+		int index = fullPath.lastIndexOf(".");
+		if(index == -1)
+			return "";
+		return fullPath.substring(0, index);
 	}
 	
 }

@@ -12,9 +12,9 @@ public class IfCommand implements Command {
         if (words.length < 1) {
             return false;
         }
-        GameObject object = lmanager.parseObject(words[0]);
+        GameObject object = lmanager.getObject(words[0]);
         if (words[1].equals("contains")) {
-            GameObject subObject = lmanager.parseObject(words[2]);
+            GameObject subObject = lmanager.getObject(words[2]);
             if (subObject.getParent().equals(object)) {
                 return true;
             } else {
@@ -29,26 +29,16 @@ public class IfCommand implements Command {
                 return false;
             }
         } else if (words[1].equals("exists")) {
-            GameObject target = lmanager.parseObject(words[2]);
             Location currentLocation = lmanager.getContext();
-            ArrayList<GameObject> allObjects = new ArrayList<GameObject>();
-            for (GameObject obj : currentLocation.getGameObjects()) {
-                allObjects.add(obj);
-            }
-            boolean exist = false;
-            for (GameObject obj : allObjects) {
-                if (obj.equals(target)) {
-                    exist = true;
-                }
-            }
-            if (exist) {
+            if (lmanager.getObject(words[0]) != null ||
+            		lmanager.getRoot().getSubLocation(words[0]) != null) {
                 return true;
             } else {
                 Interpreter.getInstance().skipUntilNewline();
                 return false;
             }
         } else if (words[2].equals("in")) {
-            GameObject target = lmanager.parseObject(words[1]);
+            GameObject target = lmanager.getObject(words[1]);
             Location targetLocation;
             if (words[3].equals("here")) {
                 targetLocation = lmanager.getContext();

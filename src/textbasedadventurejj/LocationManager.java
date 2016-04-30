@@ -28,34 +28,42 @@ public class LocationManager {
 		this.context = context;
 	}
 	
-    public GameObject parseObject(String objectName) {
-        if (root.getSubLocations().containsKey(Utils.getPathRoot(objectName))) {
-            return root.getSubLocation(Utils.getPathHead(objectName)).getChildren().get(Utils.getPathTail(objectName));
-        } else {
-            return context.getSubLocation(Utils.getPathHead(objectName)).getChildren().get(Utils.getPathTail(objectName));
-        }
+	public Location getSubLocation(String path){
+		Location loc = context.getSubLocation(path);
+		if(loc == null)
+			loc = root.getSubLocation(path);
+		return loc;
+	}
+	
+    public GameObject getObject(String objectName) {
+        Location location = getSubLocation(Utils.getPathHead(objectName));
+        return location.getChildren().get(Utils.getPathTail(objectName));
     }
 	
 	public void load(){
-		File file = new File(Constants.LOCATION_ROOT);
+		File file = new File(Constants.ROOT + Constants.LOCATION_DIR);
 		root = new Location("root");
 		setRoot(root);
 		loadTree(root, file);
 	}
 	
 	private void loadTree(Location location, File locFile){
+		File constructor = null;
 		for(File file : locFile.listFiles()){
 			if(file.getName().equals("new.tba")){
-				try {
-					System.out.printf("[LocationManager] constructing %s\n", location.getName());
-					Interpreter.getInstance().interpret(new Event("new", Utils.readFile(file).split("\n")));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				constructor = file;
 			} else if(file.isDirectory()){
 				Location newLoc = new Location(file.getName());
+				setContext(newLoc);
 				location.getSubLocations().put(file.getName(), newLoc);
 				loadTree(newLoc, file);
+			}
+		}
+		if(constructor != null){
+			try {
+				Interpreter.getInstance().interpret(new Event("new", Utils.readFile(constructor).split("\n")));
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 	}

@@ -1,14 +1,17 @@
 
 package textbasedadventurejj;
 
+import java.awt.SystemColor;
 
 public class SayCommand implements Command {
 
     @Override
     public boolean execute(String[] words) {
-        if(words.length!=1)
-            return false;
-        System.out.println(words[0]);
+        String buffer = "";
+        for(String s : words){
+        	buffer += s + " ";
+        }
+        System.out.println(buffer.trim());
         return true;
     }
     

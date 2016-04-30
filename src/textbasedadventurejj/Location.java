@@ -28,14 +28,10 @@ public class Location{
     }
     
     public Location getSubLocation(String[] path){
-        if(path.length == 0)
-            return this;
+    	if(path.length == 0 || path[0].equals("this") || path[0].equals(""))
+        	return this;
         Location location = subLocations.get(path[0]);
         return location != null ? location.getSubLocation(Arrays.copyOfRange(path, 1, path.length)) : null;
-    }
-    
-    public GameObject[] getGameObjects(){
-        return children.values().toArray(new GameObject[children.size()]);   
     }
 
     public String getName(){

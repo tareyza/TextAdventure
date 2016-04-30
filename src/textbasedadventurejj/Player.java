@@ -64,6 +64,6 @@ public class Player extends GameObject {
     }
     
     public GameObject getObjectFromInventory(String name) {
-        return LocationManager.getInstance().parseObject(name);
+        return LocationManager.getInstance().getObject(name);
     }
 }

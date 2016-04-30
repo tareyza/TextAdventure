@@ -1,2 +1,2 @@
-make Door in World.Ship.ControlRoom as closet_door
-make Lamp in World.Ship.ControlRoom as lamp
+make Door in this as closet_door
+make Lamp in this as lamp
