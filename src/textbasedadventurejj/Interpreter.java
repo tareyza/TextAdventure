@@ -59,17 +59,8 @@ public class Interpreter {
     }
 
     public void printError() {
-        //print stuff for non-executed commands
-    }
-
-    private int countWords(String line) {
-        int counter = 1;
-        for (int i = 0; i < line.length(); i++) {
-            if (line.charAt(i) == ' ') {
-                counter++;
-            }
-        }
-        return counter;
+        System.out.println("I cannot understand that unfortunately.");
+        //implement later, write to file what the user typed in that couldnt be handled
     }
 
     public boolean interpretCommand(String[] words) {
@@ -116,7 +107,23 @@ public class Interpreter {
     }
 
     public boolean interpretNonVerbSentence(String[] words) {
-        return false;//stuff goes here later
+        if(words[0].equals("exit")||words[0].equals("quit")){
+            RunGame.exitGame();
+            return true;
+        } else if (words[0].equals("restart")||words[0].equals("restore")){
+            RunGame.newGame();
+            return true;
+        } else if (words[0].equals("save")){
+            System.out.println("Your game is automatically saved every action you make.");
+            return true;
+        } else if ({
+            Structure struct = Interpreter.getStructure("say");
+            Phrase phrase = struct.parse("say", Arrays.copyOf(words, 1));
+            GameObject object = phrase.getSubject();
+            Event event = object.getEvent(new Trigger("say"));
+            interpret(event);
+            return true;
+        }
     }
 
     public GameObject parseObject(String objectName) {

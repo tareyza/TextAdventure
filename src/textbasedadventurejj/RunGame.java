@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class RunGame {
     
+     static boolean gameIsRunning;
+    
     public static void loadSavedGame(){
     Event load = loadEvents();
         Interpreter.getInstance().interpret(load);//redos all previous events executed by player
@@ -23,8 +25,19 @@ public class RunGame {
         return null;//implement later
     }
     
+    public static void newGame(){
+        System.out.println("Your game is being restarted.");
+        gameIsRunning = false;
+        runGame();
+    }
+    
+    public static void exitGame(){
+        System.out.println("Your game progress is saved. Thank you for playing.");
+        gameIsRunning = false;
+    }
+    
     public static void runGame(){
-    boolean gameIsRunning = true;
+    gameIsRunning = true;
         Scanner scanner = new Scanner(System.in);
         boolean commandExecuted = false;
         while (gameIsRunning) {

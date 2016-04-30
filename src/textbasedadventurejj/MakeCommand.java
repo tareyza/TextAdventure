@@ -22,8 +22,5 @@ public class MakeCommand implements Command {
         } else {
             return false;
         }
-        String objectName = words[0];
-        Location location = Interpreter.getInstance().getRoot().getSubLocation(words[2]);
-        return true;
     }
 }
