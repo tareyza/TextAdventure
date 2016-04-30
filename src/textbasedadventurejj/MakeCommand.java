@@ -1,9 +1,5 @@
 package textbasedadventurejj;
 
-/**
- *
- * @author Jerry
- */
 public class MakeCommand implements Command {
 
     @Override
@@ -11,8 +7,7 @@ public class MakeCommand implements Command {
         if (words.length != 5) {
             return false;
         }
-        if (words[1].equals("in") && words[3].equals("as")) {
-            //"make object in location as name"
+        if (words[1].equals("in") && words[3].equals("as")) {//"make object in location as name"
             String object = words[0];
             Location location = LocationManager.getInstance().getSubLocation(words[2]);
             System.out.println(location.getName());

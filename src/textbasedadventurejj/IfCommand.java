@@ -1,7 +1,6 @@
 package textbasedadventurejj;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class IfCommand implements Command {
 	
@@ -29,9 +28,20 @@ public class IfCommand implements Command {
                 return false;
             }
         } else if (words[1].equals("exists")) {
+            GameObject target = lmanager.parseObject(words[2]);
             Location currentLocation = lmanager.getContext();
-            if (lmanager.getObject(words[0]) != null ||
-            		lmanager.getRoot().getSubLocation(words[0]) != null) {
+            ArrayList<GameObject> allObjects = new ArrayList<GameObject>();
+
+            for (GameObject obj : currentLocation.getGameObjects()) {
+                allObjects.add(obj);
+            }
+            boolean exist = false;
+            for (GameObject obj : allObjects) {
+                if (obj.equals(target)) {
+                    exist = true;
+                }
+            }
+            if (exist) {
                 return true;
             } else {
                 Interpreter.getInstance().skipUntilNewline();

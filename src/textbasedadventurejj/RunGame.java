@@ -12,26 +12,45 @@ import java.util.Scanner;
  * @author Jerry
  */
 public class RunGame {
-    
-    public static void loadSavedGame(){
-    Event load = loadEvents();
+
+    static boolean gameIsRunning;
+
+    private void RunGame() {
+    }
+
+    public static void loadSavedGame() {
+        Event load = loadEvents();
         Interpreter.getInstance().interpret(load);//redos all previous events executed by player
     }
-    
-    private static Event loadEvents(){
+
+    private static Event loadEvents() {
         //Event event = new Event("Test","open door");
         return null;//implement later
     }
-    
-    public static void runGame(){
-    boolean gameIsRunning = true;
+
+    public static void newGame() {
+        System.out.println("Your game is being restarted.");
+        gameIsRunning = false;
+        runGame(false);
+    }
+
+    public static void exitGame() {
+        System.out.println("Your game progress is saved. Thank you for playing.");
+        gameIsRunning = false;
+    }
+
+    public static void runGame(boolean load) {
+        gameIsRunning = true;
+        if (load) {
+            loadSavedGame();
+        }
         Scanner scanner = new Scanner(System.in);
         boolean commandExecuted = false;
         while (gameIsRunning) {
             System.out.println("");
             String nextLine = scanner.nextLine();
             commandExecuted = Interpreter.getInstance().interpret(nextLine);
-            if(!commandExecuted){
+            if (!commandExecuted) {
                 Interpreter.getInstance().printError();
             }
         }

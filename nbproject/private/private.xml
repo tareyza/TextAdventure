@@ -3,22 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Player.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Trigger.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/SetCommand.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/GameObjectManager.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Location.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Utils.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/IfCommand.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Phrase.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Loader.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Test.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Interpreter.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/GameObject.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/DoCommand.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Event.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/SayCommand.java</file>
-            <file>file:/C:/Users/quchen/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Constants.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/IfCommand.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/VerbManager.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/SetCommand.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Command.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Phrase.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/PhraseBuilder.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/RunGame.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/MakeCommand.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Interpreter.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Test.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/DoCommand.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Location.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/LocationManager.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Constants.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Trigger.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Utils.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/GameObject.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/GameObjectManager.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/SayCommand.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Action.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Event.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/TestLoader.java</file>
+            <file>file:/C:/Users/Jerry/Documents/GitHub/TextAdventure/src/textbasedadventurejj/Player.java</file>
         </group>
     </open-files>
 </project-private>

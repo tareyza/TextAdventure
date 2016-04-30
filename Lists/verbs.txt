@@ -1,6 +1,6 @@
-answer TEXT to OBJECT
-ask DIRECT for INDIRECT
-ask DIRECT about INDIRECT
+answer RESPONSE to OBJECT
+ask OBJECT for INDIRECT
+ask OBJECT about INDIRECT
 attack OBJECT
 blow OBJECT
 burn OBJECT
@@ -16,7 +16,7 @@ eat OBJECT
 enter OBJECT
 examine OBJECT
 fill OBJECT
-getoff OBJECT
+get off OBJECT
 give OBJECT to INDIRECT
 go to OBJECT
 jump
@@ -33,26 +33,28 @@ look at OBJECT
 open OBJECT
 pull OBJECT
 push OBJECT
-push OBJECT to OBJECT
+push OBJECT to INDIRECT
 put OBJECT in OBJECT
 put OBJECT on OBJECT
 pray
 rub OBJECT
 search OBJECT
 show OBJECT to INDIRECT
+say RESPONSE
 sing 
-siton OBJECT
+sit on OBJECT
 sit
 sleep
 smell
 squeeze OBJECT
 swim
 swing OBJECT
-talkto OBJECT
+talk to OBJECT
 take OBJECT
 take everything
 take all
-takeoff OBJECT
+take everything
+take off OBJECT
 taste OBJECT
 tell OBJECT about OBJECT
 think

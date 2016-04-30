@@ -1,37 +1,14 @@
 
 package textbasedadventurejj;
 
-import java.util.ArrayList;
-
-
 public class Player extends GameObject {
     
     private int health;
     private GameObject equippedWeapon;
     private int weaponDamage;
-    ArrayList<GameObject> items = new ArrayList<>();
     
     public Player(String name) {
         super(name);
-    }
-    
-    public void addGameObject(GameObject object) {
-        items.add(object);
-    }
-    
-    public GameObject[] getInventory() {
-        GameObject[] arr = items.toArray(new GameObject[items.size()]);
-        return arr;
-    }
-    
-    public boolean hasObject(GameObject target) {
-        boolean exists = false;
-        for (GameObject obj : items) {
-            if (obj.equals(target)) {
-                exists = true;
-            }
-        }
-        return exists;
     }
     
     public void equipWeapon(GameObject newWeapon) {
