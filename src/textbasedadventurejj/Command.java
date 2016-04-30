@@ -2,6 +2,6 @@
 package textbasedadventurejj;
 
 public interface Command {
-    
-    boolean execute(String[] words);
+
+	void execute(String[] words);
 }

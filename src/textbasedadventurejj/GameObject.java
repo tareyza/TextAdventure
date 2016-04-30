@@ -6,116 +6,118 @@ import java.util.HashMap;
 
 public class GameObject {
 
-    private final Map<Trigger, Event> events;
-    private final Map<String, Object> properties;
-    private GameObject parent;
-    private GameObject type;
-    private String state = "default";
-    private final String name;
+	private final Map<Trigger, Event> events;
+	private final Map<String, Object> properties;
+	private GameObject parent;
+	private GameObject type;
+	private String state = "default";
+	private final String name;
 
-    public static final GameObject NOTHING;
-    
-    static{
-        NOTHING = new GameObject("nothing");
-        NOTHING.setState("nothing");
-    }
+	public static final GameObject NOTHING;
 
-    public GameObject(String name) {
-        events = new TreeMap<>();
-        properties = new HashMap<>();
-        parent = null;
-        this.name = name;
-    }
-    
-    public GameObject(String name, String state){
-        events = new TreeMap<>();
-        properties = new HashMap<>();
-        parent = null;
-        this.name = name;
-        this.state = state; 
-    }
-    
-    public GameObject(String name, GameObject object){
-    	events = new HashMap<>(object.events);
-    	properties = new HashMap<>(object.properties);
-    	parent = object.parent;
-    	type = object;
-    	state = object.state;
-    	this.name = name;
-    }
-    
-    public GameObject(GameObject object){
-    	this(object.getName(), object);
-    }
-    
-    public Map<Trigger, Event> getEvents(){
-    	return events;
-    }
-    
-    public Map<String, Object> getProperties(){
-    	return properties;
-    }
-    
-    public void addEvents(Map<Trigger, Event> eventMap){
-    	events.putAll(eventMap);
-    }
- 
-    public void addEvent(Trigger trigger, Event event) {
-        events.put(trigger, event);
-    }
+	static {
+		NOTHING = new GameObject("nothing");
+		NOTHING.setState("nothing");
+	}
 
-    public Event getEvent(Trigger trigger) {
-        Event event = null;
-        for (Map.Entry<Trigger, Event> entry : events.entrySet()) {
-            int result = trigger.compareTo(entry.getKey());
-            if (result >= 0) {
-                if (event == null) {
-                    event = entry.getValue();
-                }
-            }
-            if (result == 0) {
-                return event;
-            }
-        }
-        return event;
-    }
+	public GameObject(String name) {
+		events = new TreeMap<>();
+		properties = new HashMap<>();
+		parent = null;
+		this.name = name;
+	}
 
-    public String getName() {
-        return name;
-    }
-    
-    public GameObject getType() {
+	public GameObject(String name, String state) {
+		events = new TreeMap<>();
+		properties = new HashMap<>();
+		parent = null;
+		this.name = name;
+		this.state = state;
+	}
+
+	public GameObject(String name, GameObject object) {
+		events = new HashMap<>(object.events);
+		properties = new HashMap<>(object.properties);
+		parent = object.parent;
+		type = object;
+		state = object.state;
+		this.name = name;
+	}
+
+	public GameObject(GameObject object) {
+		this(object.getName(), object);
+	}
+
+	public Map<Trigger, Event> getEvents() {
+		return events;
+	}
+
+	public Map<String, Object> getProperties() {
+		return properties;
+	}
+
+	public void addEvents(Map<Trigger, Event> eventMap) {
+		events.putAll(eventMap);
+	}
+
+	public void addEvent(Trigger trigger, Event event) {
+		events.put(trigger, event);
+	}
+
+	public Event getEvent(Trigger trigger) {
+		Event event = null;
+		for (Map.Entry<Trigger, Event> entry : events.entrySet()) {
+			int result = trigger.compareTo(entry.getKey());
+			if (result >= 0) {
+				if (event == null) {
+					event = entry.getValue();
+				}
+			}
+			if (result == 0) {
+				return event;
+			}
+		}
+		return event;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public GameObject getType() {
 		return type;
 	}
 
-    public GameObject getParent() {
-        return parent;
-    }
+	public GameObject getParent() {
+		return parent;
+	}
 
-    public void setParent(GameObject parent) {
-        this.parent = parent;
-    }
+	public void setParent(GameObject parent) {
+		this.parent = parent;
+	}
 
-    public String getState() {
-        return state;
-    }
+	public String getState() {
+		return state;
+	}
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public void setState(String state) {
+		this.state = state;
+	}
 
-    public boolean isA(GameObject object) {
-        if (this.equals(object)) {
-            return true;
-        }
-        if (parent == null) {
-            return false;
-        }
-        return parent.isA(object);
-    }
-    
-    @Override public String toString(){
-    	return name + (parent != null ? "(" + parent.getName() + ")" : "") + "," + state + ":" + properties;
-    }
+	public boolean isA(GameObject object) {
+		if (this.equals(object)) {
+			return true;
+		}
+		if (parent == null) {
+			return false;
+		}
+		return parent.isA(object);
+	}
+
+	@Override
+	public String toString() {
+		return name + (parent != null ? "(" + parent.getName() + ")" : "") + "," + state + ":" + properties;
+	}
+
 
 }

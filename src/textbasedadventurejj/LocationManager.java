@@ -4,62 +4,63 @@ import java.io.File;
 import java.io.IOException;
 
 public class LocationManager {
-	
+
 	private static volatile LocationManager INSTANCE;
-	
+
 	Location root;
 	Location context;
-	
-	private LocationManager(){}
-	
-	public Location getRoot(){
+
+	private LocationManager() {
+	}
+
+	public Location getRoot() {
 		return root;
 	}
-	
-	private void setRoot(Location root){
+
+	private void setRoot(Location root) {
 		this.root = root;
 	}
-	
-	public Location getContext(){
+
+	public Location getContext() {
 		return context;
 	}
-	
-	public void setContext(Location context){
+
+	public void setContext(Location context) {
 		this.context = context;
 	}
-	
-	public Location getSubLocation(String path){
+
+	public Location getSubLocation(String path) {
 		Location loc = context.getSubLocation(path);
-		if(loc == null)
+		if (loc == null)
 			loc = root.getSubLocation(path);
 		return loc;
 	}
-	
-    public GameObject getObject(String objectName) {
-        Location location = getSubLocation(Utils.getPathHead(objectName));
-        return location.getChildren().get(Utils.getPathTail(objectName));
-    }
-	
-	public void load(){
+
+	public GameObject getObject(String objectName) {
+		Location location = getSubLocation(Utils.getPathHead(objectName));
+		return location.getChildren().get(Utils.getPathTail(objectName));
+	}
+
+	public void load() {
 		File file = new File(Constants.ROOT + Constants.LOCATION_DIR);
 		root = new Location("root");
 		setRoot(root);
 		loadTree(root, file);
 	}
-	
-	private void loadTree(Location location, File locFile){
+
+	private void loadTree(Location location, File locFile) {
 		File constructor = null;
-		for(File file : locFile.listFiles()){
-			if(file.getName().equals("new.tba")){
+		for (File file : locFile.listFiles()) {
+			if (file.getName().equals("new.tba")) {
 				constructor = file;
-			} else if(file.isDirectory()){
+			} else if (file.isDirectory()) {
 				Location newLoc = new Location(file.getName());
 				setContext(newLoc);
 				location.getSubLocations().put(file.getName(), newLoc);
 				loadTree(newLoc, file);
 			}
 		}
-		if(constructor != null){
+		if (constructor != null) {
 			try {
 				Interpreter.getInstance().interpret(new Event("new", Utils.readFile(constructor).split("\n")));
 			} catch (IOException e) {
@@ -67,15 +68,15 @@ public class LocationManager {
 			}
 		}
 	}
-	
+
 	public static LocationManager getInstance() {
-        if (INSTANCE == null) {
-            synchronized (LocationManager.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new LocationManager();
-                }
-            }
-        }
-        return INSTANCE;
-    }
+		if (INSTANCE == null) {
+			synchronized (LocationManager.class) {
+				if (INSTANCE == null) {
+					INSTANCE = new LocationManager();
+				}
+			}
+		}
+		return INSTANCE;
+	}
 }
