@@ -1,0 +1,19 @@
+if lamp state on
+    say "the lamp is broken and cannot be turned on."
+    say "the lamp is already on"
+    say "there is no bulb in the lamp"
+    if lamp exists
+        say "...but you have one in your inventory."
+        ask "would you like to use it?[y/n]"
+            do "player put bulb in lamp"
+            set state lamp.bulb lit
+            set state lamp on
+            say "the lamp is now on"
+
+if lamp.bulb state broken
+    say "the bulb is broken."
+
+set state lamp.bulb lit
+set state lamp on
+set location lamp earth
+say "the lamp is now on"

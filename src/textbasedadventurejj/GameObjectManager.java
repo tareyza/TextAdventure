@@ -34,9 +34,17 @@ public class GameObjectManager {
         return objects.containsKey(name);
     }
     
-    public GameObject getObject(String name){
-        return objects.get(name);
+    public GameObject newObject(String name, String type){
+    	if(!objects.containsKey(type))
+    		return null;
+        return new GameObject(name, objects.get(type));
     }
+    
+    public GameObject newObject(String type){
+    	return newObject(type, type);
+    }
+    
+
      
     private static class Loader{
     	
@@ -46,7 +54,7 @@ public class GameObjectManager {
         	System.out.println(file);
         	object.addEvents(parseEvents(file));
         	return object;
-        } 
+        }
         
         private static Map<Trigger, Event> parseEvents(File eventFile) throws IOException{
         	BufferedReader reader = new BufferedReader(new FileReader(eventFile));
@@ -71,14 +79,14 @@ public class GameObjectManager {
         			event = readEvent(fname.split("\\.")[0], new File(eventFile.getParentFile().getAbsolutePath() + File.separatorChar + fname));
         			cache.put(fname, event);
         		}
-        		events.put(new Trigger(name, GameObjectManager.getInstance().getObject(object)), event);
+        		events.put(new Trigger(name, GameObjectManager.getInstance().newObject(object)), event);
         	}
         	reader.close();
         	return events;
         }
         
         private static Event readEvent(String name, File event) throws IOException{
-        	return new Event(name, Utils.readFile(event));
+        	return new Event(name, Utils.readFile(event).split("\n"));
         }
     }
     

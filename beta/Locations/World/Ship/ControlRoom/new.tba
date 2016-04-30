@@ -1,0 +1,2 @@
+make Door in World.Ship.ControlRoom as closet_door
+make Lamp in World.Ship.ControlRoom as lamp

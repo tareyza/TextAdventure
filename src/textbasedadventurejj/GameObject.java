@@ -9,6 +9,7 @@ public class GameObject {
     private final Map<Trigger, Event> events;
     private final Map<String, Object> properties;
     private GameObject parent;
+    private GameObject type;
     private String state = "default";
     private final String name;
 
@@ -34,8 +35,25 @@ public class GameObject {
         this.state = state; 
     }
     
+    public GameObject(String name, GameObject object){
+    	events = new HashMap<>(object.events);
+    	properties = new HashMap<>(object.properties);
+    	parent = object.parent;
+    	type = object;
+    	state = object.state;
+    	this.name = name;
+    }
+    
+    public GameObject(GameObject object){
+    	this(object.getName(), object);
+    }
+    
     public Map<Trigger, Event> getEvents(){
     	return events;
+    }
+    
+    public Map<String, Object> getProperties(){
+    	return properties;
     }
     
     public void addEvents(Map<Trigger, Event> eventMap){
@@ -65,14 +83,10 @@ public class GameObject {
     public String getName() {
         return name;
     }
-
-    public Object getProperty(String key) {
-        return properties.get(key);
-    }
-
-    public void setProperty(String key, Object value) {
-        properties.put(key, value);
-    }
+    
+    public GameObject getType() {
+		return type;
+	}
 
     public GameObject getParent() {
         return parent;
@@ -101,6 +115,8 @@ public class GameObject {
     }
     
     @Override public String toString(){
-    	return name + (parent != null ? "(" + parent.getName() + ")" : "") + ":" + events;
+    	return name + (parent != null ? "(" + parent.getName() + ")" : "") + "," + state + ":" + properties;
     }
+
+	
 }

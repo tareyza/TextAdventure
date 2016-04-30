@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class IfCommand implements Command {
+	
+	private LocationManager lmanager = LocationManager.getInstance();
 
     @Override
     public boolean execute(String[] words) {
         if (words.length < 1) {
             return false;
         }
-        GameObject object = Interpreter.getInstance().parseObject(words[0]);
+        GameObject object = lmanager.parseObject(words[0]);
         if (words[1].equals("contains")) {
-            GameObject subObject = Interpreter.getInstance().parseObject(words[2]);
+            GameObject subObject = lmanager.parseObject(words[2]);
             if (subObject.getParent().equals(object)) {
                 return true;
             } else {
@@ -27,8 +29,8 @@ public class IfCommand implements Command {
                 return false;
             }
         } else if (words[1].equals("exists")) {
-            GameObject target = Interpreter.getInstance().parseObject(words[2]);
-            Location currentLocation = Interpreter.getInstance().getContext();
+            GameObject target = lmanager.parseObject(words[2]);
+            Location currentLocation = lmanager.getContext();
             ArrayList<GameObject> allObjects = new ArrayList<GameObject>();
             for (GameObject obj : currentLocation.getGameObjects()) {
                 allObjects.add(obj);
@@ -46,14 +48,14 @@ public class IfCommand implements Command {
                 return false;
             }
         } else if (words[2].equals("in")) {
-            GameObject target = Interpreter.getInstance().parseObject(words[1]);
+            GameObject target = lmanager.parseObject(words[1]);
             Location targetLocation;
             if (words[3].equals("here")) {
-                targetLocation = Interpreter.getInstance().getContext();
+                targetLocation = lmanager.getContext();
             } else if (words[3].equals("inventory")) {
-                targetLocation = Interpreter.getInstance().getContext().getSubLocation("inventory");
+                targetLocation = lmanager.getContext().getSubLocation("inventory");
             } else {
-                targetLocation = Interpreter.getInstance().getContext().getSubLocation(words[3]);//does this actually work?!?
+                targetLocation = lmanager.getContext().getSubLocation(words[3]);//does this actually work?!?
             }
             return targetLocation.getChildren().containsValue(words[1]);
 

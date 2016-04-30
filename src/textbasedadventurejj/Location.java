@@ -70,4 +70,26 @@ public class Location{
         }
         return path.substring(0, path.length()-1);
     }
+    
+    @Override public String toString(){
+    	return toString("", 0);
+    }
+    
+    private String toString(String buffer, int level){
+    	buffer += indented(name + "\n", level);
+    	for(GameObject obj : children.values()){
+    		buffer += indented(obj.getName() + ":" + obj.getType().getName() + "\n", level + 1);
+    	}
+    	for(Location loc: subLocations.values()){
+    		buffer = loc.toString(buffer, level + 1);
+    	}
+    	return buffer;
+    }
+    
+    private String indented(String initial, int indents){
+    	for(int i = 0; i < indents; ++i){
+    		initial = "|" + initial;
+    	}
+    	return initial;
+    }
 }
