@@ -2,7 +2,6 @@
 package textbasedadventurejj;
 
 public class Player extends GameObject {
-<<<<<<< HEAD
     
     private int health;
     private GameObject equippedWeapon;
