@@ -3,6 +3,7 @@ package textbasedadventurejj;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 class Utils {
@@ -22,6 +23,12 @@ class Utils {
     	return buffer;
 	}
 	
+        public static void writeError(String input) throws IOException {
+        FileWriter writer = new FileWriter("ERROR_FILE");
+        writer.write(input);
+        }
+        
+        
 	public static String readFile(File file) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(file));
     	String s = null;

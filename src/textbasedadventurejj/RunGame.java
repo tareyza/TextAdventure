@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package textbasedadventurejj;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Jerry
- */
 public class RunGame {
 
     static boolean gameIsRunning;
@@ -18,16 +13,18 @@ public class RunGame {
     private void RunGame() {
     }
 
-    public static void loadSavedGame() {
-        Event load = loadEvents();
-        Interpreter.getInstance().interpret(load);//redos all previous events executed by player
+    public static void loadSavedGame(){
+        try {
+            String events = Utils.readFile("SAVE_FILE");
+            events = events.trim();
+            String[] eventArr = events.split("\\n");
+            for (String element : eventArr) {
+                Interpreter.getInstance().interpret(element);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(RunGame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
-    private static Event loadEvents() {
-        //Event event = new Event("Test","open door");
-        return null;//implement later
-    }
-
     public static void newGame() {
         System.out.println("Your game is being restarted.");
         gameIsRunning = false;
@@ -51,7 +48,7 @@ public class RunGame {
             String nextLine = scanner.nextLine();
             commandExecuted = Interpreter.getInstance().interpret(nextLine);
             if (!commandExecuted) {
-                Interpreter.getInstance().printError();
+                Interpreter.getInstance().printError(nextLine);
             }
         }
     }

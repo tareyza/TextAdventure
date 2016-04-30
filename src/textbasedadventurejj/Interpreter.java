@@ -1,14 +1,16 @@
 package textbasedadventurejj;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Interpreter {
 
     private static volatile Interpreter INSTANCE;
-
     private String[] lines;
     private Map<String, Command> commands;
     private int programCounter;
@@ -45,9 +47,22 @@ public class Interpreter {
 
     }
 
-    public void printError() {
-        //print stuff for non-executed commands
+    public void printError(String[] line) {
+         String input = "";
+         for (int i = 0; i < line.length; i++) {
+             input+=line;
+             input+=" ";
+         }
+         printError(input);
+         
+    }
+    public void printError(String line) {
         System.out.println("I cannot understand that unfortunately.");
+        try {
+            Utils.writeError(line);
+        } catch (IOException ex) {
+            Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean interpretCommand(String[] words) {
@@ -66,25 +81,16 @@ public class Interpreter {
     }
 
     public boolean interpretSentence(String[] words) {//modified user typed sents are possible here
+        
+        
         if (words.length < 1) {
             return false;
         }
+        Phrase phrase = PhraseBuilder.getPhrase(words);
 
-        String verb = "";
-        boolean containsVerb = false;
-        if (VerbManager.verifyVerbName(words[0])) {
-            verb = words[0];
-            containsVerb = true;
-        }
-
-        if (containsVerb) {
-            Structure struct = Interpreter.getStructure(verb);
-            if (struct == null) {
-                return false;
-            }
-            Phrase phrase = struct.parse(verb, Arrays.copyOf(words, 1));
+        if (phrase==null) {
             GameObject object = phrase.getSubject();
-            Event event = object.getEvent(new Trigger(verb));
+            Event event = object.getEvent(new Trigger(phrase.getVerb()));
             interpret(event);
             return true;
         } else {
@@ -102,15 +108,18 @@ public class Interpreter {
         } else if (words[0].equals("save")){
             System.out.println("Your game is automatically saved every action you make.");
             return true;
-        } else if (VerbManager.verifyResponseName(words[0])){
-            Structure struct = Interpreter.getStructure("say");
-            Phrase phrase = struct.parse("say", Arrays.copyOf(words, 1));
+        } else {
+            String[] say = new String[words.length+1];
+            say[0]="say";
+            for (int i = 0; i < words.length; i++) {
+                say[i+1]=words[i];
+            }
+            Phrase phrase = PhraseBuilder.getPhrase(say);
             GameObject object = phrase.getSubject();
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
+            printError(words);
             return true;
-        } else {
-            return false;
         }
     }
 
