@@ -12,7 +12,6 @@ public class MakeCommand implements Command {
 																// name"
 			String object = words[0];
 			Location location = LocationManager.getInstance().getSubLocation(words[2]);
-			System.out.println(location.getName());
 			String objectName = words[4];
 			location.getChildren().put(objectName, GameObjectManager.getInstance().newObject(objectName, object));
 		}
