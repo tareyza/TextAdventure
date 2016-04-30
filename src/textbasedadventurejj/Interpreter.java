@@ -1,9 +1,12 @@
 package textbasedadventurejj;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Interpreter {
 
@@ -43,9 +46,22 @@ public class Interpreter {
 
     }
 
-    public void printError() {
+     public void printError(String[] line) {
+         String input = "";
+         for (int i = 0; i < line.length; i++) {
+             input+=line;
+             input+=" ";
+         }
+         printError(input);
+         
+     }
+    public void printError(String line) {
         System.out.println("I cannot understand that unfortunately.");
-        //implement later, write to file what the user typed in that couldnt be handled
+        try {
+            Utils.writeError(line);
+        } catch (IOException ex) {
+            Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean interpretCommand(String[] words) {
@@ -103,6 +119,7 @@ public class Interpreter {
             GameObject object = phrase.getSubject();
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
+            printError(words);
             return true;
         }
     }
