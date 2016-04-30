@@ -50,5 +50,10 @@ public class Phrase {
 	public void setVerb(String verb) {
 		this.verb = verb;
 	}
-
+	
+	@Override public String toString(){
+		return "verb:" + verb 
+				+ "\nsubject:" + subject + "\nobject:" 
+				+ object + "\niobject:" + indirect + "\nresponse:" + response;
+	}
 }

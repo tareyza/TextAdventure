@@ -8,53 +8,48 @@ import java.io.IOException;
 
 class Utils {
 
-    public static GameObject getObjectInCurrentRoom(String name) {
-        return LocationManager.getInstance().getContext().getChildren().get(name);
-    }
+	public static String readFile(String fname) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(fname));
+		String s = null;
+		String buffer = "";
+		while ((s = reader.readLine()) != null) {
+			buffer += s + "\n";
+		}
+		reader.close();
+		return buffer;
+	}
 
-    public static String readFile(String fname) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(fname));
-        String s = null;
-        String buffer = "";
-        while ((s = reader.readLine()) != null) {
-            buffer += s + "\n";
-        }
-        reader.close();
-        return buffer;
-    }
+	public static void writeError(String input) throws IOException {
+		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE);
+		writer.write(input);
+	}
 
-    public static void writeError(String input) throws IOException {
-        FileWriter writer = new FileWriter("ERROR_FILE");
-        writer.write(input);
-    }
+	public static String readFile(File file) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		String s = null;
+		String buffer = "";
+		while ((s = reader.readLine()) != null) {
+			buffer += s + "\n";
+		}
+		reader.close();
+		return buffer;
+	}
 
-    public static String readFile(File file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String s = null;
-        String buffer = "";
-        while ((s = reader.readLine()) != null) {
-            buffer += s + "\n";
-        }
-        reader.close();
-        return buffer;
-    }
+	public static String getPathRoot(String fullPath) {
+		String[] pathItems = fullPath.split("\\.");
+		return pathItems[0];
+	}
 
-    public static String getPathRoot(String fullPath) {
-        String[] pathItems = fullPath.split("\\.");
-        return pathItems[0];
-    }
+	public static String getPathTail(String fullPath) {
+		String[] pathItems = fullPath.split("\\.");
+		return pathItems[pathItems.length - 1];
+	}
 
-    public static String getPathTail(String fullPath) {
-        String[] pathItems = fullPath.split("\\.");
-        return pathItems[pathItems.length - 1];
-    }
-
-    public static String getPathHead(String fullPath) {
-        int index = fullPath.lastIndexOf(".");
-        if (index == -1) {
-            return "";
-        }
-        return fullPath.substring(0, index);
-    }
+	public static String getPathHead(String fullPath) {
+		int index = fullPath.lastIndexOf(".");
+		if (index == -1)
+			return "";
+		return fullPath.substring(0, index);
+	}
 
 }
