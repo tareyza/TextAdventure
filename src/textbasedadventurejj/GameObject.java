@@ -108,4 +108,5 @@ public class GameObject {
 		return name + (parent != null ? "(" + parent.getName() + ")" : "") + "," + state + ":" + properties;
 	}
 
+
 }

@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PhraseBuilder {
-
+    
 	static{
 		generateVerbStructures();
 	}
@@ -14,8 +14,9 @@ public class PhraseBuilder {
 	private static String[] verbStructures;
 	private static LocationManager lmanager = LocationManager.getInstance();
 
-	private PhraseBuilder() {
-	}
+
+    private PhraseBuilder() {
+    }
 
 	public static void generateVerbStructures() {
 		try {

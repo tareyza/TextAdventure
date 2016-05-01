@@ -8,8 +8,6 @@ import java.io.IOException;
 
 class Utils {
 
-	
-
 	public static String readFile(String fname) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(fname));
 		String s = null;
@@ -22,7 +20,12 @@ class Utils {
 	}
 
 	public static void writeError(String input) throws IOException {
-		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE);
+		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE, true);
+		writer.write(input);
+	}
+        
+        public static void writeEvent(String input) throws IOException {
+		FileWriter writer = new FileWriter(Constants.ROOT + Constants.SAVE_FILE, true);
 		writer.write(input);
 	}
 
