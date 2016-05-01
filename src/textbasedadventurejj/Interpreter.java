@@ -91,9 +91,10 @@ public class Interpreter {
 		}
 		Phrase phrase = PhraseBuilder.getPhrase(words);
 
-		if (phrase == null) {
+		if (phrase != null) {
 			GameObject object = phrase.getSubject();
-			Event event = object.getEvent(new Trigger(phrase.getVerb()));
+			Event event = object.getEvent(new Trigger(phrase.getVerb(), phrase.getIndirectObject()));
+			System.out.println(event);
 			interpret(event);
 			return true;
 		} else {
