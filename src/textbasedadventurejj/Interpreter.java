@@ -26,9 +26,12 @@ public class Interpreter {
 	public void removeCommand(String name) {
 		commands.remove(name);
 	}
+	
+	public void reset(){
+		programCounter = 0;
+	}
 
 	public void interpret(Event event) {
-		programCounter = 0;
 		if ((event == null) || event.getLines().length == 0) {
 			return;
 		}
@@ -82,36 +85,35 @@ public class Interpreter {
 		}
 	}
 
-	public boolean interpretSentence(String[] words) {// modified user typed
+	public void interpretSentence(String[] words) {// modified user typed
 														// sents are possible
 														// here
 
 		if (words.length < 1) {
-			return false;
+			return;
 		}
 		Phrase phrase = PhraseBuilder.getPhrase(words);
 
 		if (phrase != null) {
-			GameObject object = phrase.getSubject();
-			Event event = object.getEvent(new Trigger(phrase.getVerb(), phrase.getIndirectObject()));
-			System.out.println(event);
+			GameObject object = phrase.getDirectObject();
+			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
+			System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
+			Event event = object.getEvent(trigger);
+			System.out.println(object.getEvents());
+			System.out.println("Event:" + event);
 			interpret(event);
-			return true;
 		} else {
-			return interpretNonVerbSentence(words);
+			interpretNonVerbSentence(words);
 		}
 	}
 
-	public boolean interpretNonVerbSentence(String[] words) {
+	public void interpretNonVerbSentence(String[] words) {
 		if (words[0].equals("exit") || words[0].equals("quit")) {
 			RunGame.exitGame();
-			return true;
 		} else if (words[0].equals("restart") || words[0].equals("restore")) {
 			RunGame.newGame();
-			return true;
 		} else if (words[0].equals("save")) {
 			System.out.println("Your game is automatically saved every action you make.");
-			return true;
 		} else if (words[0].equals("say")){
 			String[] say = new String[words.length + 1];
 			say[0] = "say";
@@ -123,9 +125,7 @@ public class Interpreter {
 			Event event = object.getEvent(new Trigger("say"));
 			interpret(event);
 			printError(words);
-			return true;
 		}
-		return false;
 	}
 
 	public static Interpreter getInstance() {

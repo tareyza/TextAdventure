@@ -32,7 +32,11 @@ public class Trigger implements Comparable<Trigger> {
 	@Override
 	public boolean equals(Object obj) {
 		Trigger trigger = (Trigger) obj;
-		return trigger.verb.equals(verb) && trigger.object.equals(object);
+		if(trigger.object == null && object == null)
+			return trigger.verb.equals(verb);
+		if(trigger.object != null && object != null)
+			return trigger.verb.equals(verb) && trigger.object.equals(object);
+		return false;
 	}
 
 	@Override
@@ -47,6 +51,12 @@ public class Trigger implements Comparable<Trigger> {
 			return 1;
 		}
 		return -1;
+	}
+	
+	@Override public int hashCode(){
+		if(object == null)
+			return verb.hashCode();
+		return object.hashCode() + verb.hashCode();
 	}
 
 }

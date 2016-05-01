@@ -2,4 +2,4 @@ make Door in here as control_room_door
 make Player in here as player
 set control_room_door.new_location as World.Ship.ControlRoom
 set control_room_door is closed
-do open control_room_door control_room_door
+do enter control_room_door player

@@ -37,6 +37,7 @@ public class GameObject {
 
 	public GameObject(String name, GameObject object) {
 		events = new HashMap<>(object.events);
+		System.out.println(events);
 		properties = new HashMap<>(object.properties);
 		parent = object.parent;
 		type = object;
@@ -65,19 +66,7 @@ public class GameObject {
 	}
 
 	public Event getEvent(Trigger trigger) {
-		Event event = null;
-		for (Map.Entry<Trigger, Event> entry : events.entrySet()) {
-			int result = trigger.compareTo(entry.getKey());
-			if (result >= 0) {
-				if (event == null) {
-					event = entry.getValue();
-				}
-			}
-			if (result == 0) {
-				return event;
-			}
-		}
-		return event;
+		return events.get(trigger);
 	}
 
 	public String getName() {

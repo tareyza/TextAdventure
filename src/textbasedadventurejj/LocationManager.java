@@ -72,7 +72,6 @@ public class LocationManager {
 				e.printStackTrace();
 			}
 		}
-		
 	}
 
 	public static LocationManager getInstance() {

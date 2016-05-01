@@ -20,7 +20,7 @@ public class TestLoader {
 		Location root = lmanager.getRoot();
 		System.out.println(root);
 
-		GameObject controlDoor = lmanager.getObject("World.Ship.Closet.control_room_door");
-		System.out.println(controlDoor);
+		//GameObject controlDoor = lmanager.getObject("World.Ship.Closet.control_room_door");
+		//System.out.println(controlDoor);
 	}
 }
