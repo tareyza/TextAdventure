@@ -1,1 +1,1 @@
-set player in $new_location
+set @subject in $new_location

@@ -57,20 +57,22 @@ public class LocationManager {
 		for (File file : locFile.listFiles()) {
 			if (file.getName().equals("new.tba")) {
 				constructor = file;
-			} else if (file.isDirectory()) {
+			} else if (file.isDirectory()) {		
 				Location newLoc = new Location(file.getName());
-				setContext(newLoc);
 				location.getSubLocations().put(file.getName(), newLoc);
 				loadTree(newLoc, file);
 			}
 		}
+		setContext(location);
 		if (constructor != null) {
 			try {
 				Interpreter.getInstance().interpret(new Event("new", Utils.readFile(constructor).split("\n")));
+				constructor = null;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
+		
 	}
 
 	public static LocationManager getInstance() {
