@@ -100,6 +100,7 @@ public class Interpreter {
 		Phrase phrase = PhraseBuilder.getPhrase(words);
 
 		if (phrase != null) {
+                    System.out.println("phrase is not null");
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
 			System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
