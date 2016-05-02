@@ -36,6 +36,7 @@ public class Interpreter {
 			return;
 		}
 		lines = event.getLines();
+                System.out.println("reached interpret(Event), here's Event: " + lines.toString());
 		while (programCounter < lines.length) {
 			interpret(lines[programCounter++]);
 		}
@@ -105,7 +106,7 @@ public class Interpreter {
 			System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
 			Event event = object.getEvent(trigger);
 			System.out.println(object.getEvents());
-			System.out.println("Event:" + event);
+			System.out.println("reached interpretSentence, here's the event: " + event);
 			interpret(event);
 		} else {
 			interpretNonVerbSentence(words);

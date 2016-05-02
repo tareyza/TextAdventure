@@ -55,6 +55,7 @@ public class RunGame {
 		while (gameIsRunning) {
 			System.out.println("");
 			String nextLine = scanner.nextLine();
+                        nextLine = "do "+ nextLine;
 			Interpreter.getInstance().interpret(nextLine);
 		}
 	}
