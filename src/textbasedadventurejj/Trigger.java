@@ -58,5 +58,4 @@ public class Trigger implements Comparable<Trigger> {
 			return verb.hashCode();
 		return object.hashCode() + verb.hashCode();
 	}
-
 }

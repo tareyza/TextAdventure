@@ -35,9 +35,7 @@ public class PhraseBuilder {
 	public static Phrase getPhrase(String[] inputArr) {
 		Phrase phrase = new Phrase();
 		phrase.setSubject(lmanager.getObject(inputArr[inputArr.length - 1]));
-		System.out.println(java.util.Arrays.toString(inputArr));
 		inputArr = java.util.Arrays.copyOf(inputArr, inputArr.length - 1);
-		System.out.println(java.util.Arrays.toString(inputArr));
 		for (String sentence : verbStructures) {
 			String[] phraseArr = sentence.split(" ");
 			boolean match = true;
