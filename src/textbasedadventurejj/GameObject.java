@@ -107,6 +107,4 @@ public class GameObject {
 	public String toString() {
 		return name + (parent != null ? "(" + parent.getName() + ")" : "") + "," + state + ":" + properties;
 	}
-
-
 }

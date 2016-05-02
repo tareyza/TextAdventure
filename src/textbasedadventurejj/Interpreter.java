@@ -93,7 +93,6 @@ public class Interpreter {
 	public void interpretSentence(String[] words) {// modified user typed
 														// sents are possible
 														// here
-
 		if (words.length < 1) {
 			return;
 		}
