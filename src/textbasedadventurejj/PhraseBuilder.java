@@ -37,14 +37,17 @@ public class PhraseBuilder {
         for (String sentence : verbStructures) {
             System.out.println("trying to match this: "+ sentence);
             String[] phraseArr = sentence.split(" ");
+            String[] phraseAlias = phraseArr;
             boolean sentenceMatches = true;
             if (phraseArr.length == inputArr.length) {
                 for (int i = 0; i < inputArr.length; i++) {
-                    if (!phraseArr[i].equals("INDIRECT") || !phraseArr[i].equals("OBJECT") || !phraseArr[i].equals("RESPONSE") || !phraseArr[i].equals(inputArr[i])) {
-                        System.out.println("testing: "+phraseArr[i]);
-                        sentenceMatches = false;
-                        break;
+                    if (phraseArr[i].equals("INDIRECT") || phraseArr[i].equals("OBJECT") || phraseArr[i].equals("RESPONSE")) {
+                        phraseAlias[i] = inputArr[i];
                     }                    
+                }
+                for (int i = 0; i < inputArr.length; i++) {
+                    if(!phraseAlias[i].equals(inputArr[i]))
+                        sentenceMatches = false;
                 }
             } else {
                 sentenceMatches = false;
