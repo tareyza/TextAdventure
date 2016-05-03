@@ -106,7 +106,7 @@ public class Interpreter {
 			//System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
 			Event event = object.getEvent(trigger);
 			System.out.println(object.getEvents());
-			System.out.println("reached interpretSentence, here's the event: " + event);
+			System.out.println("reached interpretSentence, here's the event: " + event.toString());
 			interpret(event);
 		} else {
 			interpretNonVerbSentence(words);
