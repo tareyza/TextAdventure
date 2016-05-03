@@ -19,7 +19,8 @@ public class SetCommand implements Command {
 			GameObject object = lmanager.getObject(words[0]);
 			Location currentLocation = lmanager.getContext();
 			String objectName = object.getName();
-			Location newLocation = lmanager.getRoot().getSubLocation(words[2]);
+			System.out.println(words[2]);
+			Location newLocation = lmanager.getSubLocation(words[2]);
 			currentLocation.getChildren().remove(object.getName());
 			newLocation.getChildren().put(objectName, object);
 		} else if (words[1].equals("as")) {// set PROPERTY as VALUE

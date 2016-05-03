@@ -1,5 +1,2 @@
 make Door in here as closet_door
 set closet_door is closed
-
-make Lamp in here as lamp
-set lamp is off

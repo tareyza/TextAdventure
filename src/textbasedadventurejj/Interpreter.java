@@ -14,6 +14,7 @@ public class Interpreter {
 	private String[] lines;
 	private Map<String, Command> commands;
 	private int programCounter;
+	private Phrase phrase;
 
 	private Interpreter() {
 		commands = new HashMap<>();
@@ -35,6 +36,7 @@ public class Interpreter {
 		if ((event == null) || event.getLines().length == 0) {
 			return;
 		}
+		reset();
 		lines = event.getLines();
 		while (programCounter < lines.length) {
 			interpret(lines[programCounter++]);
@@ -52,6 +54,7 @@ public class Interpreter {
 		if (line.startsWith("#"))
 			return;
 		String[] words = line.split(" +");
+		words = substitute(words);
 		interpretCommand(words);
 
 	}
@@ -96,15 +99,12 @@ public class Interpreter {
 		if (words.length < 1) {
 			return;
 		}
-		Phrase phrase = PhraseBuilder.getPhrase(words);
+		phrase = PhraseBuilder.getPhrase(words);
 
 		if (phrase != null) {
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
-			System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
 			Event event = object.getEvent(trigger);
-			System.out.println(object.getEvents());
-			System.out.println("Event:" + event);
 			interpret(event);
 		} else {
 			interpretNonVerbSentence(words);
@@ -130,6 +130,29 @@ public class Interpreter {
 			interpret(event);
 			printError(words);
 		}
+	}
+	
+	private String[] substitute(String[] words){
+		String[] substituted = new String[words.length];
+		for(int i = 0; i < words.length; ++i){
+			System.out.println("WORD: " + words[i]);
+			String sub = words[i];
+			if(sub.startsWith("$")){
+				sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();
+			}else if(sub.startsWith("@")){
+				switch(sub.substring(1)){
+					case "object" : sub = phrase.getDirectObject().getName();
+						break;
+					case "subject" : sub = phrase.getSubject().getName();
+						break;
+					case "indirect" : sub = phrase.getIndirectObject().getName();
+						break;
+					case "verb" : sub = phrase.getVerb();
+				}
+			}
+			substituted[i] = sub;
+		}
+		return substituted;
 	}
 
 	public static Interpreter getInstance() {

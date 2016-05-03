@@ -16,8 +16,12 @@ public class TestLoader {
 
 		gmanager.loadObjects();
 		lmanager.load();
+		System.out.println(LocationManager.getInstance().getRoot());
 
-		Location root = lmanager.getRoot();
-		System.out.println(root);
+		//Location root = lmanager.getRoot();
+		//System.out.println(root);
+		lmanager.setContext(LocationManager.getInstance().getSubLocation("World.Ship.Closet"));
+		RunGame.runGame();
+		
 	}
 }
