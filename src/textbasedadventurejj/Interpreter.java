@@ -137,7 +137,6 @@ public class Interpreter {
 	private String[] substitute(String[] words){
 		String[] substituted = new String[words.length];
 		for(int i = 0; i < words.length; ++i){
-			System.out.println("WORD: " + words[i]);
 			String sub = words[i];
 			if(sub.startsWith("$")){
 				sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();
