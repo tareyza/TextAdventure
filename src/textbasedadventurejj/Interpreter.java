@@ -103,7 +103,7 @@ public class Interpreter {
                     System.out.println("phrase is not null");
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
-			System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
+			//System.out.println(trigger.equals(object.getEvents().keySet().toArray()[0]));
 			Event event = object.getEvent(trigger);
 			System.out.println(object.getEvents());
 			System.out.println("reached interpretSentence, here's the event: " + event);

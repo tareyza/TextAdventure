@@ -18,7 +18,7 @@ public class TestLoader {
 		lmanager.load();
 
 		Location root = lmanager.getRoot();
-		System.out.println(root);
+		//System.out.println(root);
                 
                 RunGame.runGame();
 	}
