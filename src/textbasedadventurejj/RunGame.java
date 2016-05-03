@@ -57,6 +57,7 @@ public class RunGame {
 			String nextLine = scanner.nextLine();
 			Interpreter.getInstance().interpret("do " + nextLine + " player");
 			System.out.println(LocationManager.getInstance().getRoot());
+			Interpreter.getInstance().interpret(nextLine);
 		}
 	}
-}
+

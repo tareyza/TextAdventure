@@ -22,6 +22,5 @@ public class TestLoader {
 		//System.out.println(root);
 		lmanager.setContext(LocationManager.getInstance().getSubLocation("World.Ship.Closet"));
 		RunGame.runGame();
-		
 	}
 }
