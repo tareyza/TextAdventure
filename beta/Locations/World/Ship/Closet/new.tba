@@ -1,5 +1,6 @@
 make Door in here as control_room_door
 make Player in here as player
 make Lamp in here as lamp
+make Firstaidkit in here as firstaidkit
 set control_room_door.new_location as World.Ship.ControlRoom
 set control_room_door is closed

@@ -109,6 +109,8 @@ public class Interpreter {
 			if(object!=null){
                         Event event = object.getEvent(trigger);
 			interpret(event);
+                        }else{
+                        printError(words);
                         }
 		} else {
 			interpretNonVerbSentence(words);
@@ -133,7 +135,9 @@ public class Interpreter {
 			Event event = object.getEvent(new Trigger("say"));
 			interpret(event);
 			printError(words);
-		}
+		}else{
+                printError(words);
+                }
 	}
 	
 	private String[] substitute(String[] words){
