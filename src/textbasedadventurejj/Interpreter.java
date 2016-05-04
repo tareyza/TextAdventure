@@ -106,8 +106,10 @@ public class Interpreter {
                     System.out.println("phrase is not null");
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
-			Event event = object.getEvent(trigger);
+			if(object!=null){
+                        Event event = object.getEvent(trigger);
 			interpret(event);
+                        }
 		} else {
 			interpretNonVerbSentence(words);
 		}

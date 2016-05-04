@@ -16,7 +16,7 @@ public class TestLoader {
 
 		gmanager.loadObjects();
 		lmanager.load();
-		System.out.println(LocationManager.getInstance().getRoot());
+//		System.out.println(LocationManager.getInstance().getRoot());
 
 		//Location root = lmanager.getRoot();
 		//System.out.println(root);

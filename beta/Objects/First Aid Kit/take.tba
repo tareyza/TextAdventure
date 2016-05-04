@@ -1,0 +1,6 @@
+if this in here
+	say You have taken the first aid kit.
+	set first_aid_kit in inventory
+
+if this in inventory
+	say You've already taken that. 
