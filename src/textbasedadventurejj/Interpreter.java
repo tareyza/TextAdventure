@@ -56,6 +56,7 @@ public class Interpreter {
 			return;
 		String[] words = line.split(" +");
 		words = substitute(words);
+                words = PhraseBuilder.replaceGameObjects(words);
 		interpretCommand(words);
 
 	}
