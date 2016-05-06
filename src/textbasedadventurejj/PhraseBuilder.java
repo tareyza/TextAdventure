@@ -26,8 +26,9 @@ public class PhraseBuilder {
             String matchTo = sentence.substring(sentence.indexOf(" ") + 1);
             String wordsString = "";
             for (int i = 0; i < words.length; i++) {
-                wordsString += words[i];
+                wordsString += words[i]+" ";
             }
+            wordsString = wordsString.trim();
             if(wordsString.contains(matchTo)){
                 int index = wordsString.indexOf(matchTo);
                 wordsString = wordsString.substring(0, index) + replaceWith + wordsString.substring(index+replaceWith.length());
