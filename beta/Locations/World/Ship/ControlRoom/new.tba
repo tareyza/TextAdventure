@@ -1,2 +1,2 @@
 make Door in here as closet_door
-set closet_door is closed
+set closet_door.new_location as World.Ship.Closet
