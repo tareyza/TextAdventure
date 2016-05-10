@@ -6,11 +6,12 @@ public class SetCommand implements Command {
 
 	@Override
 	public void execute(String[] words) {
+		System.out.println("FIRST WORD OF COMMAND IS: " + words[0]);
 		if (words[1].equals("is")) {
 			GameObject object = lmanager.getObject(words[0]);
 			object.setState(words[2]);
 		} else if (words[1].equals("in")) {// "set" + objectName "in" +
-											// newLocation
+			// newLocation
 			System.out.println(words[0]);
 			System.out.println(lmanager.getContext().getName());
 			GameObject object = lmanager.getObject(words[0]);
@@ -26,6 +27,7 @@ public class SetCommand implements Command {
 		} else if (words[0].equals("context")){
 			System.out.println("context");
 			Location location = lmanager.getSubLocation(words[1]);
+			System.out.println(location);
 			lmanager.setContext(location);
 		}
 	}
