@@ -37,6 +37,7 @@ public class LocationManager {
 	}
 
 	public GameObject getObject(String objectName) {
+            //System.out.println("getObject  " + getSubLocation(Utils.getPathHead(objectName)).toString());
 		Location location = getSubLocation(Utils.getPathHead(objectName));
 		return location.getChildren().get(Utils.getPathTail(objectName));
 	}

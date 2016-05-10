@@ -40,7 +40,6 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            System.out.println(lines[programCounter]);
             interpret(lines[programCounter++]);
         }
     }
@@ -108,7 +107,6 @@ public class Interpreter {
         phrase = PhraseBuilder.getPhrase(words);
         
         if (phrase != null) {
-            System.out.println("phrase is not null");
             GameObject object = phrase.getDirectObject();
             Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
             if (object != null) {

@@ -1,7 +1,7 @@
-if this in World.Ship.Closet
+if first_aid_kit in World.Ship.Closet
 	say "It seems like it might have some useful things in it." 
 
-if this in Inventory
+if first_aid_kit in Inventory
 if is empty 
 	say "There is nothing more of use here."
 
