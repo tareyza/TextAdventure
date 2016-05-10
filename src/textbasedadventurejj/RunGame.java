@@ -60,4 +60,4 @@ public class RunGame {
 			Interpreter.getInstance().interpret(nextLine);
 		}
 	}
-
+}

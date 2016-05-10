@@ -103,9 +103,10 @@ public class Interpreter {
 		phrase = PhraseBuilder.getPhrase(words);
 
 		if (phrase != null) {
-                    System.out.println("phrase is not null");
+			System.out.println(phrase);
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
+			System.out.println(LocationManager.getInstance().getContext());
 			Event event = object.getEvent(trigger);
 			interpret(event);
 		} else {
@@ -137,7 +138,6 @@ public class Interpreter {
 	private String[] substitute(String[] words){
 		String[] substituted = new String[words.length];
 		for(int i = 0; i < words.length; ++i){
-			System.out.println("WORD: " + words[i]);
 			String sub = words[i];
 			if(sub.startsWith("$")){
 				sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();

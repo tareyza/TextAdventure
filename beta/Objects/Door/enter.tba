@@ -1,1 +1,2 @@
 set @subject in $new_location
+set context $new_location

@@ -1,6 +1,7 @@
 package textbasedadventurejj;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,7 +37,7 @@ public class PhraseBuilder {
         inputArr = java.util.Arrays.copyOf(inputArr, inputArr.length - 1);
         for (String sentence : verbStructures) {
             String[] phraseArr = sentence.split(" ");
-            String[] phraseAlias = phraseArr;
+            String[] phraseAlias = Arrays.copyOf(phraseArr, phraseArr.length);
             boolean sentenceMatches = true;
             if (phraseArr.length == inputArr.length) {
                 for (int i = 0; i < inputArr.length; i++) {
