@@ -40,7 +40,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            //System.out.println(lines[programCounter].toString());
+            System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
