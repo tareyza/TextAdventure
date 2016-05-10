@@ -99,10 +99,12 @@ public class PhraseBuilder {
                     }
                 }
                 phrase.setVerb(verb.trim());
-                System.out.println("phrase is: " + phrase.toString());
+                //System.out.println("phrase is: " + phrase.toString());
                 return phrase;
             }
         }
         return null;
     }
+    
+    
 }

@@ -37,7 +37,7 @@ public class IfCommand implements Command {
                 interp.skipUntilNewline();
             }
         } else if (words[1].equals("in")){
-            System.out.println(words[0]);
+            //System.out.println(words[0]);
             if (lmanager.getSubLocation(words[2]).getChildren().containsKey(lmanager.getObject(words[0]).getName())) { //lmanager.getObject returns null
                 if (not) {
                     interp.skipUntilNewline();

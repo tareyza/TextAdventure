@@ -61,7 +61,4 @@ public class RunGame {
 		}
 	}
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
