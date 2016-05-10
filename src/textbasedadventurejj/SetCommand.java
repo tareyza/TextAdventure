@@ -6,9 +6,6 @@ public class SetCommand implements Command {
 
 	@Override
 	public void execute(String[] words) {
-		if (words.length != 3) {
-			return;
-		}
 		if (words[1].equals("is")) {
 			GameObject object = lmanager.getObject(words[0]);
 			object.setState(words[2]);
@@ -26,6 +23,10 @@ public class SetCommand implements Command {
 		} else if (words[1].equals("as")) {// set PROPERTY as VALUE
 			GameObject object = lmanager.getObject(Utils.getPathHead(words[0]));
 			object.getProperties().put(Utils.getPathTail(words[0]), words[2]);
+		} else if (words[0].equals("context")){
+			System.out.println("context");
+			Location location = lmanager.getSubLocation(words[1]);
+			lmanager.setContext(location);
 		}
 	}
 }
