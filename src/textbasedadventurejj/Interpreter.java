@@ -9,50 +9,51 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Interpreter {
+    
+    private static volatile Interpreter INSTANCE;
+    private String[] lines;
+    private Map<String, Command> commands;
+    private int programCounter;
+    private Phrase phrase;
+    
+    private Interpreter() {
+        commands = new HashMap<>();
+    }
+    
+    public void addCommand(String name, Command command) {
+        commands.put(name, command);
+    }
+    
+    public void removeCommand(String name) {
+        commands.remove(name);
+    }
+    
+    public void reset() {
+        programCounter = 0;
+    }
+    
+    public void interpret(Event event) {
 
-	private static volatile Interpreter INSTANCE;
-	private String[] lines;
-	private Map<String, Command> commands;
-	private int programCounter;
-	private Phrase phrase;
-
-	private Interpreter() {
-		commands = new HashMap<>();
-	}
-
-	public void addCommand(String name, Command command) {
-		commands.put(name, command);
-	}
-
-	public void removeCommand(String name) {
-		commands.remove(name);
-	}
-	
-	public void reset(){
-		programCounter = 0;
-	}
-
-	public void interpret(Event event) {
-		if ((event == null) || event.getLines().length == 0) {
-			return;
-		}
-		reset();
-		lines = event.getLines();
-                System.out.println("reached interpret(Event), here's Event: " + lines.toString());
-		while (programCounter < lines.length) {
-			interpret(lines[programCounter++]);
-		}
-	}
-
-	public void interpret(String line) {// line is command typed by user,
-											// object is the gameobject
-		line = line.trim();
-            try {
-                Utils.writeEvent(line);
-            } catch (IOException ex) {
-                Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
-            }
-		if (line.startsWith("#"))
+        if ((event == null) || event.getLines().length == 0) {
+            return;
+        }
+        reset();
+        lines = event.getLines();
+        while (programCounter < lines.length) {
+            //System.out.println(lines[programCounter].toString());
+            interpret(lines[programCounter++]);
+        }
+    }
+    
+    public void interpret(String line) {// line is command typed by user,
+        // object is the gameobject
+        line = line.trim();
+        try {
+            Utils.writeEvent(line);
+        } catch (IOException ex) {
+            Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (line.startsWith("#"))
 			return;
 		String[] words = line.split(" +");
 		words = substitute(words);
@@ -94,19 +95,19 @@ public class Interpreter {
 		}
 	}
 
-	public void interpretSentence(String[] words) {// modified user typed
-														// sents are possible
-														// here
+	public void interpretSentence(String[] words) {
 		if (words.length < 1) {
 			return;
 		}
+                words = PhraseBuilder.replaceGameObjects(words);
 		phrase = PhraseBuilder.getPhrase(words);
 
 		if (phrase != null) {
-			System.out.println(phrase);
+                    //System.out.println("phrase is not null");
+			//System.out.println(phrase);
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
-			System.out.println(LocationManager.getInstance().getContext());
+			//System.out.println(LocationManager.getInstance().getContext());
 			Event event = object.getEvent(trigger);
 			interpret(event);
 		} else {
@@ -167,6 +168,6 @@ public class Interpreter {
 			}
 		}
 		return INSTANCE;
-	}
+	}	
 
 }

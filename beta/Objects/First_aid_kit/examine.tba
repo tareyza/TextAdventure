@@ -1,0 +1,11 @@
+if first_aid_kit in World.Ship.Closet
+	say "It seems like it might have some useful things in it." 
+
+if first_aid_kit in Inventory
+if is empty 
+	say "There is nothing more of use here."
+if is default
+	say "The first aid kit has band-aids and a bottle of rubbing alcohol in it."
+
+
+
