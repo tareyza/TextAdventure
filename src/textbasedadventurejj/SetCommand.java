@@ -25,9 +25,7 @@ public class SetCommand implements Command {
 			GameObject object = lmanager.getObject(Utils.getPathHead(words[0]));
 			object.getProperties().put(Utils.getPathTail(words[0]), words[2]);
 		} else if (words[0].equals("context")){
-			System.out.println("context");
 			Location location = lmanager.getSubLocation(words[1]);
-			System.out.println(location);
 			lmanager.setContext(location);
 		}
 	}
