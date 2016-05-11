@@ -12,6 +12,6 @@ public final class Constants {
 	public static final String STRUCTURE_FILE = "structures";
 	public static final String SAVE_FILE = "save";
 	public static final String ERROR_FILE = "error";
-    public static final String GAME_OBJECT_FILE = "gameobjects";
+    public static final String GAME_OBJECT_FILE = "aliases";
     public static final String NEW_GAME_FILE = "new";
 }

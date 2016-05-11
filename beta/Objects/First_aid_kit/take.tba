@@ -1,6 +1,7 @@
-if this in here
+if first_aid_kit in World.Ship.Closet
 	say You have taken the first aid kit.
-	set first_aid_kit in inventory
+	set first_aid_kit in Inventory
 
-if this in inventory
+
+if first_aid_kit in Inventory
 	say You've already taken that. 
