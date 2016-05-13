@@ -16,6 +16,7 @@ public class TestLoader {
 
 		gmanager.loadObjects();
 		lmanager.load();
+                
 		lmanager.setContext(LocationManager.getInstance().getSubLocation("World.Ship.Closet"));
 		RunGame.runGame();
 	}

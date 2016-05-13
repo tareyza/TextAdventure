@@ -145,7 +145,7 @@ public class Interpreter {
         for (int i = 0; i < words.length; ++i) {
             String sub = words[i];
             if (sub.startsWith("$")) {
-                System.out.println(sub);
+                //System.out.println(sub);
                 sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();
             } else if (sub.startsWith("@")) {
                 switch (sub.substring(1)) {
