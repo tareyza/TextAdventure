@@ -5,6 +5,8 @@ make Lamp in here as lamp
 make First_aid_kit in here as first_aid_kit
 make Broom in here as broom
 set first_aid_kit is hidden
+make Shelves in here as shelves
+set shelves is hidden
 make Door in here as control_room_door
 set control_room_door.new_location as World.Ship.ControlRoom
 set control_room_door is closed
