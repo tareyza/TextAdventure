@@ -40,13 +40,12 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            System.out.println(lines[programCounter].toString());
+        	System.out.println(lines[programCounter]);
             interpret(lines[programCounter++]);
         }
     }
     
-    public void interpret(String line) {// line is command typed by user,
-        // object is the gameobject
+    public void interpret(String line) {
         line = line.trim();
         try {
             Utils.writeEvent(line);
@@ -103,11 +102,8 @@ public class Interpreter {
 		phrase = PhraseBuilder.getPhrase(words);
 
 		if (phrase != null) {
-                    //System.out.println("phrase is not null");
-			//System.out.println(phrase);
 			GameObject object = phrase.getDirectObject();
 			Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
-			//System.out.println(LocationManager.getInstance().getContext());
 			Event event = object.getEvent(trigger);
 			interpret(event);
 		} else {

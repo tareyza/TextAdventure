@@ -6,14 +6,10 @@ public class SetCommand implements Command {
 
 	@Override
 	public void execute(String[] words) {
-		System.out.println("FIRST WORD OF COMMAND IS: " + words[0]);
 		if (words[1].equals("is")) {
 			GameObject object = lmanager.getObject(words[0]);
 			object.setState(words[2]);
-		} else if (words[1].equals("in")) {// "set" + objectName "in" +									// newLocation
-			System.out.println("object: "+words[0]);
-			System.out.println("from: " +lmanager.getContext().getName());
-
+		} else if (words[1].equals("in")) {
 			GameObject object = lmanager.getObject(words[0]);
 			Location currentLocation = lmanager.getContext();
 			String objectName = object.getName();
