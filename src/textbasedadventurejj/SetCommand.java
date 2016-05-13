@@ -28,6 +28,7 @@ public class SetCommand implements Command {
 			//System.out.println("context");
 			Location location = lmanager.getSubLocation(words[1]);
 			//System.out.println(location);
+			
 			lmanager.setContext(location);
 		}
 	}
