@@ -2,7 +2,7 @@ package textbasedadventurejj;
 
 public final class Constants {
 
-	public static final String ROOT = "C:\\Users\\quchen\\Documents\\GitHub\\TextAdventure\\beta\\";
+	public static final String ROOT = "C:\\Users\\Jerry\\Documents\\GitHub\\TextAdventure\\beta\\";
 
 	public static final String OBJECT_DIR = "Objects\\";
 	public static final String LOCATION_DIR = "Locations\\";

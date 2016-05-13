@@ -1,0 +1,6 @@
+if Player in World.Ship.Closet
+	set Player in World.Ship.Control
+	say You've now entered the control room. 
+
+if not Player in World.Ship.Closet
+	say You cannot do that. 
