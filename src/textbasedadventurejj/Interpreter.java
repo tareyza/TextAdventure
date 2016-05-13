@@ -71,7 +71,6 @@ public class Interpreter {
             input += " ";
         }
         printError(input);
-
     }
 
     public void printError(String line) {
@@ -113,7 +112,6 @@ public class Interpreter {
             //System.out.println(LocationManager.getInstance().getContext());
             Event event = object.getEvent(trigger);
                 interpret(event);
-            
         } else {
             interpretNonVerbSentence(words);
         }
