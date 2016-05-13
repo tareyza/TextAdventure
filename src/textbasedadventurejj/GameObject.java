@@ -37,7 +37,7 @@ public class GameObject {
 
 	public GameObject(String name, GameObject object) {
 		events = new HashMap<>(object.events);
-		System.out.println(events);
+		//System.out.println(events);
 		properties = new HashMap<>(object.properties);
 		parent = object.parent;
 		type = object;

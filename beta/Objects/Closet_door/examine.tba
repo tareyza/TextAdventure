@@ -1,5 +1,4 @@
 if first_aid_kit in World.Ship.Closet
-	if first_aid_kit is default
 	say It seems like it might have some useful things in it. 
 
 if first_aid_kit in Inventory

@@ -1,0 +1,9 @@
+if closet_door is closed
+	say This door is already closed.  
+
+if closet_door is open
+	say You close the closet door again. The room is once again dark.
+	set closet_door is closed
+
+
+

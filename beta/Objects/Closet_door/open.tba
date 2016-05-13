@@ -1,0 +1,14 @@
+if closet_door is closed
+	say You open the closet door. A light washes into the room, illuminating it. You realize now you are in a closet of sorts. But why would you be here? The light also reveals a broom in the corner of the closet and a shelf with some potentially useful things. On the other side of the door, there is a brightly lit room. 
+	set closet_door is open
+
+
+if closet_door is open
+	say The door is already opened.
+
+
+
+
+
+
+

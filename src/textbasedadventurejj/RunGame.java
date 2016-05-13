@@ -39,6 +39,7 @@ public class RunGame {
 		} catch (IOException ex) {
 			Logger.getLogger(RunGame.class.getName()).log(Level.SEVERE, null, ex);
 		}
+                
 		runGame();
 	}
 
