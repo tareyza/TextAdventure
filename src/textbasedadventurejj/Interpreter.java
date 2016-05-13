@@ -48,6 +48,7 @@ public class Interpreter {
 
     public void interpret(String line) {// line is command typed by user,
         // object is the gameobject
+
         line = line.trim();
         try {
             Utils.writeEvent(line);
@@ -176,5 +177,4 @@ public class Interpreter {
         }
         return INSTANCE;
     }
-
 }

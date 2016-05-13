@@ -5,7 +5,6 @@ public final class Constants {
 	public static final String ROOT = "C:\\Users\\Jerry\\Documents\\GitHub\\TextAdventure\\beta\\";
  	//public static final String ROOT ="C:/cygwin64/home/jarge_000/Coding/TBA/beta";
 
-
 	public static final String OBJECT_DIR = "Objects/";
 	public static final String LOCATION_DIR = "Locations/";
 	public static final String OBJECT_FILE = "objects";

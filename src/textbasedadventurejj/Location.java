@@ -76,6 +76,7 @@ public class Location {
 	private String toString(String buffer, int level) {
 		buffer += indented(name + "\n", level);
 		for (GameObject obj : children.values()) {
+			System.out.println(obj);
 			buffer += indented(obj.getName() + ":" + obj.getType().getName() + "\n", level + 1);
 		}
 		for (Location loc : subLocations.values()) {

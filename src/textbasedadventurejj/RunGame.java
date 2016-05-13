@@ -11,7 +11,7 @@ public class RunGame {
 
 	static boolean gameIsRunning;
 
-	private void RunGame() {
+	private RunGame() {
 	}
 
 	public static void loadSavedGame() {
@@ -50,14 +50,13 @@ public class RunGame {
 
 	public static void runGame() {
 		gameIsRunning = true;
-			loadSavedGame();
+		loadSavedGame();
 		Scanner scanner = new Scanner(System.in);
 		boolean commandExecuted = false;
 		while (gameIsRunning) {
-			System.out.println("");
+			System.out.println(LocationManager.getInstance().getRoot());
 			String nextLine = scanner.nextLine();
 			Interpreter.getInstance().interpret("do " + nextLine + " player");
-			//System.out.println(LocationManager.getInstance().getRoot());
 			Interpreter.getInstance().interpret(nextLine);
 		}
 	}
