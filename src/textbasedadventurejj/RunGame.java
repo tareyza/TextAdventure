@@ -54,7 +54,7 @@ public class RunGame {
 		Scanner scanner = new Scanner(System.in);
 		boolean commandExecuted = false;
 		while (gameIsRunning) {
-			System.out.println(LocationManager.getInstance().getRoot());
+			//System.out.println(LocationManager.getInstance().getRoot());
 			String nextLine = scanner.nextLine();
 			Interpreter.getInstance().interpret("do " + nextLine + " player");
 			Interpreter.getInstance().interpret(nextLine);
