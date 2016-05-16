@@ -1,2 +1,5 @@
 make Door in here as closet_door
 set closet_door.new_location as World.Ship.Closet
+make Control in here as control 
+
+do examine player control 

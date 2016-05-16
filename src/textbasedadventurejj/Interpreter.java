@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            System.out.println(lines[programCounter].toString());
+            //System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -108,10 +108,14 @@ public class Interpreter {
             //System.out.println("phrase is not null");
             //System.out.println(phrase);
             GameObject object = phrase.getDirectObject();
+            if (object == null) {
+                printError(words);
+                return;
+            }
             Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
             //System.out.println(LocationManager.getInstance().getContext());
             Event event = object.getEvent(trigger);
-                interpret(event);
+            interpret(event);
         } else {
             interpretNonVerbSentence(words);
         }
