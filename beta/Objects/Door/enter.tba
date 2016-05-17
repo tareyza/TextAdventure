@@ -1,3 +1,5 @@
 set @subject in $new_location
 set context $new_location
-do examine$new_location player
+
+say $new_location
+do examine $new_location player

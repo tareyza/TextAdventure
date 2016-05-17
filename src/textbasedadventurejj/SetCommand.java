@@ -11,12 +11,12 @@ public class SetCommand implements Command {
 			GameObject object = lmanager.getObject(words[0]);
 			object.setState(words[2]);
 		} else if (words[1].equals("in")) {// "set" + objectName "in" +									// newLocation
-			//System.out.println("object: "+words[0]);
-			//System.out.println("from: " +lmanager.getContext().getName());
+			System.out.println("object: "+words[0]);
+			System.out.println("from: " +lmanager.getContext().getName());
 			GameObject object = lmanager.getObject(words[0]);
 			Location currentLocation = lmanager.getContext();
 			String objectName = object.getName();
-			//System.out.println("to: "+words[2]);
+			System.out.println("to: "+words[2]);
 			Location newLocation = lmanager.getSubLocation(words[2]);
 			currentLocation.getChildren().remove(object.getName());
 			newLocation.getChildren().put(objectName, object);
