@@ -1,0 +1,6 @@
+if door is closed
+	say The door is already closed.
+
+if door is open
+	say You've closed the door.
+	set door is closed

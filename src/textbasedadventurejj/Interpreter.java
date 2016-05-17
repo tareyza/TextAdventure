@@ -110,8 +110,10 @@ public class Interpreter {
             GameObject object = phrase.getDirectObject();
             if (object == null) {
                 printError(words);
+                //System.out.println("obj: "+object);
                 return;
             }
+            //System.out.println("verb is: "+phrase.getVerb());
             Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
             //System.out.println(LocationManager.getInstance().getContext());
             Event event = object.getEvent(trigger);
