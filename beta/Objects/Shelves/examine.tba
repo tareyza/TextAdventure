@@ -1,7 +1,9 @@
+
+
 if closet_door is closed 
 	say You cannot make it out. 
 
-if close_door is open
+if closet_door is open
 	say You look around the shelves, but most of the things on it seem pretty useless. The only thing that might be helpful is a first aid kit. 
 	set first_aid_kit is default
 

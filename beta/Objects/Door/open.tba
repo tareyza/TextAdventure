@@ -1,0 +1,6 @@
+if @object is open
+	say The door is already open. 
+
+if @object is closed
+	say You open the door.
+	set @object is open

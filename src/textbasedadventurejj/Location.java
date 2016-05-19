@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 
-public class Location {
+public class Location extends GameObject{
 
 	private String name;
 	private Map<String, GameObject> children;
@@ -14,6 +14,7 @@ public class Location {
 	private Location parentLocation;
 
 	public Location(String name, Location parentLocation) {
+            super(name);
 		this.name = name;
 		this.children = new HashMap<>();
 		this.subLocations = new HashMap<>();
