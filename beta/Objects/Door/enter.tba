@@ -1,5 +1,9 @@
-set @subject in $new_location
-set context $new_location
+if @object is closed
+	say The door is closed.
 
-say $new_location
-do examine $new_location player
+if @object is open
+	set @subject in $new_location
+	set context $new_location
+	say $new_location
+	do examine $new_location player
+
