@@ -8,6 +8,7 @@ public class Location {
 
 	private String name;
 	private Map<String, GameObject> children;
+	private Map<String, String> aliases;
 	private Map<String, Location> subLocations;
 	private Map<String, Location> adjacentLocations;
 	private Location parentLocation;
@@ -41,6 +42,10 @@ public class Location {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Map<String, String> getAliases(){
+		return this.aliases;
 	}
 
 	public Map<String, GameObject> getChildren() {

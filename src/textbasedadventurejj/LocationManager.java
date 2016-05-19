@@ -7,8 +7,8 @@ public class LocationManager {
 
 	private static volatile LocationManager INSTANCE;
 
-	Location root;
-	Location context;
+	private Location root;
+	private Location context;
 
 	private LocationManager() {
 	}
