@@ -87,8 +87,10 @@ public class Interpreter {
             return;
         }
         String command = words[0];
+        String[] argv = Arrays.copyOfRange(words, 1, words.length);
+        argv = alias(argv);
         if (commands.containsKey(command)) {
-            commands.get(command).execute(Arrays.copyOfRange(words, 1, words.length));
+            commands.get(command).execute(argv);
         }
     }
 
@@ -142,6 +144,20 @@ public class Interpreter {
             interpret(event);
             printError(words);
         }
+    }
+    
+    private String[] alias(String[] words){
+    	String[] substituted = new String[words.length];
+    	Map<String, String> aliases = LocationManager.getInstance().getContext().getAliases();
+        for (int i = 0; i < words.length; ++i) {
+            String sub = words[i];
+            if(aliases.containsKey(sub)){
+            	substituted[i] = aliases.get(sub);
+            }else{
+            	substituted[i] = sub;
+            }
+        }
+        return substituted;
     }
 
     private String[] substitute(String[] words) {
