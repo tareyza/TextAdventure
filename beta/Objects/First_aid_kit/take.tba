@@ -1,7 +1,8 @@
-if first_aid_kit in World.Ship.Closet
-	say You have taken the first aid kit.
-	set first_aid_kit in Inventory
-
-
-if first_aid_kit in Inventory
+if @subject in Inventory
 	say You've already taken that. 
+
+if @subject in World.Ship.Closet
+	set @subject in Inventory
+	set context Inventory
+	say You've taken the first aid kit. Perhaps it might come in handy later. 
+

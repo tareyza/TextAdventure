@@ -23,7 +23,7 @@ public class PhraseBuilder {
     public static String[] replaceGameObjects(String[] words) {
         for (String sentence : gameObjectAliases) {
             String replaceWith = sentence.substring(0, sentence.indexOf(" "));
-            String matchTo = sentence.substring(sentence.indexOf(" ") + 1);
+            String matchTo = sentence.substring(sentence.indexOf(" ") + 1).trim();
             String wordsString = "";
             for (int i = 0; i < words.length; i++) {
                 wordsString += words[i] + " ";
