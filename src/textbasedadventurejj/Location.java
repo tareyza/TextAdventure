@@ -15,6 +15,7 @@ public class Location extends GameObject{
 
 	public Location(String name, Location parentLocation) {
             super(name);
+            this.aliases = new HashMap<>();
 		this.name = name;
 		this.children = new HashMap<>();
 		this.subLocations = new HashMap<>();
