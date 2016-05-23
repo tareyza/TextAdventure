@@ -4,3 +4,6 @@ if @object is closed
 if @object is open
 	say You've closed the door.
 	set @object is closed
+if Player in World.Ship.Closet
+	say The room is now dark.
+ 

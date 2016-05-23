@@ -1,0 +1,5 @@
+if @object is open
+	say The door is open. 
+
+if @object is closed
+	say The door is closed.	

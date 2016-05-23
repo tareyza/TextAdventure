@@ -1,3 +1,5 @@
 enter:enter.tba
 open:open.tba
 close:close.tba
+examine:examine.tba
+look:look.tba

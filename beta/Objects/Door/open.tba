@@ -4,3 +4,6 @@ if @object is open
 if @object is closed
 	say You open the door.
 	set @object is open
+if Player in World.Ship.Closet
+	say A light washes into the room, illuminating it. You realize now you are in a closet of sorts. But why would you be here? The light also reveals a broom in the corner of the closet and a shelf with some potentially useful things. On the other side of the door, there is a brightly lit room.
+	set shelves is default
