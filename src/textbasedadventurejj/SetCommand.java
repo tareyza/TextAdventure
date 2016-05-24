@@ -1,5 +1,7 @@
 package textbasedadventurejj;
 
+import java.util.Arrays;
+
 public class SetCommand implements Command {
 
 	private LocationManager lmanager = LocationManager.getInstance();
@@ -28,7 +30,12 @@ public class SetCommand implements Command {
 			lmanager.setContext(location);
 		} else if (words[1].equals("alias")){
 			Location context = lmanager.getContext();
-			context.getAliases().put(words[0], words[2]);
+			String buffer = "";
+			for(String str : Arrays.copyOfRange(words, 2, words.length)){
+				buffer += str + " ";
+			}
+			buffer = buffer.trim();
+			context.getAliases().put(buffer, words[0]);
 		}
 	}
 }
