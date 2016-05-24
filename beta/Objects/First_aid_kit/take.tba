@@ -1,8 +1,8 @@
-if @subject in Inventory
+if @object in Inventory
 	say You've already taken that. 
 
-if @subject in World.Ship.Closet
-	set @subject in Inventory
+if @object in World.Ship.Closet
+	set @object in Inventory
 	set context Inventory
 	say You've taken the first aid kit. Perhaps it might come in handy later. 
 

@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            System.out.println(lines[programCounter].toString());
+            //System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -89,8 +89,8 @@ public class Interpreter {
         String command = words[0];
         String[] argv = Arrays.copyOfRange(words, 1, words.length);
         argv = alias(argv);
-        System.out.println(Arrays.toString(argv));
-        System.out.println(LocationManager.getInstance().getContext().getAliases());
+        //System.out.println(Arrays.toString(argv));
+        //System.out.println(LocationManager.getInstance().getContext().getAliases());
         if (commands.containsKey(command)) {
             commands.get(command).execute(argv);
         }
@@ -154,7 +154,7 @@ public class Interpreter {
         for (int i = 0; i < words.length; ++i) {
             String sub = words[i];
             if(aliases.containsKey(sub)){
-            	System.out.println("---------------substituted");
+            	//System.out.println("---------------substituted");
             	substituted[i] = aliases.get(sub);
             }else{
             	substituted[i] = sub;
