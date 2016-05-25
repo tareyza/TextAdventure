@@ -15,6 +15,7 @@ drop everything
 eat OBJECT
 enter OBJECT
 examine OBJECT
+examine
 fill OBJECT
 get off OBJECT
 give OBJECT to INDIRECT
@@ -27,6 +28,7 @@ listen to OBJECT
 lock OBJECT
 lock OBJECT with INDIRECT
 look 
+look around
 look inside OBJECT
 look under OBJECT
 look at OBJECT

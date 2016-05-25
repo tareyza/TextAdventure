@@ -102,6 +102,9 @@ public class PhraseBuilder {
                         verb += phraseArr[i] + " ";
                     }
                 }
+                if((phraseArr[0].equals("look")||phraseArr[0].equals("examine"))&&phrase.getDirectObject()==null){
+                phrase.setDirectObject(lmanager.getObjectInCurrentRoom(lmanager.getContext().getName().toLowerCase()));
+                }
                 phrase.setVerb(verb.trim());
                 //System.out.println("phrase is: " + phrase.toString());
                 return phrase;

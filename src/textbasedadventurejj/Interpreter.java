@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            //System.out.println(lines[programCounter].toString());
+            System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -74,7 +74,7 @@ public class Interpreter {
     }
 
     public void printError(String line) {
-        System.out.println("I cannot understand that unfortunately.");
+        System.out.println("I cannot understand that unfortunately. Try typing in something else.");
         try {
             Utils.writeError(line);
         } catch (IOException ex) {
@@ -145,19 +145,21 @@ public class Interpreter {
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
             printError(words);
+        } else {
+            System.out.println("I'm sorry, what you said doesn't make sense to me.");
         }
     }
-    
-    private String[] alias(String[] words){
-    	String[] substituted = new String[words.length];
-    	Map<String, String> aliases = LocationManager.getInstance().getContext().getAliases();
+
+    private String[] alias(String[] words) {
+        String[] substituted = new String[words.length];
+        Map<String, String> aliases = LocationManager.getInstance().getContext().getAliases();
         for (int i = 0; i < words.length; ++i) {
             String sub = words[i];
-            if(aliases.containsKey(sub)){
-            	//System.out.println("---------------substituted");
-            	substituted[i] = aliases.get(sub);
-            }else{
-            	substituted[i] = sub;
+            if (aliases.containsKey(sub)) {
+                //System.out.println("---------------substituted");
+                substituted[i] = aliases.get(sub);
+            } else {
+                substituted[i] = sub;
             }
         }
         return substituted;
