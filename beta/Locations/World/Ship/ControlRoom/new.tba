@@ -1,10 +1,14 @@
+make ControlRoom in here as control_room
+
 make Door in here as closet_door
 set closet_door.new_location as World.Ship.Closet
 make ControlRoom in here as controlroom
+set closet_door is closed
+set closet_door alias closet door
 make Door in here as armory_door
 set armory_door.new_location as World.Ship.Armory
-set closet_door alias closet door
-alias armory_door armory door
+set armory_door is closed
+set alias armory_door armory door
+
 make Controls in here as controls
 set controls is hidden
-set armory_door is closed
