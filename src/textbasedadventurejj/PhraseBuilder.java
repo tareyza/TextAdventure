@@ -103,10 +103,11 @@ public class PhraseBuilder {
                     }
                 }
                 if((phraseArr[0].equals("look")||phraseArr[0].equals("examine"))&&phrase.getDirectObject()==null){
+                    System.out.println("inside look/examine part, here's getName: "+lmanager.getContext().getName());
                 phrase.setDirectObject(lmanager.getObjectInCurrentRoom(lmanager.getContext().getName().toLowerCase()));
                 }
                 phrase.setVerb(verb.trim());
-                //System.out.println("phrase is: " + phrase.toString());
+                System.out.println("phrase is: " + phrase.toString());
                 return phrase;
             }
         }

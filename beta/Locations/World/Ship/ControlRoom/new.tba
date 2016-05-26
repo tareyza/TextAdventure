@@ -1,6 +1,6 @@
 make Door in here as closet_door
 set closet_door.new_location as World.Ship.Closet
-make ControlRoom in here as control_room
+make ControlRoom in here as controlroom
 make Door in here as armory_door
 set armory_door.new_location as World.Ship.Armory
 set closet_door alias closet door

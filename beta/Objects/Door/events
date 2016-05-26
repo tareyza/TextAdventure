@@ -3,3 +3,4 @@ open:open.tba
 close:close.tba
 examine:examine.tba
 look:examine.tba
+look at:examine.tba
