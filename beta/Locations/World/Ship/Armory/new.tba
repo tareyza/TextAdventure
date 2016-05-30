@@ -2,5 +2,11 @@ make Armory in here as armory
 
 make Door in here as control_room_door
 set control_room_door alias door
-set door.new_location as World.Ship.ControlRoom
+set control_room_door.new_location as World.Ship.ControlRoom
 set door is closed
+
+make Baton_rack in here as baton_rack
+set baton_rack is open
+make Rifle in here as rifle
+make Handgun in here as handgun
+make Baton in here as baton
