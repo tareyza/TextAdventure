@@ -1,5 +1,4 @@
 Weapon
-Lamp
 Sword:Weapon
 Door
 Player
@@ -12,3 +11,7 @@ Closet
 ControlRoom
 Controls
 Armory
+Rifle
+Handgun
+Baton
+Baton_rack
