@@ -7,6 +7,7 @@ set door is closed
 
 make Baton_rack in here as baton_rack
 set baton_rack is open
+
 make Rifle in here as rifle
 make Handgun in here as handgun
 make Baton in here as baton

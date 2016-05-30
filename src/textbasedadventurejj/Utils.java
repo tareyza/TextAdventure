@@ -22,11 +22,16 @@ class Utils {
 	public static void writeError(String input) throws IOException {
 		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE, true);
 		writer.write(input);
+		writer.close();
 	}
         
         public static void writeEvent(String input) throws IOException {
+        if(input.equals("do exit player") || input.equals("do quit player")){
+        	return;
+        }
 		FileWriter writer = new FileWriter(Constants.ROOT + Constants.SAVE_FILE, true);
-		writer.write(input);
+		writer.write(input + "\n");
+		writer.close();
 	}
 
 	public static String readFile(File file) throws IOException {
