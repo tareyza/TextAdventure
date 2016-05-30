@@ -1,0 +1,17 @@
+if @object in Inventory
+	if @object is opened
+		say Nothing happens. The first aid kit is already opened. 
+
+
+if @object in Inventory
+	if @object is default
+		say You open the first aid kit and find some rubbing alcohol and band aids inside. You take these out of the first aid kit and stash them in your pocket.
+		make Band_aids in here as band_aids
+		set band_aids is default
+		make Rubbing_alcohol in here as rubbing_alcohol
+		set rubbing_alcohol is default
+		set @object is opened
+
+
+if not @object in Inventory
+	say Nothing happens. 

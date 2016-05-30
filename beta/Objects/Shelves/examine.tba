@@ -4,5 +4,6 @@ if door is closed
 if door is open
 	say You look around the shelves, but most of the things on it seem pretty useless. The only thing that might be helpful is a first aid kit. 
 	set @object is default
+	set first_aid_kit is default
 
 

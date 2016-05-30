@@ -16,6 +16,7 @@ eat OBJECT
 enter OBJECT
 examine OBJECT
 examine
+extract OBJECT
 fill OBJECT
 get off OBJECT
 give OBJECT to INDIRECT

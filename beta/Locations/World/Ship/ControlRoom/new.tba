@@ -8,7 +8,7 @@ set closet_door alias closet door
 make Door in here as armory_door
 set armory_door.new_location as World.Ship.Armory
 set armory_door is closed
-set alias armory_door armory door
+set armory_door alias armory door
 
 make Controls in here as controls
 set controls is hidden
