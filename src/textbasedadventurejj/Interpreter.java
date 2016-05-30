@@ -48,7 +48,6 @@ public class Interpreter {
 
     public void interpret(String line) {// line is command typed by user,
         // object is the gameobject
-
         line = line.trim();
         if (line.startsWith("#")) {
             return;
@@ -100,6 +99,7 @@ public class Interpreter {
         if (words.length < 1) {
             return;
         }
+        
         words = PhraseBuilder.replaceGameObjects(words);
         phrase = PhraseBuilder.getPhrase(words);
 
@@ -118,6 +118,7 @@ public class Interpreter {
             Event event = object.getEvent(trigger);
             interpret(event);
         } else {
+            
             interpretNonVerbSentence(words);
         }
     }
@@ -140,7 +141,7 @@ public class Interpreter {
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
         } else {
-            System.out.println("I'm sorry, what you said doesn't make sense to me.");
+            printError(words);
         }
     }
 

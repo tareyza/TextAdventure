@@ -1,3 +1,2 @@
-do open door player
-do close door player
+do debug player
 do open door player
