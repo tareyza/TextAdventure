@@ -1,5 +1,4 @@
 make ControlRoom in here as control_room
-
 make Door in here as closet_door
 set closet_door.new_location as World.Ship.Closet
 make ControlRoom in here as controlroom
