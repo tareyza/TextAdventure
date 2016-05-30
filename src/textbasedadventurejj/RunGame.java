@@ -1,5 +1,6 @@
 package textbasedadventurejj;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -22,23 +23,20 @@ public class RunGame {
                 Interpreter.getInstance().interpret(element);
             }
         } catch (IOException ex) {
-            Logger.getLogger(RunGame.class.getName()).log(Level.SEVERE, null, ex);
+            File file = new File(Constants.ROOT + Constants.SAVE_FILE);
+            try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
         }
     }
 
     public static void newGame() {
         System.out.println("Your game is being restarted.");
         gameIsRunning = false;
-        String events;
-        try {
-            events = Utils.readFile(Constants.ROOT + Constants.NEW_GAME_FILE);
-            events = events.trim();
-            FileWriter writer = new FileWriter(Constants.ROOT + Constants.SAVE_FILE, false);
-            writer.write(events);
-        } catch (IOException ex) {
-            Logger.getLogger(RunGame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        File file = new File(Constants.ROOT + Constants.SAVE_FILE);
+        file.delete();
         runGame();
     }
 
@@ -48,16 +46,21 @@ public class RunGame {
     }
 
     public static void runGame() {
+		try {
+			loadSavedGame();
+			gameIsRunning = true;
+			
+			loadSavedGame();
+	        Scanner scanner = new Scanner(System.in);
+	        while (gameIsRunning) {
+	            String nextLine = "do " + scanner.nextLine() + " player";
+	            Interpreter.getInstance().interpret(nextLine);
+	            Utils.writeEvent(nextLine);
+	        }
+	        scanner.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         
-        gameIsRunning = true;
-        loadSavedGame();
-        Scanner scanner = new Scanner(System.in);
-        boolean commandExecuted = false;
-        while (gameIsRunning) {
-            //System.out.println(LocationManager.getInstance().getRoot());
-            String nextLine = scanner.nextLine();
-            Interpreter.getInstance().interpret("do " + nextLine + " player");
-            Interpreter.getInstance().interpret(nextLine);
-        }
     }
 }

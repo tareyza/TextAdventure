@@ -50,11 +50,6 @@ public class Interpreter {
         // object is the gameobject
 
         line = line.trim();
-        try {
-            Utils.writeEvent(line);
-        } catch (IOException ex) {
-            Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
-        }
         if (line.startsWith("#")) {
             return;
         }
@@ -144,7 +139,6 @@ public class Interpreter {
             GameObject object = phrase.getSubject();
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
-            printError(words);
         } else {
             System.out.println("I'm sorry, what you said doesn't make sense to me.");
         }
@@ -170,6 +164,7 @@ public class Interpreter {
         for (int i = 0; i < words.length; ++i) {
             String sub = words[i];
             if (sub.startsWith("$")) {
+            	System.out.println(Arrays.toString(words));
                 //System.out.println(sub);
                 sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();
             } else if (sub.startsWith("@")) {
