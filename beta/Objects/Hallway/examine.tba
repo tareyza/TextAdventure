@@ -1,9 +1,1 @@
-if door is closed
-say You are in a dark room. Some distance away, you can make out the outline of a doorway. The small light barely illuminates the room, allowing you to see that there may be things in this room. 
-
-if door is open
-say You are in a closet of sorts. But why would you be here? The light also reveals a broom in the corner of the closet and a shelf with some potentially useful things. On the other side of the door, there is a brightly lit room. 
-
-
-
-
+say You are in a fairly long hallway, well illuminated by a line of ceiling lights. Several doors are along this hallway, most of which have illuminated lights indicating where they lead. On one side of the hallway doors lead to the control room, the library, and an unknown room behind a circular glass door. The glass door is too grimy to see through. On the other side the hallway leads to the cafeteria before going upstairs, though rubble seems to have blocked this part off.  

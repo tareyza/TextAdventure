@@ -1,0 +1,17 @@
+make Door in here as control_room_door
+set control_room_door is open
+set control_room_door.new_location as World.Ship.ControlRoom
+
+make Door in here as airlock_door
+set airlock_door.new_location as World.Ship.Airlock
+set airlock_door is grimy
+
+make Door in here as cafeteria_door
+set cafeteria_door is open
+set cafeteria_door.new_location as World.Ship.Cafeteria
+
+make Door in here as library_door
+set library_door is open
+set library_door.new_location as World.Ship.Library 
+
+make Rubble in here as rubble
