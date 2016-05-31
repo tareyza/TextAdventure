@@ -6,4 +6,3 @@ if @object is open
 	set @object is closed
 if Player in World.Ship.Closet
 	say The room is now dark.
- 
