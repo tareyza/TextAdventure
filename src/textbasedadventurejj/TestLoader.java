@@ -17,11 +17,12 @@ public class TestLoader {
         System.out.println("CLOSET");
         GameObjectManager gmanager = GameObjectManager.getInstance();
         LocationManager lmanager = LocationManager.getInstance();
-
+        System.out.println("____________________________________________________________________");
         gmanager.loadObjects();
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
         lmanager.load();
-
-        lmanager.setContext(LocationManager.getInstance().getSubLocation("World.Ship.Closet"));
+        System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        lmanager.setContext(lmanager.getSubLocation("World.Ship.Closet"));
         
         RunGame.runGame();
     }

@@ -1,0 +1,9 @@
+enter hallway_door player 
+enter hallway door player 
+examine World.Ship.Hallway player 
+enter control player 
+examine glass door player 
+pour rubbing_alcohol on airlock door player 
+pour rubbing_alcohol on airlock door player 
+pour rubbing_alcohol on glass door player 
+clean glass door with rubbing_alcohol player 

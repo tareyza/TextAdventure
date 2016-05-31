@@ -25,10 +25,10 @@ public class RunGame {
         } catch (IOException ex) {
             File file = new File(Constants.ROOT + Constants.SAVE_FILE);
             try {
-				file.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -50,7 +50,7 @@ public class RunGame {
     }
 
     public static void runGame() {
-        
+
         GameObjectManager gmanager = GameObjectManager.getInstance();
         LocationManager lmanager = LocationManager.getInstance();
 
@@ -58,19 +58,19 @@ public class RunGame {
         lmanager.load();
 
         lmanager.setContext(LocationManager.getInstance().getSubLocation("World.Ship.Closet"));
-		try {
-			loadSavedGame();
-			gameIsRunning = true;
-	        Scanner scanner = new Scanner(System.in);
-	        while (gameIsRunning) {
-	            String nextLine = "do " + scanner.nextLine() + " player";
-	            Interpreter.getInstance().interpret(nextLine);
-	            //Utils.writeEvent(nextLine);
-	        }
-	        scanner.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        
+        try {
+            loadSavedGame();
+            gameIsRunning = true;
+            Scanner scanner = new Scanner(System.in);
+            while (gameIsRunning) {
+                String nextLine = "do " + scanner.nextLine() + " player";
+                Interpreter.getInstance().interpret(nextLine);
+                //Utils.writeEvent(nextLine);
+            }
+            scanner.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

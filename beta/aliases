@@ -18,3 +18,5 @@ baton_rack baton rack
 library_door library door
 airlock_door airlock door
 cafeteria_door cafeteria door
+airlock_door glass door
+airlock_door circular door

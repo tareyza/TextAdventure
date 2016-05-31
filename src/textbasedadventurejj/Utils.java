@@ -31,7 +31,8 @@ class Utils {
         	return;
         }
 		FileWriter writer = new FileWriter(Constants.ROOT + Constants.SAVE_FILE, true);
-		writer.write(input + "\n");
+		writer.write(input);
+                writer.append(System.getProperty("line.separator"));
 		writer.close();
 	}
 

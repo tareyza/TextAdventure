@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            //System.out.println(lines[programCounter].toString());
+            System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -106,7 +106,7 @@ public class Interpreter {
             //System.out.println("phrase is not null");
             //System.out.println("phrase is: "+phrase);
             GameObject object = phrase.getDirectObject();
-            System.out.println("object:"+object.toString());
+            //System.out.println("object:"+object.toString());
             if (object == null) {
                 printError(words);
                 //System.out.println("obj: "+object);
@@ -170,7 +170,7 @@ public class Interpreter {
         for (int i = 0; i < words.length; ++i) {
             String sub = words[i];
             if (sub.startsWith("$")) {
-                System.out.println(Arrays.toString(words));
+                //System.out.println(Arrays.toString(words));
                 //System.out.println(sub);
                 sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();
             } else if (sub.startsWith("@")) {
