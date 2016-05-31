@@ -101,10 +101,12 @@ public class Interpreter {
 
         words = PhraseBuilder.replaceGameObjects(words);
         phrase = PhraseBuilder.getPhrase(words);
-
+        System.out.println("substitute input is: ");
+            for (String s : words) {
+                System.out.print(s+" ");
+        }
         if (phrase != null) {
-            //System.out.println("phrase is not null");
-            //System.out.println("phrase is: "+phrase);
+            System.out.println("phrase is: "+phrase);
             GameObject object = phrase.getDirectObject();
             //System.out.println("object:"+object.toString());
             if (object == null) {
@@ -112,10 +114,10 @@ public class Interpreter {
                 //System.out.println("obj: "+object);
                 return;
             }
-            //System.out.println("verb is: "+phrase.getVerb());
             Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
-            //System.out.println(LocationManager.getInstance().getContext());
             Event event = object.getEvent(trigger);
+            //System.out.println("trigger is:"+trigger.toString());
+            //System.out.println("event is:"+event.toString());
             interpret(event);
         } else {
 

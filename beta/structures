@@ -8,6 +8,7 @@ buy OBJECT
 climb OBJECT
 close OBJECT
 cut OBJECT
+clean OBJECT with INDIRECT
 dig OBJECT
 drink OBJECT
 drop OBJECT

@@ -7,6 +7,10 @@ set control_room_door.new_location as World.Ship.ControlRoom
 make Door in here as airlock_door
 set airlock_door.new_location as World.Ship.Airlock
 set airlock_door is grimy
+set airlock_door alias glass door
+set airlock_door alias circular door
+set airlock_door alias airlock door
+set airlock_door alias airlock
 
 make Door in here as cafeteria_door
 set cafeteria_door is open

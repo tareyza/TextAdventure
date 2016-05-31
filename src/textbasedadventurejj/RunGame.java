@@ -32,15 +32,19 @@ public class RunGame {
         }
     }
 
+    public static void printNewGameText() {
+        System.out.println("Welcome to Jerry and Jared's text based adventure. \nHere's some basic tips: In general to travel between rooms you have to type \"enter door.\" If there is more than door in a room, type something like \"enter hallway door\".\nWhen in doubt, type \"look around\" or \"examine\" to examine your surroundings and objects and \"take\" to take items. \nMake sure you start each command you type in with a verb, like \"say yes\" or \"open door\"");
+        System.out.println("Your game automatically saves progress. If you want to exit game, type \"exit.\" Typing \"inventory\" will show your current items. If you want to restore to a new game, type \"restore.\"");
+        System.out.println("");
+        System.out.println("CLOSET");
+    }
+
     public static void newGame() {
         System.out.println("Your game is being restarted.\n\n\n\n");
         gameIsRunning = false;
         File file = new File(Constants.ROOT + Constants.SAVE_FILE);
         file.delete();
-        System.out.println("Welcome to Jerry and Jared's text based adventure. \nHere's some basic tips: In general to travel between rooms you have to type \"enter door.\" If there is more than door in a room, type something like \"enter hallway door\".\nWhen in doubt, type \"look around\" or \"examine\" to examine your surroundings and objects and \"take\" to take items. \nMake sure you start each command you type in with a verb, like \"say yes\" or \"open door\"");
-        System.out.println("Your game automatically saves progress. If you want to exit game, type \"exit.\" Typing \"inventory\" will show your current items. If you want to restore to a new game, type \"restore.\"");
-        System.out.println("");
-        System.out.println("CLOSET");
+
         runGame();
     }
 
@@ -65,7 +69,7 @@ public class RunGame {
             while (gameIsRunning) {
                 String nextLine = "do " + scanner.nextLine() + " player";
                 Interpreter.getInstance().interpret(nextLine);
-                //Utils.writeEvent(nextLine);
+                Utils.writeEvent(nextLine);
             }
             scanner.close();
         } catch (Exception e) {

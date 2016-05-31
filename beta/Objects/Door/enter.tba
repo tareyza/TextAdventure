@@ -7,3 +7,10 @@ if @object is open
 	say $new_location
 	do examine $new_location player
 
+if @object in World.Ship.Hallway
+	if @object is grimy
+		say You cannot figure out how to open the door.
+
+	if @object is clean
+		say You still cannot open the doorway. You need a keypad combination. 
+

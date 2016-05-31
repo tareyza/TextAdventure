@@ -4,4 +4,5 @@ close:close.tba
 examine:examine.tba
 look:examine.tba
 look at:examine.tba
-pour on:pour.tba
+pour on,rubbing_alcohol,default:{}:pour.tba
+clean with,rubbing_alcohol,default:{}:pour.tba

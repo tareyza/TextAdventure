@@ -8,5 +8,4 @@ make Closet in here as closet
 set control_room_door.new_location as World.Ship.ControlRoom
 set control_room_door is closed
 set control_room_door alias door
-
 do examine closet player
