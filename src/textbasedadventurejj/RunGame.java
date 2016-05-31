@@ -33,7 +33,11 @@ public class RunGame {
     }
 
     public static void printNewGameText() {
-        System.out.println("Welcome to Jerry and Jared's text based adventure! \nHere's some basic tips: In general to travel between rooms you have to type \"enter door.\" If there is more than door in a room, type something like \"enter hallway\".\nWhen in doubt, type \"look around\" or \"examine\" to examine your surroundings and objects and \"take\" to take items. \nMake sure you start each command you type in with a verb, like \"say yes\" or \"open door.\" Avoid typing in articles like \"the\" and if something doesn't work, try using a synonym.");
+        System.out.println("WELCOME TO JERRY AND JARED'S TEXT BASAED ADVENTURE!");
+        System.out.println("Here's some basic tips:");
+        System.out.println("In general to travel between rooms you have to type \"enter door.\" If there is more than door in a room, type something like \"enter hallway\".");
+        System.out.println("When in doubt, type \"look around\" or \"examine\" to examine your surroundings and objects and \"take\" to take items.");
+        System.out.println("Make sure you start each command you type in with a verb, like \"say yes\" or \"open door.\" Avoid typing in articles like \"the\" and if something doesn't work, try using a synonym.");
         System.out.println("Your game automatically saves progress. If you want to exit game, type \"exit.\" Typing \"inventory\" will show your current items. If you want to restore to a new game, type \"restore.\"");
         System.out.println("");
         System.out.println("CLOSET");

@@ -10,11 +10,26 @@ handgun pistol
 handgun pistols
 handgun handguns
 baton_rack baton rack
+closet_door closet door
+closet_door closet
+armory_door armory door
+armory_door armory
 library_door library door
+library_door library
 airlock_door airlock door
+airlock_door airlock
 cafeteria_door cafeteria door
+cafeteria_door cafeteria
 airlock_door glass door
 airlock_door circular door
 airlock_door airlock door
-dead_bodies dead bodies
 control_room World.Ship.ControlRoom
+control_room_door control room door
+control_room_door control room
+hallway_door hallway door
+hallway_door hallway
+dead_bodies dead bodies
+dead_bodies bodies
+id_card ID card
+id_card card
+id_card ID

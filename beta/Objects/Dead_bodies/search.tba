@@ -2,4 +2,5 @@ if @object is taken
 	say You have found everything you can, no need to linger here any longer.
 
 if @object is default
-	say You find 
+	say You find an ID card off of a man named Kenneth Green! You might want to take this.
+	set id_card is default

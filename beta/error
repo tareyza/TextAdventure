@@ -1,21 +1,103 @@
-open odor player 
-examine World.Ship.ControlRoom player 
-open odor player 
+enter door player 
+enter door player 
+open closet_door control_room_door player 
+enter closet_door player 
+approach control_room_door player 
+approach control_room_door player 
+enter room player 
+enter hallway_door player 
+enter cafeteria_door_door player 
+enter cafeteria_door_door door player 
+enter room player 
+enter hallway_door player 
+enter cafeteria_door_door player 
+enter cafeteria_door_door door player 
+enter room player 
+enter hallway_door player 
+enter cafeteria_door player 
+enter control_room_door player 
+enter hallway_door_door player 
+enter control_room_door player 
+search dead_bodies player 
+search dead_bodies player 
+enter hallway_door_door player 
+search dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search #dead_bodies player 
+search #dead_bodies player 
+eamine #dead_bodies player 
+search dead bodies player 
+search bodies player 
+examine dead bodies player 
+examine dead bodies player 
+examine dead bodies player 
+eamine dead bodies player 
+examine dead bodies player 
+examine dead bodies player 
+examine dead bodies player 
+examine dead bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+search dead_bodies player 
+search dead_bodies player 
+eamine dead_bodies player 
+eamine dead_bodies player 
+eamine dead_bodies player 
+take ID_card player 
+take ID ID_card player 
+take ID_card player 
+take debug player 
 debug player 
-examine World.Ship.ControlRoom player 
-open odor player 
+eamine dead_bodies player 
+take ID_card player 
+take ID_card player 
+take ID_card player 
+take debug player 
 debug player 
-examine World.Ship.ControlRoom player 
-open odor player 
+take ID_card player 
+eamine dead_bodies player 
+eamine dead_bodies player 
+take id player 
+enter inventory player 
+take id player 
+enter inventory player 
 debug player 
-examine World.Ship.ControlRoom player 
-examine World.Ship.ControlRoom player 
-examine World.Ship.ControlRoom player 
-enter control_room player 
-enter control room player 
-enter control player 
-enter control room door player 
-enter control room player 
-enter control player 
-enter control room door player 
-enter control room player 
+go to control player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 

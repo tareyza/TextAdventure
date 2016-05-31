@@ -1,6 +1,9 @@
 if @object is closed
 	say The door is closed.
 
+if @object is locked
+	say The door is locked.
+
 if @object is open
 	set @subject in $new_location
 	set context $new_location

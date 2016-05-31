@@ -1,15 +1,9 @@
 make Cafeteria in here as cafeteria
+make Dead_bodies in here as dead_bodies
 
 make Door in here as hallway_door
 set hallway_door is open
 set hallway_door.new_location as World.Ship.Hallway
-set hallway_door alias hallway
-
-make Dead_bodies in here as dead_bodies
-set dead_bodies alias dead bodies
-set dead_bodies alias as bodies
 
 make ID_card in here as id_card
 set id_card is hidden
-set id_card alias card
-set id_Card alias id

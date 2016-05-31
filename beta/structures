@@ -2,6 +2,7 @@ answer RESPONSE to OBJECT
 ask OBJECT for INDIRECT
 ask OBJECT about INDIRECT
 attack OBJECT
+approach OBJECT
 blow OBJECT
 burn OBJECT
 buy OBJECT

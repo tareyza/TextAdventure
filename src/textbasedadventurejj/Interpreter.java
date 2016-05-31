@@ -67,7 +67,7 @@ public class Interpreter {
     }
 
     public void printError(String line) {
-        System.out.println("I cannot understand that unfortunately. Try typing in something else.");
+        System.out.println("I cannot understand that unfortunately. Try typing synonyms to see if it works.");
         try {
             Utils.writeError(line);
         } catch (IOException ex) {
@@ -106,7 +106,7 @@ public class Interpreter {
                 //System.out.print(s+" ");
         }
         if (phrase != null) {
-            //System.out.println("phrase is: "+phrase);
+           // System.out.println("phrase is: "+phrase);
             GameObject object = phrase.getDirectObject();
             //System.out.println("object:"+object.toString());
             if (object == null) {

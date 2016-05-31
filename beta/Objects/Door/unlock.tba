@@ -1,0 +1,15 @@
+if @object is open
+	say The door is open already.
+
+if @object is closed
+	say The door is closed but not locked. You can just open it.
+
+if @object is locked
+	if player in World.Ship.ControlRoom
+		if id_card in Inventory
+			say You unlock the door with the Kenneth's card, poor man. 
+			set @object is closed
+
+
+	if not player in World.Ship.ControlRoom
+		say You are unable to unlock this door. 

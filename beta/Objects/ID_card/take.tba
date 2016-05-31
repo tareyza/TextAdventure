@@ -6,4 +6,4 @@ if @object is hidden
 
 if @object is default
 	say You've taken the ID card. 
-	set @object in Iventory
+	set @object in Inventory

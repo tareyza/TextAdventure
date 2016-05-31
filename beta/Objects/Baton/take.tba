@@ -1,9 +1,8 @@
-if baton_rack is closed
+if not baton_rack is open
 	say You already have a baton.
 
 if baton_rack is open
 	set baton_rack is closed
 	set @object in Inventory
-	set context Inventory
 	say The batons are fairly small but a strong blow would still injure an enemy. They appear to be unsecured to their stand. You take a baton from the stand. It makes you feel a little bit more safe.
 	

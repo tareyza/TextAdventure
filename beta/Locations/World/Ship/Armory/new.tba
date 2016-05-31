@@ -4,7 +4,7 @@ make Door in here as control_room_door
 set control_room_door alias door
 set control_room_door alias control room
 set control_room_door.new_location as World.Ship.ControlRoom
-set door is closed
+set door is open
 
 make Baton_rack in here as baton_rack
 set baton_rack is open

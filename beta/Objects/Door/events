@@ -1,8 +1,13 @@
 enter:enter.tba
+go to:enter.tba
 open:open.tba
 close:close.tba
 examine:examine.tba
 look:examine.tba
 look at:examine.tba
-pour on,rubbing_alcohol,default:{}:examine.tba
-clean with,rubbing_alcohol,default:{}:examine.tba
+approach:nothing.tba
+pour on:pour.tba
+clean with:pour.tba
+use on:pour.tba
+lock:lock.tba
+unlock:unlock.tba

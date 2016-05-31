@@ -1,9 +1,17 @@
 do open door player
 do enter door player
 do enter hallway player
-do enter control room player
-do enter control player
-do enter control room door player
-do enter control_room_door player
-do enter hallway player
-do enter control room player
+do enter cafeteria player
+do search dead bodies player
+do take id player
+do take card player
+do enter inventory player
+do debug player
+do go to hallway player
+do go to control player
+do go to control room player
+do unlock armory player
+do open armory player
+do enter armory player
+do take baton player
+do take baton player
