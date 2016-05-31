@@ -1,2 +1,9 @@
 do open door player
-do restore player
+do enter door player
+do enter hallway player
+do enter control room player
+do enter control player
+do enter control room door player
+do enter control_room_door player
+do enter hallway player
+do enter control room player

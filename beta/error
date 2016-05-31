@@ -9,3 +9,13 @@ examine World.Ship.ControlRoom player
 open odor player 
 debug player 
 examine World.Ship.ControlRoom player 
+examine World.Ship.ControlRoom player 
+examine World.Ship.ControlRoom player 
+enter control_room player 
+enter control room player 
+enter control player 
+enter control room door player 
+enter control room player 
+enter control player 
+enter control room door player 
+enter control room player 

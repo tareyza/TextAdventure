@@ -6,7 +6,6 @@ controls markings
 controls marks on the ground
 controls lines on the ground
 controls lines
-armory_door armory door
 handgun pistol
 handgun pistols
 handgun handguns
@@ -18,3 +17,4 @@ airlock_door glass door
 airlock_door circular door
 airlock_door airlock door
 dead_bodies dead bodies
+control_room World.Ship.ControlRoom
