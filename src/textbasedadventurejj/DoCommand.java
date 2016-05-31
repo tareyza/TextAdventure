@@ -11,6 +11,7 @@ public class DoCommand implements Command {
 		//System.out.println(java.util.Arrays.toString(words));
 		if(words.length == 2 && words[0].equals("debug")){
 			System.out.println(LocationManager.getInstance().getContext());
+			System.out.println(LocationManager.getInstance().getInventory());
 		}
 		Map<String, String> aliases = LocationManager.getInstance().getContext().getAliases();
 		for(int i = 0; i < words.length; ++i){

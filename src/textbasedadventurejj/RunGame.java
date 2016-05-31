@@ -55,10 +55,10 @@ public class RunGame {
 	        while (gameIsRunning) {
 	            String nextLine = "do " + scanner.nextLine() + " player";
 	            Interpreter.getInstance().interpret(nextLine);
-	            Utils.writeEvent(nextLine);
+	            //Utils.writeEvent(nextLine);
 	        }
 	        scanner.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
         

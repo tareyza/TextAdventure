@@ -21,6 +21,7 @@ public class TestLoader {
         lmanager.load();
 
         lmanager.setContext(LocationManager.getInstance().getSubLocation("World.Ship.Closet"));
+        lmanager.setInventory(LocationManager.getInstance().getSubLocation("Inventory"));
         
         RunGame.runGame();
     }

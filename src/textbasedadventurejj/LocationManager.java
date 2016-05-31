@@ -9,6 +9,7 @@ public class LocationManager {
 
 	private Location root;
 	private Location context;
+	private Location inventory;
 
     private LocationManager() {
     }
@@ -28,6 +29,14 @@ public class LocationManager {
     public void setContext(Location context) {
         this.context = context;
     }
+    
+    public Location getInventory(){
+    	return inventory;
+    }
+    
+    public void setInventory(Location inventory){
+    	this.inventory = inventory;
+    }
 
     public Location getSubLocation(String path) {
         Location loc = context.getSubLocation(path);
@@ -38,10 +47,9 @@ public class LocationManager {
     }
 
     public GameObject getObject(String objectName) {
-        //System.out.println("getObject  " + getSubLocation(Utils.getPathHead(objectName)).toString());
-        if (objectName.equals("this")) {
-            
-        }
+    	GameObject object = inventory.getChildren().get(objectName);
+    	if(object != null)
+    	    return object;
         Location location = getSubLocation(Utils.getPathHead(objectName));
         return location.getChildren().get(Utils.getPathTail(objectName));
     }
@@ -53,6 +61,7 @@ public class LocationManager {
     public void load() {
         File file = new File(Constants.ROOT + Constants.LOCATION_DIR);
         root = new Location("root");
+        inventory = new Location("inventory");
         setRoot(root);
         loadTree(root, file);
     }
