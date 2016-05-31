@@ -6,9 +6,9 @@ if @object in Inventory
 if @object in Inventory
 	if @object is default
 		say You open the first aid kit and find some rubbing alcohol and band aids inside. You take these out of the first aid kit and stash them in your pocket.
-		make Band_aids in here as band_aids
+		make Band_aids in Inventory as band_aids
 		set band_aids is default
-		make Rubbing_alcohol in here as rubbing_alcohol
+		make Rubbing_alcohol in Inventory as rubbing_alcohol
 		set rubbing_alcohol is default
 		set @object is opened
 
