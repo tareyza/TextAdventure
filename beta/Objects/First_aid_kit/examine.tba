@@ -1,16 +1,16 @@
-if first_aid_kit in World.Ship.Closet
-	if first_aid_kit is default
+if @object in World.Ship.Closet
+	if @object is default
 	say It seems like it might have some useful things in it.	
 
-	if first_aid_kit is hidden	
+	if @object is hidden	
 	say You cannot see any first aid kits.  
 
 
-if first_aid_kit in Inventory
-if is empty 
+if @object in Inventory
+if @object is empty 
 	say There is nothing more of use here.
 
-if is default
+if @object is default
 	say The first aid kit has band-aids and a bottle of rubbing alcohol in it.
 
 
