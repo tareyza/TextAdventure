@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            System.out.println(lines[programCounter].toString());
+            //System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -60,9 +60,8 @@ public class Interpreter {
 
     public void printError(String[] line) {
         String input = "";
-        for (int i = 0; i < line.length; i++) {
-            input += line;
-            input += " ";
+        for (String s : line) {
+            input+=s+" ";
         }
         printError(input);
     }
