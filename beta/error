@@ -7,3 +7,6 @@ poop!!! player
 open ddoor player 
 open first_aid_kit player 
 debug player 
+examin shelves player 
+open first_aid_kit player 
+open first_aid_kit player 

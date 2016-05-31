@@ -1,4 +1,5 @@
 take:take.tba
 examine:examine.tba
+look at:examine.tba
 open:open.tba
 extract:open.tba
