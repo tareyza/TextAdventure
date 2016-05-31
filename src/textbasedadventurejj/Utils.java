@@ -22,6 +22,7 @@ class Utils {
 	public static void writeError(String input) throws IOException {
 		FileWriter writer = new FileWriter(Constants.ROOT + Constants.ERROR_FILE, true);
 		writer.write(input);
+                writer.append(System.getProperty("line.separator"));
 		writer.close();
 	}
         

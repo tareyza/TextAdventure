@@ -3,3 +3,7 @@ if @object is open
 
 if @object is closed
 	say The door is closed.	
+
+if @object in World.Ship.Hallway
+	if @object is grimy
+		say This strange glass door has a monolithic glass panel almost as tall as you are! A layer of some silver colored grime prevents you from seeing what's on the other side however. Perhaps there is a way to clean it off with something.

@@ -48,7 +48,6 @@ public class Interpreter {
 
     public void interpret(String line) {// line is command typed by user,
         // object is the gameobject
-
         line = line.trim();
         if (line.startsWith("#")) {
             return;
@@ -61,9 +60,8 @@ public class Interpreter {
 
     public void printError(String[] line) {
         String input = "";
-        for (int i = 0; i < line.length; i++) {
-            input += line;
-            input += " ";
+        for (String s : line) {
+            input+=s+" ";
         }
         printError(input);
     }
@@ -100,6 +98,7 @@ public class Interpreter {
         if (words.length < 1) {
             return;
         }
+
         words = PhraseBuilder.replaceGameObjects(words);
         phrase = PhraseBuilder.getPhrase(words);
 
@@ -118,6 +117,7 @@ public class Interpreter {
             Event event = object.getEvent(trigger);
             interpret(event);
         } else {
+
             interpretNonVerbSentence(words);
         }
     }
@@ -127,6 +127,11 @@ public class Interpreter {
             RunGame.exitGame();
         } else if (words[0].equals("restart") || words[0].equals("restore")) {
             RunGame.newGame();
+        } else if (words[0].equals("inventory")) {
+            System.out.println("Your current items: ");
+            for (String key : LocationManager.getInstance().getSubLocation("Inventory").getChildren().keySet()) {
+                System.out.println(key);
+            }
         } else if (words[0].equals("save")) {
             System.out.println("Your game is automatically saved every action you make.");
         } else if (words[0].equals("say")) {
@@ -140,7 +145,7 @@ public class Interpreter {
             Event event = object.getEvent(new Trigger("say"));
             interpret(event);
         } else {
-            System.out.println("I'm sorry, what you said doesn't make sense to me.");
+            printError(words);
         }
     }
 
@@ -164,7 +169,7 @@ public class Interpreter {
         for (int i = 0; i < words.length; ++i) {
             String sub = words[i];
             if (sub.startsWith("$")) {
-            	System.out.println(Arrays.toString(words));
+                System.out.println(Arrays.toString(words));
                 //System.out.println(sub);
                 sub = phrase.getDirectObject().getProperties().get(sub.substring(1)).toString();
             } else if (sub.startsWith("@")) {

@@ -2,14 +2,14 @@ if @object in Inventory
 	say You've already taken that. 
 
 if @object in World.Ship.Closet
+	if @object is hidden
+	say You cannot see any first aid kits. 	
+
 	if not @object is hidden
 	set @object in Inventory
-	set context Inventory
 	say You've taken the first aid kit. Perhaps it might come in handy later.
 
-	if @object is hidden
-	say You cannot see any first aid kits. 
-
+	
  
 
 
