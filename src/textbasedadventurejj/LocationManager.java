@@ -29,14 +29,6 @@ public class LocationManager {
     public void setContext(Location context) {
         this.context = context;
     }
-    
-    public Location getInventory(){
-    	return inventory;
-    }
-    
-    public void setInventory(Location inventory){
-    	this.inventory = inventory;
-    }
 
     public Location getSubLocation(String path) {
         Location loc = context.getSubLocation(path);
@@ -62,7 +54,7 @@ public class LocationManager {
         File file = new File(Constants.ROOT + Constants.LOCATION_DIR);
         root = new Location("root");
         inventory = new Location("inventory");
-        setRoot(root);
+        root.getSubLocations().put("Inventory", inventory);
         loadTree(root, file);
     }
 

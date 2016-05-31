@@ -93,9 +93,9 @@ public class PhraseBuilder {
                 String verb = "";
                 for (int i = 0; i < phraseArr.length; i++) {
                     if (phraseArr[i].equals("INDIRECT")) {
-                        phrase.setIndirectObject(lmanager.getObjectInCurrentRoom(inputArr[i]));
+                        phrase.setIndirectObject(lmanager.getObject(inputArr[i]));
                     } else if (phraseArr[i].equals("OBJECT")) {
-                        phrase.setDirectObject(lmanager.getObjectInCurrentRoom(inputArr[i]));
+                        phrase.setDirectObject(lmanager.getObject(inputArr[i]));
                     } else if (phraseArr[i].equals("RESPONSE")) {
                         phrase.setResponse(inputArr[i]);
                     } else {
@@ -104,7 +104,7 @@ public class PhraseBuilder {
                 }
                 if((phraseArr[0].equals("look")||phraseArr[0].equals("examine"))&&phrase.getDirectObject()==null){
                     //System.out.println("inside look/examine part, here's getName: "+lmanager.getContext().getName());
-                phrase.setDirectObject(lmanager.getObjectInCurrentRoom(lmanager.getContext().getName().toLowerCase()));
+                phrase.setDirectObject(lmanager.getObject(lmanager.getContext().getName().toLowerCase()));
                 }
                 phrase.setVerb(verb.trim());
                 //System.out.println("phrase is: " + phrase.toString());
