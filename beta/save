@@ -1,7 +1,2 @@
 do open door player
-do examine shelves player
-do take first aid kit player
-do open first aid kit player
-do enter door player
-do enter hallway player
-do pour rubbing alcohol on airlock player
+do restore player

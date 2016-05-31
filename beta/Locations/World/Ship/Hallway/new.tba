@@ -1,8 +1,10 @@
 make Hallway in here as hallway
+make Rubble in here as rubble
 
 make Door in here as control_room_door
 set control_room_door is open
 set control_room_door.new_location as World.Ship.ControlRoom
+set control_room_door alias control room 
 
 make Door in here as airlock_door
 set airlock_door.new_location as World.Ship.Airlock
@@ -10,14 +12,13 @@ set airlock_door is grimy
 set airlock_door alias glass door
 set airlock_door alias circular door
 set airlock_door alias airlock door
-set airlock_door alias airlock
 
 make Door in here as cafeteria_door
 set cafeteria_door is open
 set cafeteria_door.new_location as World.Ship.Cafeteria
+set cafeteria_door alias cafeteria
 
 make Door in here as library_door
 set library_door is open
 set library_door.new_location as World.Ship.Library 
-
-make Rubble in here as rubble
+set library_door alias library

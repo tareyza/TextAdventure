@@ -35,13 +35,13 @@ public class Interpreter {
     public void interpret(Event event) {
 
         if ((event == null) || event.getLines().length == 0) {
-            System.out.println("You cannot do that unfortuantely.");
+            System.out.println("You cannot do that unfortunately.");
             return;
         }
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            System.out.println(lines[programCounter].toString());
+            //System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -101,12 +101,12 @@ public class Interpreter {
 
         words = PhraseBuilder.replaceGameObjects(words);
         phrase = PhraseBuilder.getPhrase(words);
-        System.out.println("substitute input is: ");
+        //System.out.println("substitute input is: ");
             for (String s : words) {
-                System.out.print(s+" ");
+                //System.out.print(s+" ");
         }
         if (phrase != null) {
-            System.out.println("phrase is: "+phrase);
+            //System.out.println("phrase is: "+phrase);
             GameObject object = phrase.getDirectObject();
             //System.out.println("object:"+object.toString());
             if (object == null) {
@@ -117,6 +117,7 @@ public class Interpreter {
             Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
             Event event = object.getEvent(trigger);
             //System.out.println("trigger is:"+trigger.toString());
+            if(event!=null)
             //System.out.println("event is:"+event.toString());
             interpret(event);
         } else {

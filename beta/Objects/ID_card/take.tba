@@ -1,0 +1,9 @@
+if @object in Inventory
+	say You already have it.
+
+if @object is hidden
+	say What ID card?
+
+if @object is default
+	say You've taken the ID card. 
+	set @object in Iventory

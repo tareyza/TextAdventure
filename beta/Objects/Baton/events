@@ -1,2 +1,5 @@
 examine:examine.tba
 take:take.tba
+grab:take.tba
+get:take.tba
+look at:examine.tba

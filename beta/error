@@ -1,95 +1,11 @@
-enter hallway_door player 
-enter hallway door player 
-examine World.Ship.Hallway player 
-enter control player 
-examine glass door player 
-pour rubbing_alcohol on airlock door player 
-pour rubbing_alcohol on airlock door player 
-pour rubbing_alcohol on glass door player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour rubbing_alcohol on airlock door player 
-pour rubbing_alcohol on airlock door player 
-pour indirect on object player 
-pour rubbing_alcohol on glass door player 
-clean nothing with something player 
-clean glass door with rubbing_alcohol player 
-clean glass door with rubbing_alcohol player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on circular door player 
-pour rubbing_alcohol on glass door player 
-pour rubbing_alcohol on airlock door player 
-pour rubbing_alcohol on airlock door player 
-enter library player 
-examine World.Ship.Library player 
-examine World.Ship.Library player 
-enter airlock_door player 
-enter airlock_doro door player 
-enter airlock_doro door player 
-pour rubbing_alcohol on airlock_doro player 
+open odor player 
+examine World.Ship.ControlRoom player 
+open odor player 
+debug player 
+examine World.Ship.ControlRoom player 
+open odor player 
+debug player 
+examine World.Ship.ControlRoom player 
+open odor player 
+debug player 
+examine World.Ship.ControlRoom player 

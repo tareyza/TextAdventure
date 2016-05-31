@@ -2,15 +2,11 @@ first_aid_kit first aid kit
 rubbing_alcohol rubbing alcohol
 band_aid band aid
 shelves shelf
-control_room control room
-control_room World.Ship.ControlRoom
 controls markings
 controls marks on the ground
 controls lines on the ground
 controls lines
 armory_door armory door
-closet_door closet door
-control_room_door control room door
 handgun pistol
 handgun pistols
 handgun handguns
@@ -21,3 +17,4 @@ cafeteria_door cafeteria door
 airlock_door glass door
 airlock_door circular door
 airlock_door airlock door
+dead_bodies dead bodies

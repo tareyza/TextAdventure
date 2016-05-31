@@ -1,0 +1,5 @@
+if @object is taken
+	say You have found everything you can, no need to linger here any longer.
+
+if @object is default
+	say You find 
