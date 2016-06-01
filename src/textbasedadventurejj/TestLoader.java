@@ -70,6 +70,7 @@ public class TestLoader {
 
     // handle "System.in"
     area.getInputMap().put(KeyStroke.getKeyStroke("BACK_SPACE"), "none");
+    area.getInputMap().put(KeyStroke.getKeyStroke("DELETE"), "none");
     area.addKeyListener(new KeyAdapter() {
         private StringBuffer line = new StringBuffer();
         @Override public void keyTyped(KeyEvent e) {
@@ -77,8 +78,12 @@ public class TestLoader {
             if (c == KeyEvent.VK_ENTER) {
                 in.println(line);
                 line.setLength(0); 
-            } else if (c == KeyEvent.VK_BACK_SPACE) { 
-                line.setLength(line.length() - 1);
+            } else if (c == KeyEvent.VK_BACK_SPACE) {
+            	if(line.length() != 0){
+            		line.setLength(line.length() - 1);
+                    String text = area.getText();
+                    area.setText(text.substring(0, text.length() - line.length() - 1) + line);
+            	}
             } else if (!Character.isISOControl(c)) {
                 line.append(e.getKeyChar());
             }
