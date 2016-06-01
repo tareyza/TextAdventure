@@ -1,5 +1,7 @@
 examine:examine.tba
 look at:examine.tba
-turn on:turn on
-open:turn on
+turn on:turn on.tba
+open:turn on.tba
+turn off:turn off.tba
+shutdown:turn off.tba
 

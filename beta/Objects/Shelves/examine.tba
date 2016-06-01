@@ -2,6 +2,10 @@ if door is closed
 	say You cannot make it out. 
 
 if door is open
+	if first_aid_kit is default
+		say Everything else here looks pretty useless.
+
+	if first_aid_kit is hidden
 	say You look around the shelves, but most of the things on it seem pretty useless. The only thing that might be helpful is a first aid kit. 
 	set @object is default
 	set first_aid_kit is default

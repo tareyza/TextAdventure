@@ -21,26 +21,28 @@ public class PhraseBuilder {
     }
 
     public static String[] replaceGameObjects(String[] words) {
+        String wordsString = "";
+        for (int i = 0; i < words.length; i++) {
+            wordsString += words[i] + " ";
+        }
         for (String sentence : gameObjectAliases) {
             String replaceWith = sentence.substring(0, sentence.indexOf(" "));
             String matchTo = sentence.substring(sentence.indexOf(" ") + 1).trim();
-            String wordsString = "";
-            for (int i = 0; i < words.length; i++) {
-                wordsString += words[i] + " ";
-            }
 
             wordsString = wordsString.trim();
 
             if (wordsString.contains(matchTo)) {
-                //System.out.println("match to: " + matchTo);
-                //System.out.println("replace with: " + replaceWith);
-                wordsString = wordsString.replace(matchTo, replaceWith);
-                //System.out.println("we are returning: " + wordsString);
-                return wordsString.split(" ");
+                if (wordsString.charAt(wordsString.indexOf(matchTo) - 1) == ' ' && wordsString.charAt(wordsString.indexOf(matchTo) + matchTo.length()) == ' ') {
+                    //System.out.println("match to: " + matchTo);
+                    //System.out.println("replace with: " + replaceWith);
+                    wordsString = wordsString.replace(matchTo, replaceWith);
+                    //System.out.println("we are returning: " + wordsString);
+                }
             }
 
         }
-        return words;
+
+        return wordsString.split(" ");
     }
 
     public static void generateGameObjects() {
@@ -102,9 +104,9 @@ public class PhraseBuilder {
                         verb += phraseArr[i] + " ";
                     }
                 }
-                if((phraseArr[0].equals("look")||phraseArr[0].equals("examine"))&&phrase.getDirectObject()==null){
+                if ((phraseArr[0].equals("look") || phraseArr[0].equals("examine")) && phrase.getDirectObject() == null) {
                     //System.out.println("inside look/examine part, here's getName: "+lmanager.getContext().getName());
-                phrase.setDirectObject(lmanager.getObject(lmanager.getContext().getName().toLowerCase()));
+                    phrase.setDirectObject(lmanager.getObject(lmanager.getContext().getName().toLowerCase()));
                 }
                 phrase.setVerb(verb.trim());
                 //System.out.println(phrase.toString());
