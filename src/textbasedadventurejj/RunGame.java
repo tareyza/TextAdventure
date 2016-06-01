@@ -14,13 +14,6 @@ public class RunGame {
     private RunGame() {
     }
 
-    public static String setDirectory() throws IOException {
-        File currentDirFile = new File(".");
-        String path = currentDirFile.getAbsolutePath();
-        path+="\\beta\\";
-        return path;
-    }
-
     public static void loadSavedGame() {
         try {
             String events = Utils.readFile(Constants.ROOT + Constants.SAVE_FILE);
