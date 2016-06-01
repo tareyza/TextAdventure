@@ -4,6 +4,8 @@ public class TestLoader {
 
     public static void main(String[] argv) {
 
+        
+
         Interpreter interp = Interpreter.getInstance();
         interp.addCommand("make", new MakeCommand());
         interp.addCommand("set", new SetCommand());

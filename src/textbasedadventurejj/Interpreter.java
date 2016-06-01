@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            //System.out.println(lines[programCounter].toString());
+            System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -101,12 +101,12 @@ public class Interpreter {
 
         words = PhraseBuilder.replaceGameObjects(words);
         phrase = PhraseBuilder.getPhrase(words);
-        //System.out.println("substitute input is: ");
+        System.out.println("substitute input is: ");
             for (String s : words) {
-                //System.out.print(s+" ");
+                System.out.print(s+" ");
         }
         if (phrase != null) {
-           // System.out.println("phrase is: "+phrase);
+            System.out.println("phrase is: "+phrase);
             GameObject object = phrase.getDirectObject();
             //System.out.println("object:"+object.toString());
             if (object == null) {

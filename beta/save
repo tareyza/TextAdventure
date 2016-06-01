@@ -38,3 +38,7 @@ do take food player
 do take food player
 do take knife player
 do examine knife player
+do enter cafeteria player
+do enter hallway player
+do clean glass door player
+do clean door with poop player
