@@ -46,6 +46,7 @@ public class TestLoader {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //end gui bullshit
+
         Interpreter interp = Interpreter.getInstance();
         interp.addCommand("make", new MakeCommand());
         interp.addCommand("set", new SetCommand());
@@ -101,23 +102,3 @@ public class TestLoader {
     }
 }
 
-/*
-        PipedInputStream inPipe = new PipedInputStream();
-        PipedInputStream outPipe = new PipedInputStream();
-        System.setIn(inPipe);
-        System.setOut(new PrintStream(new PipedOutputStream(outPipe), true));
-        PrintWriter inWriter = new PrintWriter(new PipedOutputStream(inPipe), true);
-        
-        JFrame frame = new JFrame("Text Adventure");
-        frame.setLayout(new BorderLayout());
-        JTextArea jta = console(outPipe, inWriter);
-        frame.add(jta);
-        //JScrollPane scrollPane = new JScrollPane(jta);
-        //frame.add(scrollPane,BorderLayout.EAST);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(800, 800);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        //end gui bullshit
-*/
