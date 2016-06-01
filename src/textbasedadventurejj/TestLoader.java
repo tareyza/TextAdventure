@@ -96,6 +96,7 @@ public class TestLoader {
         }.execute();
 
         // handle "System.in"
+        area.getInputMap().put(KeyStroke.getKeyStroke("BACK_SPACE"), "none");
         area.addKeyListener(new KeyAdapter() {
             private StringBuffer line = new StringBuffer();
 
@@ -106,7 +107,11 @@ public class TestLoader {
                     in.println(line);
                     line.setLength(0);
                 } else if (c == KeyEvent.VK_BACK_SPACE) {
-                    line.setLength(line.length() - 1);
+                	if(line.length() != 0){
+                		line.setLength(line.length() - 1);
+                		String text = area.getText();
+                		area.setText(text.substring(0, text.length() - line.length() - 1) + line);
+                	}
                 } else if (!Character.isISOControl(c)) {
                     line.append(e.getKeyChar());
                 }
