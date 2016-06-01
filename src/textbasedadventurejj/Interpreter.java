@@ -108,7 +108,6 @@ public class Interpreter {
         if (phrase != null) {
             //System.out.println("phrase is: "+phrase);
             GameObject object = phrase.getDirectObject();
-            //System.out.println("object:"+object.toString());
             if (object == null) {
                 printError(words);
                 //System.out.println("obj: "+object);
