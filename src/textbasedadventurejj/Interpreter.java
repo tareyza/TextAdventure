@@ -41,7 +41,7 @@ public class Interpreter {
         reset();
         lines = event.getLines();
         while (programCounter < lines.length) {
-            //System.out.println(lines[programCounter].toString());
+            System.out.println(lines[programCounter].toString());
             interpret(lines[programCounter++]);
         }
     }
@@ -113,8 +113,7 @@ public class Interpreter {
                 //System.out.println("obj: "+object);
                 return;
             }
-            String trigger = new String(phrase.getVerb());
-            Event event = object.getEvent(trigger);
+            Event event = object.getEvent (phrase.getVerb());
             //System.out.println("trigger is:"+trigger.toString());
             if(event!=null)
             //System.out.println("event is:"+event.toString());
@@ -145,7 +144,7 @@ public class Interpreter {
             }
             Phrase phrase = PhraseBuilder.getPhrase(say);
             GameObject object = phrase.getSubject();
-            Event event = object.getEvent(new String("say"));
+            Event event = object.getEvent("say");
             interpret(event);
         } else {
             printError(words);
