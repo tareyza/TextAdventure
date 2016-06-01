@@ -3,7 +3,7 @@ package textbasedadventurejj;
 
 public class Phrase {
 
-	private GameObject object, subject, indirect;
+	private GameObject object = GameObject.NOTHING, subject = GameObject.NOTHING, indirect = GameObject.NOTHING;
 	private String response;
 	private String verb;
 

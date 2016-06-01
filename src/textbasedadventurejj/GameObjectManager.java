@@ -53,21 +53,16 @@ public class GameObjectManager {
 			return object;
 		}
 
-		private static Map<Trigger, Event> parseEvents(File eventFile) throws IOException {
+		private static Map<String, Event> parseEvents(File eventFile) throws IOException {
 			BufferedReader reader = new BufferedReader(new FileReader(eventFile));
-			Map<Trigger, Event> events = new HashMap<>();
+			Map<String, Event> events = new HashMap<>();
 			Map<String, Event> cache = new HashMap<>();
 			String s = null;
 			while ((s = reader.readLine()) != null) {
 				String[] keyVal = s.split(":");
 				if (keyVal.length != 2)
 					continue;
-				String[] trigger = keyVal[0].split(",");
-				String name = null, object = null;
-				name = trigger[0];
-				if (trigger.length == 2) {
-					object = trigger[1];
-				}
+				String name = keyVal[0];
 				String fname = keyVal[1];
 				Event event = null;
 				if (cache.containsKey(fname)) {
@@ -77,7 +72,7 @@ public class GameObjectManager {
 							new File(eventFile.getParentFile().getAbsolutePath() + File.separatorChar + fname));
 					cache.put(fname, event);
 				}
-				events.put(new Trigger(name, GameObjectManager.getInstance().newObject(object)), event);
+				events.put(name, event);
 			}
 			reader.close();
 			return events;

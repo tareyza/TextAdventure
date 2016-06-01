@@ -47,8 +47,17 @@ public class IfCommand implements Command {
             if (!not) {
                 interp.skipUntilNewline();
             }
+        } else if(words[1].equals("equals")){
+        	if(lmanager.getObject(words[0]).equals(lmanager.getObject(words[2]))){
+        		if(not){
+        			interp.skipUntilNewline();
+        		}
+        		return;
+        	}
+        	if (!not) {
+            	interp.skipUntilNewline();
+            }
         }
-
+        
     }
-
 }

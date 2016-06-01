@@ -1,11 +1,8 @@
 package textbasedadventurejj;
 
-import java.io.IOException;
-
 public final class Constants {
 
 	public static String ROOT = "beta/";
-	
 	public static final String OBJECT_DIR = "Objects/";
 	public static final String LOCATION_DIR = "Locations/";
 	public static final String OBJECT_FILE = "objects";
