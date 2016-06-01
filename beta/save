@@ -1,1 +1,14 @@
 do open door player
+do try player
+do enter door player
+do enter hallway player
+do enter control room player
+do enter armory player
+do enter armory player
+do open door player
+do enter hallway player
+do enter cafeteria player
+do search bodies player
+do take card player
+do enter hallway player
+do enter room player
