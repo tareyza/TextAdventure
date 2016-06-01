@@ -14,6 +14,3 @@ if @object is closed
 	say You open the door.
 	set @object is open
 
-
-	
-

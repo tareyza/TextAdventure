@@ -336,3 +336,7 @@ clean airlock_door player
 clean airlock_door with player 
 clean airlock_door player 
 clean airlock_door with player 
+open airlock_door_door player 
+debug player 
+open airlock_door_door player 
+clean airlock_door player 
