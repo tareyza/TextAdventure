@@ -1,14 +1,1 @@
 do open door player
-do take first aid kit player
-do open first aid kit player
-do enter door player
-do enter hallway player
-do clean airlock with rubbing_alcohol player
-do open airlock player
-do open airlock player
-do open airlock_door player
-do debug player
-do open airlock player
-do open airlock_door player
-do clean airlock player
-do clean airlock with rubbing_alcohol player
