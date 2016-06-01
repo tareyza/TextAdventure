@@ -1,0 +1,5 @@
+make Library in here as library
+
+make Door in here as hallway_door
+set hallway_door is open
+set hallway_door.new_location as World.Ship.Hallway

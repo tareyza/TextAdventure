@@ -1,0 +1,6 @@
+if @object in Inventory
+	say You already have it.
+
+if @object is default
+	say You take the knife. It might be a kitchen knife but it will still kill. 
+	set @object in Inventory

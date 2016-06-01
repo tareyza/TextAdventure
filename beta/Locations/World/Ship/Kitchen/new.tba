@@ -1,0 +1,10 @@
+make Kitchen in here as kitchen
+make Knife in here as knife
+set knife is default
+
+make Food in here as food
+set food is default
+
+make Door in here as cafeteria_door
+set cafeteria_door is open
+set cafeteria_door.new_location as World.Ship.Cafeteria

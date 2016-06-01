@@ -1,7 +1,3 @@
-if not Player in World.Ship.Closet
-say It seems pretty ordinary. 
-
-if Player in World.Ship.Closet
 if door is opened
 say It seems pretty ordinary.
 if door is closed

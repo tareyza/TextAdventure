@@ -101,3 +101,52 @@ take id player
 enter inventory player 
 debug player 
 go to control player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 
+enter control player 
+enter control player 
+pour rubbing_alcohol on glass door player 
+clean airlock_door_door with rubbing_alcohol player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 
+enter control player 
+enter control player 
+pour rubbing_alcohol on glass door player 
+clean airlock_door_door with rubbing_alcohol player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 
+enter control player 
+enter control player 
+pour rubbing_alcohol on glass door player 
+clean airlock_door_door with rubbing_alcohol player 
+enter kitchen player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 
+enter control player 
+enter control player 
+pour rubbing_alcohol on glass door player 
+clean airlock_door_door with rubbing_alcohol player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 
+enter control player 
+enter control player 
+pour rubbing_alcohol on glass door player 
+clean airlock_door_door with rubbing_alcohol player 
+take id player 
+enter inventory player 
+debug player 
+go to control player 
+enter control player 
+enter control player 
+pour rubbing_alcohol on glass door player 
+clean airlock_door_door with rubbing_alcohol player 

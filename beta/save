@@ -15,3 +15,26 @@ do open armory player
 do enter armory player
 do take baton player
 do take baton player
+do enter control player
+do enter control player
+do enter control room player
+do enter closet player
+do search shelves player
+do take first aid kit player
+do open first aid kit player
+do inventory player
+do enter control room player
+do enter hallway player
+do examine glass door player
+do pour rubbing alcohol on glass door player
+do clean airlock_door with rubbing_alcohol player
+do enter cafeteria player
+do enter kitchen player
+do examine food player
+do take food player
+do eat food player
+do take food player
+do take food player
+do take food player
+do take knife player
+do examine knife player

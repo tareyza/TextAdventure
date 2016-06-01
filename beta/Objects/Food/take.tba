@@ -1,0 +1,6 @@
+if @object in Inventory
+	say You already have enough food for now.
+
+if not @object in Inventory
+	say You take as much food as you'll need for now, at least you won't starve in here. 
+	set @object in Inventory
