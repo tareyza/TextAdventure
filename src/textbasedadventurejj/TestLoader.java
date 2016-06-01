@@ -1,6 +1,5 @@
 package textbasedadventurejj;
 
-import java.awt.Dimension;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -11,9 +10,11 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.KeyStroke;
 import javax.swing.SwingWorker;
 
 public class TestLoader {
@@ -68,6 +69,7 @@ public class TestLoader {
     }.execute();
 
     // handle "System.in"
+    area.getInputMap().put(KeyStroke.getKeyStroke("BACK_SPACE"), "none");
     area.addKeyListener(new KeyAdapter() {
         private StringBuffer line = new StringBuffer();
         @Override public void keyTyped(KeyEvent e) {
@@ -76,7 +78,7 @@ public class TestLoader {
                 in.println(line);
                 line.setLength(0); 
             } else if (c == KeyEvent.VK_BACK_SPACE) { 
-                line.setLength(line.length() - 1); 
+                line.setLength(line.length() - 1);
             } else if (!Character.isISOControl(c)) {
                 line.append(e.getKeyChar());
             }

@@ -107,7 +107,7 @@ public class PhraseBuilder {
                 phrase.setDirectObject(lmanager.getObject(lmanager.getContext().getName().toLowerCase()));
                 }
                 phrase.setVerb(verb.trim());
-                //System.out.println("phrase is: " + phrase.toString());
+                //System.out.println(phrase.toString());
                 return phrase;
             }
         }
