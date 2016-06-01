@@ -97,6 +97,7 @@ public class TestLoader {
 
         // handle "System.in"
         area.getInputMap().put(KeyStroke.getKeyStroke("BACK_SPACE"), "none");
+        area.setLineWrap(true);
         area.addKeyListener(new KeyAdapter() {
             private StringBuffer line = new StringBuffer();
 
