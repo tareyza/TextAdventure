@@ -13,5 +13,6 @@ if @object is empty
 if @object is default
 	say The first aid kit has band-aids and a bottle of rubbing alcohol in it.
 
-
+if @object is opened
+	say The first aid kit is empty now.
 

@@ -6,17 +6,37 @@ if player in World.Ship.Closet
 		set @object is open	
 		say You open the door. A light washes into the room, illuminating it. You realize now you are in a closet of sorts. But why would you be here? The light also reveals a broom in the corner of the closet and a shelf with some potentially useful things. On the other side of the door, there is a brightly lit room.
 		set shelves is default
-        set broom is default
+        	set broom is default
 
 
 if @object is closed
 	say You open the door.
 	set @object is open
 
+if @object is locked
+	say The door is locked.
 
 if player in World.Ship.Hallway
 	if key in Inventory
+		if @object is clean
 		say You open the door with the key
-		set @object is open 
-	
+		set @object is open 	
+
+
+
+if player in World.Ship.Airlock
+	if key in Inventory
+		if @object is clean
+			if @object equals space_door
+				if hallway_door is open
+		        	say You open the door with the key. A sudden rush of air comes into the airlock from the ship. You grab on to stop yourself from being sucked into empty space. Pieces of the nearby rubble come flying into the airlock. One suddenly hits you on the head, making you black out. You have died in space
+				do exit player
+				if hallway_door is closed
+				say You open the door with the key. The air in the airlock suddenly gets sucked into space. You begin choking as you try to return to the ship. You die from asphyxiation.
+				do exit player
+
+
+
+
+
 

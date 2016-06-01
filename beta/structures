@@ -22,6 +22,8 @@ extract OBJECT
 fill OBJECT
 get off OBJECT
 give OBJECT to INDIRECT
+grab OBJECT with INDIRECT
+get OBJECT with INDIRECT
 go to OBJECT
 jump
 jump over OBJECT
@@ -56,6 +58,7 @@ squeeze OBJECT
 swim
 swing OBJECT
 talk to OBJECT
+type RESPONSE
 take OBJECT
 take OBJECT with INDIRECT
 take everything
