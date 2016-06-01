@@ -114,7 +114,8 @@ public class Interpreter {
                 //System.out.println("obj: "+object);
                 return;
             }
-            Event event = object.getEvent(phrase.getVerb());
+            Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
+            Event event = object.getEvent(trigger);
             //System.out.println("trigger is:"+trigger.toString());
             if(event!=null)
             //System.out.println("event is:"+event.toString());
@@ -145,7 +146,7 @@ public class Interpreter {
             }
             Phrase phrase = PhraseBuilder.getPhrase(say);
             GameObject object = phrase.getSubject();
-            Event event = object.getEvent("say");
+            Event event = object.getEvent(new Trigger("say"));
             interpret(event);
         } else {
             printError(words);
@@ -184,7 +185,7 @@ public class Interpreter {
                         sub = phrase.getSubject().getName();
                         break;
                     case "indirect":
-                    	sub = phrase.getIndirectObject().getName();
+                        sub = phrase.getIndirectObject().getName();
                         break;
                     case "verb":
                         sub = phrase.getVerb();

@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class GameObject {
 
-	private final Map<String, Event> events;
+	private final Map<Trigger, Event> events;
 	private final Map<String, Object> properties;
 	private GameObject parent;
 	private GameObject type;
@@ -49,7 +49,7 @@ public class GameObject {
 		this(object.getName(), object);
 	}
 
-	public Map<String, Event> getEvents() {
+	public Map<Trigger, Event> getEvents() {
 		return events;
 	}
 
@@ -57,15 +57,15 @@ public class GameObject {
 		return properties;
 	}
 
-	public void addEvents(Map<String, Event> eventMap) {
+	public void addEvents(Map<Trigger, Event> eventMap) {
 		events.putAll(eventMap);
 	}
 
-	public void addEvent(String trigger, Event event) {
+	public void addEvent(Trigger trigger, Event event) {
 		events.put(trigger, event);
 	}
 
-	public Event getEvent(String trigger) {
+	public Event getEvent(Trigger trigger) {
 		return events.get(trigger);
 	}
 

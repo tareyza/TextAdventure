@@ -1,19 +1,18 @@
-say doing smth with a door
 if @object in World.Ship.Hallway
 	if @object is clean
 		say You've already cleaned it. 	
 
 	if @object is grimy 
  		if @indirect in Inventory
-			if @indirect equals rubbing_alcohol
+			if @indirect is rubbing_alcohol
 			set @object is clean
 			say You pour the rubbing alcohol on the door. After a while, the door's grime is dissolved, letting you see what's on the other side. You realize that the room on the other side must be an airlock! You are clearly not on earth, but in space! Strange how there's still gravity...
 			set @indirect is empty
 
-		if not @indirect equals rubbing_alcohol
+		if not @indirect is rubbing_alcohol
 		say You cannot clean the grime off this way. 
 	
 
 
 if not @object in World.Ship.Hallway
-    say You cannot do that.
+	say You cannot do that.
