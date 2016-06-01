@@ -26,11 +26,14 @@ public class TestLoader {
         PipedInputStream inPipe = new PipedInputStream();
         PipedInputStream outPipe = new PipedInputStream();
         System.setIn(inPipe);
-        System.setOut(new PrintStream(new PipedOutputStream(outPipe), true));
         PrintWriter inWriter = new PrintWriter(new PipedOutputStream(inPipe), true);
-        
+        JTextArea jta = console(outPipe, inWriter);
+        PrintStream con = new PrintStream(new TextAreaOutputStream(jta));
+        System.setOut(con);
+        System.setErr(con);
         JFrame frame = new JFrame("Text Adventure");
-         frame.add(console(outPipe, inWriter));
+         frame.add(jta);
+         frame.add(new JScrollPane(jta));
 
         frame.pack();
         frame.setVisible(true);

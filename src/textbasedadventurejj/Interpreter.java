@@ -113,7 +113,7 @@ public class Interpreter {
                 //System.out.println("obj: "+object);
                 return;
             }
-            Trigger trigger = new Trigger(phrase.getVerb(), phrase.getIndirectObject());
+            String trigger = new String(phrase.getVerb());
             Event event = object.getEvent(trigger);
             //System.out.println("trigger is:"+trigger.toString());
             if(event!=null)
@@ -145,7 +145,7 @@ public class Interpreter {
             }
             Phrase phrase = PhraseBuilder.getPhrase(say);
             GameObject object = phrase.getSubject();
-            Event event = object.getEvent(new Trigger("say"));
+            Event event = object.getEvent(new String("say"));
             interpret(event);
         } else {
             printError(words);
