@@ -57,6 +57,7 @@ swim
 swing OBJECT
 talk to OBJECT
 take OBJECT
+take OBJECT with INDIRECT
 take everything
 take all
 take everything

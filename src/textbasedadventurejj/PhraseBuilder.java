@@ -104,8 +104,9 @@ public class PhraseBuilder {
                         verb += phraseArr[i] + " ";
                     }
                 }
-                if ((phraseArr[0].equals("look") || phraseArr[0].equals("examine")) && phrase.getDirectObject() == null) {
-                    //System.out.println("inside look/examine part, here's getName: "+lmanager.getContext().getName());
+                //System.out.println("here");
+                if ((phraseArr[0].equals("look") || phraseArr[0].equals("examine")) && (phrase.getDirectObject() == GameObject.NOTHING || phrase.getDirectObject() == null)) {
+                  //  System.out.println("inside look/examine part, here's getName: "+lmanager.getContext().getName());
                     phrase.setDirectObject(lmanager.getObject(lmanager.getContext().getName().toLowerCase()));
                 }
                 phrase.setVerb(verb.trim());

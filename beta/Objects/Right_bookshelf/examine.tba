@@ -1,6 +1,4 @@
-if door is opened
-say It seems pretty ordinary.
-if door is closed
-say You cannot see a broom. It is too dark.
+say This bookshelf has a few uninteresting books. However, above its very top shelf you notice a metallic glint. Further investigation reveals that it is probably a key of some sort! 
+set key is default
 
 

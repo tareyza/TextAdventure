@@ -6,7 +6,7 @@ if @object in World.Ship.Hallway
  		if @indirect in Inventory
 			if @indirect equals rubbing_alcohol
 			set @object is clean
-			say You pour the rubbing alcohol on the door. After a while, the door's grime is dissolved, letting you see what's on the other side. You realize that the room on the other side must be an airlock! You are clearly not on earth, but in space! Strange how there's still gravity...
+			say You pour the rubbing alcohol on the door. After a while, the door's grime is dissolved, letting you see what's on the other side. You find that the door has a small keyhole that you could open if you had the key. You realize that the room on the other side must be an airlock! You are clearly not on earth, but in space! Strange how there's still gravity...
 			set @indirect is empty
 
 		if not @indirect equals rubbing_alcohol

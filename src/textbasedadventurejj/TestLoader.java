@@ -38,7 +38,7 @@ public class TestLoader {
 
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(800, 800);
+        frame.setSize(1400, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //end gui bullshit

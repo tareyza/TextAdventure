@@ -1,0 +1,27 @@
+if @object in Inventory
+	say You have the key already.
+
+if @object in World.Ship.Library
+	if @object is hidden
+		say You cannot see any key there.
+
+	if @object is taken
+		say You've already taken this.
+
+	if @object is default
+		if @indirect in Inventory
+			if @indirect equals baton
+			set @object is taken
+			set @object in Inventory
+			say Using your baton, you reach up and knock the key off the shelf and take it. 
+
+		if not @indirect equals baton
+			say You cannot take the key with this.
+
+		if not @indirect in Inventory
+			You do not have this in your inventory!
+
+
+			
+
+

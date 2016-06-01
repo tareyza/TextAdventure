@@ -14,5 +14,9 @@ if @object is closed
 	set @object is open
 
 
+if player in World.Ship.Hallway
+	if key in Inventory
+		say You open the door with the key
+		set @object is open 
 	
 

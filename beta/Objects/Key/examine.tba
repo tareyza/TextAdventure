@@ -1,0 +1,6 @@
+if door is opened
+say It seems pretty ordinary.
+if door is closed
+say You cannot see a broom. It is too dark.
+
+

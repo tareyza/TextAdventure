@@ -1,0 +1,15 @@
+if @object in Inventory
+	say You have the key already.
+
+if @object in World.Ship.Library
+	if @object is hidden
+		say You cannot see any key there.
+
+	if @object is taken
+		say You've already taken this.
+
+	if @object is default
+		say You reach up to take it but are unable to. Perhaps you could find something to take the key with that will help you reach higher. 
+			
+
+

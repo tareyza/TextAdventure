@@ -7,6 +7,9 @@ set hallway_door.new_location as World.Ship.Hallway
 make Left_bookshelf in here as left_bookshelf
 make Center_bookshelf in here as center_bookshelf
 make Desk in here as desk
+make Right_bookshelf in here as right_bookshelf
+make Key in here as key
+set key is hidden
 
 make Laptop_computer in here as laptop_computer
 set laptop_computer is off
