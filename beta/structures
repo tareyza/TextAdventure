@@ -67,6 +67,7 @@ think
 touch OBJECT
 turn OBJECT
 turn on OBJECT
+use INDIRECT on OBJECT
 unlock OBJECT with OBJECT
 unlock OBJECT
 wait
