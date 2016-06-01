@@ -1,0 +1,8 @@
+if @object is on
+say It is already turned on. 
+
+if @object is off
+say You turn it on but the laptop goes to a login screen. Sadly it's password protected and despite your attempts to guess the password, you cannot access the computer.
+set @object is on
+
+

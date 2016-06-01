@@ -1,0 +1,7 @@
+if @object is off
+	say The laptop is already off.
+
+if @object is on
+	say You turn the laptop off.
+	set @object is off
+

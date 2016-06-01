@@ -66,6 +66,7 @@ tell OBJECT about OBJECT
 think
 touch OBJECT
 turn OBJECT
+turn on OBJECT
 unlock OBJECT with OBJECT
 unlock OBJECT
 wait

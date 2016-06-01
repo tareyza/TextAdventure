@@ -72,6 +72,7 @@ public class TestLoader {
                 for (String line : chunks) {
                     area.append(line);
                 }
+                /*
     // handle "System.in"
     area.getInputMap().put(KeyStroke.getKeyStroke("BACK_SPACE"), "none");
     area.getInputMap().put(KeyStroke.getKeyStroke("DELETE"), "none");
@@ -90,6 +91,7 @@ public class TestLoader {
             	}
             } else if (!Character.isISOControl(c)) {
                 line.append(e.getKeyChar());
+*/
             }
         }.execute();
 
