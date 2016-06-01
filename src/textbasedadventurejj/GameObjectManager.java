@@ -62,12 +62,7 @@ public class GameObjectManager {
 				String[] keyVal = s.split(":");
 				if (keyVal.length != 2)
 					continue;
-				String[] trigger = keyVal[0].split(",");
-				String name = null, object = null;
-				name = trigger[0];
-				if (trigger.length == 2) {
-					object = trigger[1];
-				}
+				String name = keyVal[0];
 				String fname = keyVal[1];
 				Event event = null;
 				if (cache.containsKey(fname)) {
