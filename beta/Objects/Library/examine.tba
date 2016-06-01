@@ -1,9 +1,1 @@
-if door is closed
-say You are in a dark room. Some distance away, you can make out the outline of a doorway. The small light barely illuminates the room, allowing you to see that there may be things in this room. 
-
-if door is open
-say You are in a closet of sorts. But why would you be here? The light also reveals a broom in the corner of the closet and a shelf with some potentially useful things. On the other side of the door, there is a brightly lit room. 
-
-
-
-
+say You find yourself in a rather small library. The books 

@@ -1,10 +1,12 @@
 package textbasedadventurejj;
 
+import java.io.IOException;
+
 public class TestLoader {
 
-    public static void main(String[] argv) {
+    public static void main(String[] argv) throws IOException {
 
-        
+        Constants constants = new Constants();
 
         Interpreter interp = Interpreter.getInstance();
         interp.addCommand("make", new MakeCommand());
