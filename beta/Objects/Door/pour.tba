@@ -1,4 +1,3 @@
-say doing smth with a door
 if @object in World.Ship.Hallway
 	if @object is clean
 		say You've already cleaned it. 	
