@@ -11,7 +11,7 @@ if @object is empty
 	say There is nothing more of use here.
 
 if @object is default
-	say The first aid kit has band-aids and a bottle of rubbing alcohol in it.
+	say The first aid kit has band-aids and a bottle of rubbing alcohol in it. If you opened this, you could get access to the band aids and rubbing alcohol.
 
 if @object is opened
 	say The first aid kit is empty now.

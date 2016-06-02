@@ -28,12 +28,11 @@ if player in World.Ship.Airlock
 	if key in Inventory
 		if @object is clean
 			if @object equals space_door
-				if hallway_door is open
-		        	say You open the door with the key. A sudden rush of air comes into the airlock from the ship. You grab on to stop yourself from being sucked into empty space. Pieces of the nearby rubble come flying into the airlock. One suddenly hits you on the head, making you black out. You have died in space
-				do exit player
-				if hallway_door is closed
 				say You open the door with the key. The air in the airlock suddenly gets sucked into space. You begin choking as you try to return to the ship. You die from asphyxiation.
 				do exit player
+				
+
+
 
 
 

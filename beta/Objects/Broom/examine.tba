@@ -1,6 +1,7 @@
-if door is opened
+if control_room_door is open
 say It seems pretty ordinary.
-if door is closed
+
+if control_room_door is closed
 say You cannot see a broom. It is too dark.
 
 

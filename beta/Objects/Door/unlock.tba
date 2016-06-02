@@ -10,6 +10,9 @@ if @object is locked
 			say You unlock the door with the Kenneth's card, poor man. 
 			set @object is closed
 
+		if not id_card in Inventory
+			say You have nothing that might open this door. 
+
 
 	if not player in World.Ship.ControlRoom
 		say You are unable to unlock this door. 
